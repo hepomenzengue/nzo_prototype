@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <style>
+    .logo {
+      opacity: 0;
+      transform-origin: 512px 512px;
+      animation: fadeScale 1.1s ease-out forwards;
+    }
+
+    .teal-bar-base {
+      opacity: 0.34;
+    }
+
+    .teal-bar-spiral {
+      stroke-dasharray: 18 14 30 14 42 16;
+      animation: tealSpiral 2.3s linear infinite, tealBlink 1.5s ease-in-out infinite;
+      filter: drop-shadow(0 0 12px rgba(1, 187, 186, 0.45));
+    }
+
+    .comet circle {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: loaderDots 1.9s ease-in-out infinite;
+    }
+
+    .comet circle:nth-child(1) { animation-delay: 0s; }
+    .comet circle:nth-child(2) { animation-delay: 0.18s; }
+    .comet circle:nth-child(3) { animation-delay: 0.36s; }
+    .comet circle:nth-child(4) { animation-delay: 0.54s; }
+
+    @keyframes fadeScale {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes tealSpiral {
+      from { stroke-dashoffset: 0; }
+      to { stroke-dashoffset: -134; }
+    }
+
+    @keyframes tealBlink {
+      0%, 100% { opacity: 0.35; }
+      28% { opacity: 1; }
+      62% { opacity: 0.52; }
+    }
+
+    @keyframes loaderDots {
+      0%, 100% {
+        opacity: 0.28;
+        transform: translateY(0) scale(0.92);
+      }
+      42% {
+        opacity: 1;
+        transform: translateY(-6px) scale(1.08);
+      }
+      78% {
+        opacity: 0.38;
+        transform: translateY(0) scale(0.96);
+      }
+    }
+  </style>
+
+  <rect width="1024" height="1024" fill="#02163B"/>
+
+  <g class="logo">
+    <path d="M195 594V399" fill="none" stroke="#FFFFFF" stroke-width="42" stroke-linecap="round"/>
+    <path d="M195 399L384 594" fill="none" stroke="#FFFFFF" stroke-width="42" stroke-linecap="round"/>
+    <path d="M384 594V399" fill="none" stroke="#FFFFFF" stroke-width="42" stroke-linecap="round"/>
+
+    <path class="teal-bar-base" d="M470 400H632" fill="none" stroke="#01BBBA" stroke-width="32" stroke-linecap="round"/>
+    <path class="teal-bar-spiral" d="M470 400H632" fill="none" stroke="#01BBBA" stroke-width="32" stroke-linecap="round"/>
+    <path d="M605 444L456 572" fill="none" stroke="#FFFFFF" stroke-width="42" stroke-linecap="round"/>
+    <path d="M456 572H630" fill="none" stroke="#FFFFFF" stroke-width="42" stroke-linecap="round"/>
+
+    <path d="M666 544A100 100 0 1 1 719 617" fill="none" stroke="#FFFFFF" stroke-width="42" stroke-linecap="round"/>
+    <path d="M697 419A125 125 0 1 1 723 629" fill="none" stroke="#FFFFFF" stroke-width="13" stroke-linecap="round"/>
+    <path d="M735 622A98 98 0 0 0 873 493" fill="none" stroke="#FFFFFF" stroke-width="13" stroke-linecap="round"/>
+
+    <g class="comet" fill="#01BBBA">
+      <circle cx="681" cy="600" r="17"/>
+      <circle cx="656" cy="637" r="11"/>
+      <circle cx="628" cy="666" r="9"/>
+      <circle cx="601" cy="687" r="6"/>
+    </g>
+  </g>
+</svg>
