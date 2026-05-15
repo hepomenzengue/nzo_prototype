@@ -1,4 +1,4 @@
-<!doctype html>
+=<!doctype html>
 <html lang="fr">
 <head>
     <meta charset="utf-8">
@@ -7843,6 +7843,14 @@
         }
 
         @media (max-width: 480px) {
+            .view,
+            .view.can-scroll {
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+                touch-action: pan-y;
+                padding-bottom: 100px;
+            }
+
             .view[data-view="home"],
             .view[data-view="home"].can-scroll {
                 overflow-y: auto;
