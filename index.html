@@ -2580,55 +2580,61 @@
         .history-tabs {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 10px;
-            margin: 0 16px 12px;
-            padding: 8px;
-            border-radius: 20px;
-            background: color-mix(in srgb, var(--card2) 86%, transparent);
-            border: 1px solid var(--line)
+            gap: 8px;
+            margin: 0;
+            padding: 0;
+            border-radius: 0;
+            background: transparent;
+            border: 0
         }
 
         .history-tab {
-            min-height: 56px;
-            border: 1px solid transparent;
-            border-radius: 16px;
-            background: transparent;
+            min-height: 54px;
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            background: color-mix(in srgb, var(--card) 82%, transparent);
             color: var(--muted);
-            padding: 10px 12px;
+            padding: 10px 11px;
             font: inherit;
             cursor: pointer;
             display: grid;
-            grid-template-columns: auto 1fr auto;
+            grid-template-columns: minmax(0, 1fr) auto;
             gap: 10px;
             align-items: center;
             text-align: left;
             transition: .18s ease
         }
 
+        .history-tab-copy {
+            min-width: 0;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-wrap: nowrap
+        }
+
         .history-tab b {
-            display: block;
+            display: inline;
             color: var(--text);
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 950;
-            line-height: 1.1
+            line-height: 1.1;
+            white-space: nowrap
         }
 
-        .history-tab small {
-            color: var(--muted);
-            font-size: 10px;
-            font-weight: 800
-        }
-
-        .history-tab span {
-            width: 32px;
-            height: 32px;
-            border-radius: 12px;
-            display: grid;
-            place-items: center;
+        .history-tab-count {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 22px;
+            height: 20px;
+            padding: 0 6px;
+            border-radius: 999px;
             background: var(--chip);
             color: #0B74FF;
-            font-size: 14px;
-            font-weight: 950
+            font-size: 10px;
+            font-weight: 900;
+            white-space: nowrap
         }
 
         .history-tab em {
@@ -2640,7 +2646,7 @@
 
         .history-tab.active {
             border-color: rgba(11,116,255,.35);
-            background: color-mix(in srgb, #0B74FF 14%, var(--card) 86%);
+            background: linear-gradient(180deg, color-mix(in srgb, #0B74FF 14%, var(--card) 86%), color-mix(in srgb, #0B74FF 8%, var(--card) 92%));
             box-shadow: 0 10px 22px rgba(11,116,255,.10);
             color: var(--text)
         }
@@ -2680,20 +2686,252 @@
             gap: 10px
         }
 
-        .history-deal-row {
+        .history-shell {
+            margin: 0 16px 16px;
+            display: grid;
+            gap: 12px
+        }
+
+        .history-hero {
+            border: 1px solid var(--line);
+            border-radius: 28px;
+            background: linear-gradient(180deg, color-mix(in srgb, #0B74FF 10%, var(--card) 90%), var(--card));
+            box-shadow: var(--shadow);
+            padding: 16px
+        }
+
+        .history-hero-top {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            align-items: flex-start
+        }
+
+        .history-kicker {
+            display: inline-flex;
+            padding: 6px 9px;
+            border-radius: 999px;
+            background: var(--chip);
+            color: #0B74FF;
+            font-size: 10px;
+            font-weight: 950;
+            letter-spacing: .04em;
+            text-transform: uppercase
+        }
+
+        .history-hero h2 {
+            margin: 0;
+            color: var(--text);
+            font-size: 20px;
+            line-height: 1.05;
+            font-weight: 950;
+            letter-spacing: -.05em
+        }
+
+        .history-stats {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 8px;
+            margin-top: 14px
+        }
+
+        .history-stat {
+            padding: 11px 10px;
+            border-radius: 18px;
+            background: color-mix(in srgb, var(--card) 90%, transparent);
+            border: 1px solid var(--line)
+        }
+
+        .history-stat b {
+            display: inline;
+            color: var(--text);
+            font-size: 14px;
+            line-height: 1.1;
+            font-weight: 950;
+            letter-spacing: -.04em
+        }
+
+        .history-stat span {
+            display: inline;
+            margin-left: 6px;
+            color: var(--muted);
+            font-size: 10px;
+            font-weight: 800
+        }
+
+        .history-spotlight {
+            display: grid;
+            gap: 8px;
+            padding: 12px;
+            border-radius: 22px;
+            background: var(--card);
+            border: 1px solid var(--line)
+        }
+
+        .history-spotlight-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px
+        }
+
+        .history-spotlight-head b {
+            color: var(--text);
+            font-size: 12px;
+            font-weight: 950
+        }
+
+        .history-spotlight-head small {
+            color: var(--muted);
+            font-size: 10px;
+            font-weight: 750
+        }
+
+        .history-mini-list {
+            display: grid;
+            gap: 8px
+        }
+
+        .history-mini-row {
+            display: grid;
+            grid-template-columns: auto minmax(0, 1fr) auto;
+            gap: 10px;
+            align-items: center;
+            padding: 10px 0;
+            border-top: 1px solid var(--line)
+        }
+
+        .history-mini-row:first-child {
+            border-top: 0;
+            padding-top: 0
+        }
+
+        .history-mini-icon {
+            width: 34px;
+            height: 34px;
+            border-radius: 13px;
+            display: grid;
+            place-items: center;
+            background: color-mix(in srgb, #0B74FF 12%, var(--card) 88%);
+            color: #0B74FF;
+            font-size: 16px;
+            font-weight: 950
+        }
+
+        .history-mini-main {
+            min-width: 0
+        }
+
+        .history-mini-main b {
+            display: block;
+            color: var(--text);
+            font-size: 12px;
+            font-weight: 900;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis
+        }
+
+        .history-mini-main small {
+            display: block;
+            margin-top: 3px;
+            color: var(--muted);
+            font-size: 10px;
+            font-weight: 750;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis
+        }
+
+        .history-mini-meta {
+            display: grid;
+            justify-items: end;
+            gap: 5px;
+            color: var(--muted);
+            font-size: 10px;
+            font-weight: 800
+        }
+
+        .history-tx-row {
             width: 100%;
             border: 1px solid var(--line);
             border-radius: 20px;
             background: var(--card);
             box-shadow: var(--shadow);
-            padding: 14px 16px;
+            padding: 12px 14px;
             display: grid;
             grid-template-columns: auto minmax(0, 1fr) auto;
-            gap: 12px;
+            gap: 10px;
             align-items: center;
             text-align: left;
             color: inherit;
             cursor: pointer
+        }
+
+        .history-tx-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 13px;
+            display: grid;
+            place-items: center;
+            background: color-mix(in srgb, #0B74FF 12%, var(--card) 88%);
+            color: #0B74FF;
+            font-size: 16px;
+            font-weight: 950
+        }
+
+        .history-tx-main {
+            min-width: 0;
+            display: grid;
+            gap: 4px
+        }
+
+        .history-tx-title {
+            color: var(--text);
+            font-size: 12px;
+            font-weight: 950;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis
+        }
+
+        .history-tx-sub {
+            color: var(--muted);
+            font-size: 10px;
+            font-weight: 750;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis
+        }
+
+        .history-tx-meta {
+            display: grid;
+            justify-items: end;
+            gap: 5px;
+            color: var(--muted);
+            font-size: 10px;
+            font-weight: 800
+        }
+
+        .history-deal-row {
+            width: 100%;
+            border: 1px solid var(--line);
+            border-radius: 22px;
+            background: linear-gradient(180deg, var(--card), color-mix(in srgb, var(--card2) 74%, transparent));
+            box-shadow: var(--shadow);
+            padding: 14px 15px;
+            display: grid;
+            grid-template-columns: auto minmax(0, 1fr) auto;
+            gap: 11px;
+            align-items: center;
+            text-align: left;
+            color: inherit;
+            cursor: pointer;
+            transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease
+        }
+
+        .history-deal-row:active {
+            transform: scale(.995)
         }
 
         .history-deal-icon {
@@ -2706,6 +2944,16 @@
             color: #0B74FF;
             font-size: 18px;
             font-weight: 950
+        }
+
+        .history-deal-row.completed .history-deal-icon {
+            background: color-mix(in srgb, #16a34a 12%, var(--card) 88%);
+            color: #16a34a
+        }
+
+        .history-deal-row.pending .history-deal-icon {
+            background: color-mix(in srgb, #f59e0b 12%, var(--card) 88%);
+            color: #d97706
         }
 
         .history-deal-main {
@@ -2739,6 +2987,14 @@
             color: var(--muted);
             font-size: 10px;
             font-weight: 800
+        }
+
+        .history-soft-tabs {
+            margin: 0 16px 12px;
+            padding: 6px;
+            border-radius: 18px;
+            background: color-mix(in srgb, var(--card2) 78%, transparent);
+            border: 1px solid var(--line)
         }
 
         .nzone-entry {
@@ -5466,14 +5722,14 @@
 
         .deal-advanced-criteria-body {
             display: grid;
-            gap: 10px;
+            gap: 12px;
             margin-top: 12px
         }
 
         .deal-advanced-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 8px
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 10px
         }
 
         .deal-advanced-grid.compact {
@@ -5482,7 +5738,7 @@
 
         .deal-advanced-field {
             display: grid;
-            gap: 5px
+            gap: 6px
         }
 
         .deal-advanced-field span {
@@ -5496,19 +5752,127 @@
         .deal-advanced-field input,
         .deal-advanced-field select {
             width: 100%;
-            min-height: 42px;
+            min-height: 46px;
             border: 1px solid var(--line);
-            border-radius: 14px;
+            border-radius: 16px;
             background: var(--card);
             color: var(--text);
-            padding: 0 12px;
+            padding: 0 13px;
             font: inherit;
-            font-size: 13px;
+            font-size: 14px;
             font-weight: 750
         }
 
         .deal-advanced-field-wide {
             grid-column: 1 / -1
+        }
+
+        .deal-period-field {
+            grid-column: 1 / -1;
+            display: grid;
+            gap: 10px;
+            padding: 12px;
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            background: var(--card)
+        }
+
+        .deal-period-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px
+        }
+
+        .deal-period-head span {
+            color: var(--muted);
+            font-size: 10px;
+            font-weight: 850;
+            text-transform: uppercase;
+            letter-spacing: .06em
+        }
+
+        .deal-period-head b {
+            color: #0B74FF;
+            font-size: 12px;
+            font-weight: 950;
+            text-align: right
+        }
+
+        .deal-period-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 8px
+        }
+
+        .deal-period-option {
+            position: relative;
+            min-height: 54px;
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            background: var(--card2);
+            padding: 10px 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            transition: .18s ease
+        }
+
+        .deal-period-option:hover {
+            border-color: rgba(11,116,255,.28);
+            transform: translateY(-1px)
+        }
+
+        .deal-period-option input {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            margin: 0;
+            cursor: pointer
+        }
+
+        .deal-period-option span {
+            min-width: 0;
+            display: grid;
+            gap: 2px
+        }
+
+        .deal-period-option b {
+            color: var(--text);
+            font-size: 13px;
+            font-weight: 950;
+            line-height: 1.05
+        }
+
+        .deal-period-option small {
+            color: var(--muted);
+            font-size: 10px;
+            font-weight: 750;
+            line-height: 1.1
+        }
+
+        .deal-period-option:before {
+            content: "";
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 2px solid #cbd5e1;
+            box-sizing: border-box;
+            background: transparent;
+            flex: none
+        }
+
+        .deal-period-option:has(input:checked) {
+            background: color-mix(in srgb, #0B74FF 12%, var(--card) 88%);
+            border-color: rgba(11,116,255,.38);
+            box-shadow: 0 10px 24px rgba(11,116,255,.10)
+        }
+
+        .deal-period-option:has(input:checked):before {
+            border-color: #0B74FF;
+            background: #0B74FF;
+            box-shadow: inset 0 0 0 2px #ffffff
         }
 
         .receipt-card {
@@ -5518,9 +5882,21 @@
 
         .receipt-card-head {
             display: flex;
-            align-items: flex-start;
+            align-items: center;
             justify-content: space-between;
             gap: 12px
+        }
+
+        .receipt-card-copy {
+            min-width: 0;
+            display: grid;
+            gap: 3px
+        }
+
+        .receipt-card-head .tag {
+            background: var(--chip);
+            color: #0B74FF;
+            border: 0
         }
 
         .receipt-card-head b {
@@ -5530,6 +5906,8 @@
         }
 
         .receipt-card-head small {
+            display: block;
+            max-width: 100%;
             color: var(--muted);
             font-size: 11px;
             font-weight: 650
@@ -5538,10 +5916,49 @@
         .receipt-preview {
             display: grid;
             gap: 8px;
-            padding: 12px;
-            border-radius: 16px;
-            background: var(--card);
+            padding: 13px;
+            border-radius: 18px;
+            background: linear-gradient(180deg, var(--card), color-mix(in srgb, var(--card2) 76%, transparent));
             border: 1px solid var(--line)
+        }
+
+        .receipt-preview-cta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 12px 13px;
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            background: color-mix(in srgb, #0B74FF 8%, var(--card) 92%)
+        }
+
+        .receipt-preview-cta b {
+            color: var(--text);
+            font-size: 13px;
+            font-weight: 950
+        }
+
+        .receipt-preview-cta small {
+            display: block;
+            margin-top: 3px;
+            color: var(--muted);
+            font-size: 10px;
+            font-weight: 750
+        }
+
+        .receipt-preview-cta em {
+            width: 34px;
+            height: 34px;
+            border-radius: 13px;
+            display: grid;
+            place-items: center;
+            background: var(--chip);
+            color: #0B74FF;
+            font-style: normal;
+            font-size: 16px;
+            font-weight: 950;
+            flex: none
         }
 
         .receipt-preview-row {
@@ -5566,11 +5983,11 @@
         }
 
         .receipt-actions button {
-            min-height: 42px;
-            border: 0;
-            border-radius: 14px;
-            background: #0B74FF;
-            color: #ffffff;
+            min-height: 46px;
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            background: var(--card);
+            color: var(--text);
             font: inherit;
             font-size: 12px;
             font-weight: 900;
@@ -5578,12 +5995,149 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 8px
+            gap: 8px;
+            box-shadow: var(--shadow)
+        }
+
+        .obtain-card.obtain-success-card {
+            padding: 18px;
+            border-color: color-mix(in srgb, #0B74FF 14%, var(--line));
+            box-shadow: 0 18px 48px rgba(15, 38, 72, .08)
+        }
+
+        .obtain-success-card .obtain-state {
+            justify-items: stretch;
+            text-align: left;
+            gap: 14px;
+            padding: 0
+        }
+
+        .obtain-success-summary {
+            display: grid;
+            grid-template-columns: 42px minmax(0, 1fr);
+            align-items: center;
+            gap: 12px;
+            padding: 2px 0 4px
+        }
+
+        .obtain-success-card .xsheet-success-mark {
+            width: 42px;
+            height: 42px;
+            border-radius: 15px;
+            font-size: 21px;
+            background: color-mix(in srgb, #0B74FF 12%, var(--card));
+            box-shadow: inset 0 0 0 1px rgba(11,116,255,.08)
+        }
+
+        .obtain-success-card .obtain-title {
+            color: #0B74FF;
+            font-size: 21px;
+            line-height: 1.05
+        }
+
+        .obtain-success-card .obtain-sub {
+            margin-top: 5px;
+            font-size: 10px;
+            line-height: 1.35
+        }
+
+        .obtain-success-card .obtain-actions {
+            margin: 0
+        }
+
+        .obtain-success-card .home-exchange-cta {
+            min-height: 46px;
+            border-radius: 16px;
+            box-shadow: 0 12px 26px rgba(11,116,255,.18)
+        }
+
+        .obtain-success-card .success-receipt {
+            margin-top: 4px;
+            padding: 14px 0 0;
+            border: 0;
+            border-top: 1px solid var(--line);
+            border-radius: 0;
+            background: transparent
+        }
+
+        .obtain-success-card .success-receipt .receipt-card-head .tag {
+            padding: 5px 8px;
+            font-size: 9px
+        }
+
+        .obtain-success-card .success-receipt .receipt-card-head b {
+            font-size: 12px
+        }
+
+        .obtain-success-card .success-receipt .receipt-card-head small {
+            font-size: 9px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis
+        }
+
+        .obtain-success-card .success-receipt .receipt-actions {
+            gap: 7px
+        }
+
+        .obtain-success-card .success-receipt .receipt-actions button {
+            min-width: 0;
+            min-height: 58px;
+            padding: 8px 4px;
+            border: 0;
+            border-radius: 15px;
+            background: var(--card2);
+            box-shadow: none;
+            display: grid;
+            place-items: center;
+            align-content: center;
+            gap: 4px;
+            font-size: 10px
+        }
+
+        .obtain-success-card .success-receipt .receipt-action-icon {
+            width: 18px;
+            height: 18px;
+            color: #0B74FF
+        }
+
+        .receipt-actions-only {
+            margin-top: 4px;
+            padding: 14px 0 0;
+            border: 0;
+            border-top: 1px solid var(--line);
+            border-radius: 0;
+            background: transparent
+        }
+
+        .receipt-actions-only .receipt-actions {
+            gap: 7px
+        }
+
+        .receipt-actions-only .receipt-actions button {
+            min-width: 0;
+            min-height: 58px;
+            padding: 8px 4px;
+            border: 0;
+            border-radius: 15px;
+            background: var(--card2);
+            box-shadow: none;
+            display: grid;
+            place-items: center;
+            align-content: center;
+            gap: 4px;
+            font-size: 10px
+        }
+
+        .receipt-actions-only .receipt-action-icon {
+            width: 18px;
+            height: 18px;
+            color: #0B74FF
         }
 
         .receipt-action-icon {
-            width: 16px;
-            height: 16px;
+            width: 17px;
+            height: 17px;
             display: inline-block;
             flex: 0 0 auto
         }
@@ -5596,8 +6150,14 @@
 
         .nzone-menu-panel {
             display: grid;
-            gap: 10px;
-            width: 286px
+            gap: 12px;
+            width: min(320px, calc(100vw - 44px));
+            padding: 14px;
+            border: 1px solid var(--line);
+            border-radius: 22px;
+            background: color-mix(in srgb, var(--card) 95%, transparent);
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(16px)
         }
 
         .nzone-menu-title {
@@ -5606,6 +6166,48 @@
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: .08em
+        }
+
+        .nzone-menu-head {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 12px;
+            border-radius: 18px;
+            background: color-mix(in srgb, #0B74FF 10%, var(--card2) 90%)
+        }
+
+        .nzone-menu-head-mark {
+            width: 34px;
+            height: 34px;
+            border-radius: 13px;
+            background: var(--chip);
+            color: #0B74FF;
+            display: grid;
+            place-items: center;
+            font-size: 15px;
+            font-weight: 950;
+            flex: none
+        }
+
+        .nzone-menu-head-copy {
+            min-width: 0;
+            display: grid;
+            gap: 2px
+        }
+
+        .nzone-menu-head-copy b {
+            color: var(--text);
+            font-size: 13px;
+            font-weight: 950;
+            line-height: 1.1
+        }
+
+        .nzone-menu-head-copy small {
+            color: var(--muted);
+            font-size: 10px;
+            font-weight: 750;
+            line-height: 1.15
         }
 
         .nzone-menu .deal-advanced-criteria {
@@ -5635,10 +6237,155 @@
             grid-template-columns: 1fr
         }
 
+        .nzone-menu .deal-period-field {
+            padding: 10px;
+            border-radius: 16px
+        }
+
+        .nzone-menu .deal-period-grid {
+            grid-template-columns: 1fr 1fr
+        }
+
+        .nzone-menu .deal-period-option {
+            min-height: 48px;
+            padding: 9px 10px;
+            border-radius: 14px
+        }
+
+        .nzone-menu .deal-period-option b {
+            font-size: 12px
+        }
+
+        .nzone-menu .deal-period-option small {
+            font-size: 9px
+        }
+
         .receipt-actions button.secondary {
             background: var(--card);
+            color: var(--text)
+        }
+
+        .receipt-modal-layer,
+        .receipt-share-layer {
+            position: absolute;
+            inset: 0;
+            z-index: 95;
+            display: none;
+            align-items: flex-end;
+            justify-content: center;
+            background: rgba(2, 12, 29, .58)
+        }
+
+        .receipt-modal-panel,
+        .receipt-share-panel {
+            width: 100%;
+            max-height: calc(100% - 34px);
+            overflow-y: auto;
+            border: 1px solid var(--line);
+            border-bottom: 0;
+            border-radius: 30px 30px 0 0;
+            background: var(--card);
             color: var(--text);
-            border: 1px solid var(--line)
+            padding: 10px 18px 22px;
+            box-shadow: 0 -24px 60px rgba(0, 0, 0, .32);
+            animation: sheetUp .24s ease both
+        }
+
+        .receipt-modal-head,
+        .receipt-share-head {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 12px;
+            margin: 8px 0 14px
+        }
+
+        .receipt-modal-head b,
+        .receipt-share-head b {
+            display: block;
+            color: var(--text);
+            font-size: 18px;
+            font-weight: 950;
+            letter-spacing: -.03em
+        }
+
+        .receipt-modal-head small,
+        .receipt-share-head small {
+            color: var(--muted);
+            font-size: 11px;
+            font-weight: 750
+        }
+
+        .receipt-modal-close,
+        .receipt-share-close {
+            width: 38px;
+            height: 38px;
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            background: var(--card2);
+            color: var(--text);
+            font: inherit;
+            font-size: 16px;
+            font-weight: 950;
+            cursor: pointer
+        }
+
+        .receipt-modal-card {
+            padding: 14px;
+            border-radius: 22px;
+            border: 1px solid var(--line);
+            background: linear-gradient(180deg, var(--card), color-mix(in srgb, var(--card2) 76%, transparent));
+            display: grid;
+            gap: 10px
+        }
+
+        .receipt-share-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 10px
+        }
+
+        .receipt-share-btn {
+            min-height: 56px;
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            background: var(--card);
+            color: var(--text);
+            padding: 10px 12px;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            box-shadow: var(--shadow)
+        }
+
+        .receipt-share-btn b {
+            display: block;
+            font-size: 12px;
+            font-weight: 950;
+            line-height: 1.1
+        }
+
+        .receipt-share-btn small {
+            display: block;
+            margin-top: 3px;
+            color: var(--muted);
+            font-size: 10px;
+            font-weight: 750
+        }
+
+        .receipt-share-icon {
+            width: 34px;
+            height: 34px;
+            border-radius: 13px;
+            display: grid;
+            place-items: center;
+            background: var(--chip);
+            color: #0B74FF;
+            font-size: 15px;
+            font-weight: 950;
+            flex: none
         }
 
         @keyframes authSpin {
@@ -6982,11 +7729,13 @@
             border-color: #0B74FF;
         }
         .home-currency-label {
-            font-size: 9px;
+            font-size: 10px;
             font-weight: 850;
             color: var(--muted);
-            text-transform: uppercase;
-            letter-spacing: .08em;
+            text-transform: none;
+            letter-spacing: 0;
+            white-space: nowrap;
+            line-height: 1.1;
         }
         .home-currency-code {
             font-size: 19px;
@@ -7274,19 +8023,25 @@
         }
 
         .obtain-form-card {
-            padding: 18px 18px 17px
+            padding: 18px
         }
 
-        .obtain-form-card .obtain-title {
-            font-size: 17px
+        .obtain-form-card .home-exchange-title {
+            font-size: 17px;
+            margin: 0
+        }
+
+        .obtain-form-card .home-exchange-subtitle {
+            margin: 3px 0 0;
+            font-size: 12px
         }
 
         .obtain-inline-form {
             display: grid;
-            grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
-            align-items: stretch;
+            grid-template-columns: minmax(0, 1fr) 44px minmax(0, 1fr);
+            align-items: center;
             gap: 10px;
-            margin: 15px 0 13px;
+            margin: 14px 0 10px;
             color: var(--muted);
             font-size: 12px;
             font-weight: 850
@@ -7294,16 +8049,17 @@
 
         .deal-amount-card,
         .deal-cost-box {
-            padding: 12px;
-            border: 1px solid var(--line);
-            border-radius: 18px;
+            padding: 12px 14px;
+            border: 1.5px solid var(--line);
+            border-radius: 20px;
             background: var(--card2)
         }
 
         .deal-amount-card {
             display: grid;
-            gap: 8px;
-            align-content: start
+            gap: 6px;
+            align-content: start;
+            min-height: 86px
         }
 
         .deal-amount-card span,
@@ -7313,7 +8069,9 @@
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: .06em;
-            white-space: nowrap
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis
         }
 
         .deal-amount-row {
@@ -7330,7 +8088,7 @@
             background: transparent;
             color: var(--text);
             font: inherit;
-            font-size: 18px;
+            font-size: 17px;
             font-weight: 950;
             letter-spacing: -.03em;
             text-align: left
@@ -7339,13 +8097,13 @@
         .deal-cost-box {
             display: grid;
             align-content: center;
-            gap: 4px;
-            min-height: 78px
+            gap: 5px;
+            min-height: 86px
         }
 
         .deal-cost-box b {
             color: var(--text);
-            font-size: 18px;
+            font-size: 17px;
             font-weight: 950;
             letter-spacing: -.03em;
             line-height: 1.05;
@@ -7359,6 +8117,90 @@
         .obtain-inline-form .xsheet-input {
             min-height: 42px;
             gap: 8px
+        }
+
+        .obtain-inline-switch {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: var(--chip);
+            color: #0B74FF;
+            font-size: 18px;
+            border: 1.5px solid rgba(11,116,255,.2);
+            justify-self: center
+        }
+
+        .obtain-form-card .home-currency-label {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100%
+        }
+
+        .obtain-form-card .home-currency-btn {
+            justify-content: center;
+            min-height: 86px
+        }
+
+        .obtain-form-card .obtain-amount-field {
+            cursor: default;
+            justify-content: flex-start
+        }
+
+        .obtain-form-card .obtain-amount-field .home-currency-code {
+            display: none
+        }
+
+        .obtain-form-card .obtain-amount-row {
+            width: 100%;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            gap: 8px;
+            align-items: center
+        }
+
+        .obtain-form-card .obtain-amount-row input {
+            min-width: 0;
+            border: 0;
+            outline: 0;
+            background: transparent;
+            color: var(--text);
+            font: inherit;
+            font-size: 17px;
+            font-weight: 950;
+            letter-spacing: -.03em;
+            text-align: left
+        }
+
+        .obtain-form-card .obtain-amount-row input::placeholder {
+            color: color-mix(in srgb, var(--muted) 80%, transparent)
+        }
+
+        .obtain-form-card .obtain-inline-target {
+            border: 0;
+            background: var(--chip);
+            color: #0B74FF;
+            border-radius: 999px;
+            padding: 0 10px;
+            min-height: 28px;
+            font: inherit;
+            font-size: 12px;
+            font-weight: 950;
+            cursor: pointer;
+            white-space: nowrap
+        }
+
+        .obtain-form-card .obtain-cost-field {
+            cursor: default;
+            align-items: flex-start
+        }
+
+        .obtain-form-card .obtain-cost-field .home-currency-code {
+            font-size: 17px;
+            line-height: 1.05;
+            white-space: nowrap
         }
 
         .obtain-inline-currency,
@@ -8053,13 +8895,13 @@
             padding: 18px;
             border: 1px solid var(--line);
             border-radius: 24px;
-            background: var(--card);
-            box-shadow: var(--shadow)
+            background: linear-gradient(180deg, var(--card), color-mix(in srgb, var(--card2) 72%, transparent));
+            box-shadow: 0 10px 22px rgba(11, 116, 255, .05)
         }
 
         .seller-detail-main {
             color: var(--text);
-            font-size: 24px;
+            font-size: 23px;
             line-height: 1.05;
             font-weight: 950;
             letter-spacing: -.04em
@@ -8076,7 +8918,7 @@
             display: flex;
             justify-content: space-between;
             gap: 14px;
-            padding: 12px 0;
+            padding: 11px 0;
             border-bottom: 1px solid var(--line);
             color: var(--muted);
             font-size: 12px;
@@ -8091,6 +8933,32 @@
             color: var(--text);
             text-align: right;
             font-weight: 950
+        }
+
+        .seller-exchange-detail .pending-obtain-card-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            padding: 0 2px
+        }
+
+        .seller-exchange-detail .seller-wide-cta,
+        .seller-exchange-detail .seller-offer-action {
+            min-height: 44px;
+            border-radius: 16px;
+            padding: 0 14px;
+            font-size: 12px
+        }
+
+        .seller-exchange-detail .seller-wide-cta {
+            background: #0B74FF;
+            color: #ffffff;
+            border: 0
+        }
+
+        .seller-exchange-detail .seller-offer-action {
+            background: color-mix(in srgb, var(--card) 88%, transparent);
+            color: var(--text)
         }
 
         .pending-obtain-line {
@@ -10591,7 +11459,7 @@
             ...exchange,
             nzone: exchange.nzone || currency,
             status: archivedUserExchangeIds.includes(exchange.id) ? 'Archivé' : exchange.status
-        })))
+        }))).filter(exchange => exchange.type !== 'Achat direct au vendeur')
     }
 
     function allUserTransactions() {
@@ -10610,16 +11478,44 @@
         return tab === 'deals' ? allUserExchanges().length : allUserTransactions().length
     }
 
+    function historyLatestTransaction() {
+        return allUserTransactions()[0] || null
+    }
+
+    function historyLatestDeal() {
+        return allUserExchanges()[0] || null
+    }
+
+    function historyOverviewStats() {
+        const txCount = historyTabCount('transactions');
+        const dealCount = historyTabCount('deals');
+        const pendingCount = allUserExchanges().filter(exchange => ['En cours', 'En attente'].includes(exchange.status)).length;
+        return [
+            {value: txCount, label: 'transactions'},
+            {value: dealCount, label: 'deals'},
+            {value: pendingCount, label: 'en attente'}
+        ]
+    }
+
+    function historyOverviewCard() {
+        const tx = historyLatestTransaction();
+        const deal = historyLatestDeal();
+        const stats = historyOverviewStats().map(stat => `<div class="history-stat"><b>${stat.value}</b><span>${stat.label}</span></div>`).join('');
+        const txRow = tx ? `<div class="history-mini-row"><div class="history-mini-icon">${['Recharge', 'Dépôt'].includes(tx.type) ? '＋' : '−'}</div><div class="history-mini-main"><b>${tx.method}</b><small>${tx.type} · Cagnotte ${tx.nzone}</small></div><div class="history-mini-meta"><span class="nzone-status-badge ${nzoneEntryStatusClass(tx.status)}">${tx.status}</span><small>${tx.date}</small></div></div>` : '';
+        const dealRow = deal ? `<div class="history-mini-row"><div class="history-mini-icon">${archivedUserExchangeIds.includes(deal.id) || deal.status === 'Complété' ? '✓' : '↔'}</div><div class="history-mini-main"><b>${deal.amount}</b><small>${deal.type} · Cagnotte ${deal.nzone}</small></div><div class="history-mini-meta"><span class="nzone-status-badge ${nzoneEntryStatusClass(archivedUserExchangeIds.includes(deal.id) ? 'Archivé' : deal.status)}">${archivedUserExchangeIds.includes(deal.id) ? 'Archivé' : deal.status}</span><small>${String(deal.date || '').split('·')[0] || ''}</small></div></div>` : '';
+        return `<section class="history-hero"><div class="history-stats">${stats}</div><div class="history-spotlight"><div class="history-spotlight-head"><div><b>Récents</b></div></div><div class="history-mini-list">${txRow}${dealRow}</div></div></section>`
+    }
+
     function historyTabs() {
         const txCount = historyTabCount('transactions');
         const dealCount = historyTabCount('deals');
-        return `<div class="history-tabs"><button class="history-tab ${historyTab === 'transactions' ? 'active' : ''}" type="button" onclick="setHistoryTab('transactions')"><span>↕</span><div><b>Transactions</b><small>${txCount} éléments</small></div><em>›</em></button><button class="history-tab ${historyTab === 'deals' ? 'active' : ''}" type="button" onclick="setHistoryTab('deals')"><span>⇄</span><div><b>Deals</b><small>${dealCount} éléments</small></div><em>›</em></button></div>`
+        return `<div class="history-soft-tabs"><div class="history-tabs"><button class="history-tab ${historyTab === 'transactions' ? 'active' : ''}" type="button" onclick="setHistoryTab('transactions')"><div class="history-tab-copy"><b>Transactions</b><span class="history-tab-count">${txCount}</span></div><em>›</em></button><button class="history-tab ${historyTab === 'deals' ? 'active' : ''}" type="button" onclick="setHistoryTab('deals')"><div class="history-tab-copy"><b>Deals</b><span class="history-tab-count">${dealCount}</span></div><em>›</em></button></div></div>`
     }
 
     function historyTransactionRow(txn) {
         const dir = ['Recharge', 'Dépôt'].includes(txn.type) ? 'in' : 'out';
         const icon = dir === 'in' ? '＋' : '−';
-        return `<div class="nzone-entry nzone-ledger-row"><div class="nzone-ledger-main"><div class="nzone-ledger-title">${icon} ${txn.method}</div><div class="nzone-ledger-amount ${dir}">${txn.amount}</div><div class="nzone-ledger-meta"><span class="nzone-ledger-date">${txn.type} · ${txn.date} · Cagnotte ${txn.nzone}</span><span class="nzone-status-badge ${nzoneEntryStatusClass(txn.status)}">${txn.status}</span></div></div></div>`
+        return `<button class="history-tx-row" type="button"><span class="history-tx-icon">${icon}</span><div class="history-tx-main"><div class="history-tx-title">${txn.method}</div><div class="history-tx-sub">${txn.type} · Cagnotte ${txn.nzone}</div></div><div class="history-tx-meta"><span class="nzone-status-badge ${nzoneEntryStatusClass(txn.status)}">${txn.status}</span><small>${txn.date}</small></div></button>`
     }
 
     function historyDealRow(exchange) {
@@ -10627,7 +11523,7 @@
         const dateLabel = dateParts.length > 1 ? `${dateParts[0]} · ${dateParts[1]}` : (dateParts[0] || '');
         const status = archivedUserExchangeIds.includes(exchange.id) ? 'Archivé' : exchange.status;
         const icon = status === 'Complété' ? '✓' : '↔';
-        return `<button class="history-deal-row" type="button" onclick="openUserExchangeDetail('${exchange.id}')"><span class="history-deal-icon">${icon}</span><div class="history-deal-main"><div class="history-deal-title">${exchange.amount}</div><span class="history-deal-sub">${exchange.type} · Cagnotte ${exchange.nzone}</span></div><div class="history-deal-meta"><span class="nzone-status-badge ${nzoneEntryStatusClass(status)}">${status}</span><small>${dateLabel}</small></div></button>`
+        return `<button class="history-deal-row ${status === 'Complété' ? 'completed' : ['En cours', 'En attente'].includes(status) ? 'pending' : ''}" type="button" onclick="openUserExchangeDetail('${exchange.id}')"><span class="history-deal-icon">${icon}</span><div class="history-deal-main"><div class="history-deal-title">${exchange.amount}</div><span class="history-deal-sub">Deal · Cagnotte ${exchange.nzone}</span></div><div class="history-deal-meta"><span class="nzone-status-badge ${nzoneEntryStatusClass(status)}">${status}</span><small>${dateLabel}</small></div></button>`
     }
 
     function historyTransactionsList() {
@@ -11127,7 +12023,7 @@
     }
 
     function nzoneDetailHeader(data) {
-        const menu = nzoneDetailMenuOpen ? `<div class="nzone-menu"><div class="nzone-menu-panel"><div class="nzone-menu-title">Configurations récurrentes</div>${nzoneCriteriaBlock('menu')}</div></div>` : '';
+        const menu = nzoneDetailMenuOpen ? `<div class="nzone-menu"><div class="nzone-menu-panel"><div class="nzone-menu-title">Configurations récurrentes</div><div class="nzone-menu-head"><div class="nzone-menu-head-mark">⏱</div><div class="nzone-menu-head-copy"><b>Planification rapide</b><small>Tranches et période en un geste</small></div></div>${nzoneCriteriaBlock('menu')}</div></div>` : '';
         return `<div class="nzone-detail-head"><button class="back" onclick="go('wallets')">←</button><div class="nzone-detail-title">${data.name}</div><div class="nzone-menu-wrap"><button class="nzone-menu-btn" type="button" onclick="toggleNzoneMenu()" aria-label="Configurations récurrentes">☰</button>${menu}</div></div>`
     }
 
@@ -11151,7 +12047,15 @@ ${obtainDealCard(sourceCurrency)}${nzonePendingObtainBlock(sourceCurrency)}`
         const min = criteria.min || '';
         const max = criteria.max || '';
         const anticipation = criteria.anticipation || 'immédiat';
-        const content = `<div class="deal-advanced-grid${mode === 'menu' ? ' compact' : ''}"><label class="deal-advanced-field"><span>Tranche min.</span><input type="text" inputmode="decimal" placeholder="ex. 50 000" value="${min}" oninput="updateObtainCriteria('min', this.value)"></label><label class="deal-advanced-field"><span>Tranche max.</span><input type="text" inputmode="decimal" placeholder="ex. 250 000" value="${max}" oninput="updateObtainCriteria('max', this.value)"></label><label class="deal-advanced-field deal-advanced-field-wide"><span>Période</span><select onchange="updateObtainCriteria('anticipation', this.value)"><option ${anticipation === 'immédiat' ? 'selected' : ''}>immédiat</option><option ${anticipation === 'dans 24 h' ? 'selected' : ''}>dans 24 h</option><option ${anticipation === 'dans 7 jours' ? 'selected' : ''}>dans 7 jours</option><option ${anticipation === 'dans 30 jours' ? 'selected' : ''}>dans 30 jours</option></select></label></div>`;
+        const periodOptions = [
+            ['immédiat', 'Maintenant', 'Dès que possible'],
+            ['dans 24 h', '24 h', 'Demain'],
+            ['dans 7 jours', '7 jours', 'Cette semaine'],
+            ['dans 30 jours', '30 jours', 'Ce mois-ci']
+        ];
+        const periodName = mode === 'menu' ? 'nzone-period-menu' : 'nzone-period-deal';
+        const periodMarkup = periodOptions.map(([value, label, sub]) => `<label class="deal-period-option"><input type="radio" name="${periodName}" value="${value}" ${anticipation === value ? 'checked' : ''} onchange="updateObtainCriteria('anticipation', this.value)"><span><b>${label}</b><small>${sub}</small></span></label>`).join('');
+        const content = `<div class="deal-advanced-grid${mode === 'menu' ? ' compact' : ''}"><label class="deal-advanced-field"><span>Tranche min.</span><input type="text" inputmode="decimal" placeholder="ex. 50 000" value="${min}" oninput="updateObtainCriteria('min', this.value)"></label><label class="deal-advanced-field"><span>Tranche max.</span><input type="text" inputmode="decimal" placeholder="ex. 250 000" value="${max}" oninput="updateObtainCriteria('max', this.value)"></label><div class="deal-period-field"><div class="deal-period-head"><span>Période</span><b>${anticipation === 'immédiat' ? 'Maintenant' : anticipation}</b></div><div class="deal-period-grid">${periodMarkup}</div></div></div>`;
         if (mode === 'menu') return content;
         return `<details class="deal-advanced-criteria"><summary>Critères avancés</summary><div class="deal-advanced-criteria-body">${content}</div></details>`
     }
@@ -11173,7 +12077,7 @@ ${obtainDealCard(sourceCurrency)}${nzonePendingObtainBlock(sourceCurrency)}`
         const targetCurrency = obtainFlow.target;
         const computed = obtainComputed();
         const error = obtainFlow.error ? `<div id="obtainError" class="obtain-error">${obtainFlow.error}</div>` : '<div id="obtainError" class="obtain-error"></div>';
-        return `<section class="obtain-card obtain-form-card"><h2 class="obtain-title">Votre meilleur deal</h2><div class="obtain-inline-form"><label class="deal-amount-card"><span>J’ai besoin de</span><div class="deal-amount-row"><input value="${obtainFlow.amount}" inputmode="decimal" placeholder="0" oninput="setObtainAmount(this.value)"><button type="button" id="nzTgtVal" class="obtain-inline-target" onclick="openNzoneDealCurrencySheet('target', this)">${targetCurrency}</button></div></label><div class="deal-cost-box"><span>Ça me coûtera</span><b id="nzCostVal">${sourceCurrency}</b></div></div><div id="obtainEstimate" class="obtain-estimate">${obtainEstimateText()}</div>${error}${nzoneCriteriaBlock()}<button class="home-exchange-cta" type="button" onclick="startObtainSearch()">Obtenir</button>${nzoneDealCurrencyLayer(sourceCurrency)}</section>`
+        return `<section class="obtain-card obtain-form-card"><h2 class="home-exchange-title">Votre meilleur deal</h2><p class="home-exchange-subtitle">Le bon montant, au bon taux</p><div class="obtain-inline-form"><label class="home-currency-btn obtain-amount-field"><span class="home-currency-label">J’ai besoin de</span><div class="obtain-amount-row"><input value="${obtainFlow.amount}" inputmode="decimal" placeholder="0" oninput="setObtainAmount(this.value)"><button type="button" id="nzTgtVal" class="obtain-inline-target" onclick="openNzoneDealCurrencySheet('target', this)">${targetCurrency}</button></div></label><div class="obtain-inline-switch">⇄</div><div class="home-currency-btn obtain-cost-field"><span class="home-currency-label">Ça me coûtera</span><span class="home-currency-code" id="nzCostVal">${sourceCurrency}</span></div></div>${error}<div id="obtainEstimate" class="obtain-estimate">${obtainEstimateText()}</div>${nzoneCriteriaBlock()}<button class="home-exchange-cta" type="button" onclick="startObtainSearch()">Obtenir</button>${nzoneDealCurrencyLayer(sourceCurrency)}</section>`
     }
 
     function obtainFoundCard() {
@@ -11187,6 +12091,7 @@ ${obtainDealCard(sourceCurrency)}${nzonePendingObtainBlock(sourceCurrency)}`
     }
 
     let activeDealReceipt = null;
+    let receiptShareMode = '';
 
     function dealReceiptDataFromExchange(exchange) {
         const parts = String(exchange?.amount || '').split('→').map(part => part.trim()).filter(Boolean);
@@ -11229,12 +12134,8 @@ ${obtainDealCard(sourceCurrency)}${nzonePendingObtainBlock(sourceCurrency)}`
     }
 
     function previewDealReceipt() {
-        const preview = document.querySelector('.receipt-preview');
-        if (preview) {
-            preview.scrollIntoView({behavior: 'smooth', block: 'center'});
-            preview.style.outline = '2px solid rgba(11,116,255,.28)';
-            setTimeout(() => { preview.style.outline = '' }, 1200);
-        }
+        const layer = document.getElementById('receiptModalLayer');
+        if (layer) layer.style.display = 'flex';
     }
 
     function downloadDealReceipt() {
@@ -11250,25 +12151,60 @@ ${obtainDealCard(sourceCurrency)}${nzonePendingObtainBlock(sourceCurrency)}`
     }
 
     async function shareDealReceipt() {
-        const payload = {title: 'Reçu de deal', text: dealReceiptText(), url: location.href};
-        if (navigator.share) {
-            try {
-                await navigator.share(payload);
-                return
-            } catch (error) {}
-        }
-        downloadDealReceipt()
+        receiptShareMode = 'sheet';
+        const layer = document.getElementById('receiptShareLayer');
+        if (layer) layer.style.display = 'flex';
     }
 
-    function dealReceiptCard(exchange = null) {
+    function closeDealReceiptModal() {
+        const layer = document.getElementById('receiptModalLayer');
+        if (layer) layer.style.display = 'none';
+    }
+
+    function closeDealShareSheet() {
+        const layer = document.getElementById('receiptShareLayer');
+        if (layer) layer.style.display = 'none';
+    }
+
+    function shareReceiptTo(channel) {
+        const receipt = activeDealReceipt || dealReceiptData();
+        const text = encodeURIComponent(dealReceiptText(receipt));
+        const url = encodeURIComponent(location.href);
+        const links = {
+            whatsapp: `https://wa.me/?text=${text}`,
+            telegram: `https://t.me/share/url?url=${url}&text=${text}`,
+            messenger: `https://www.facebook.com/dialog/send?link=${url}&app_id=123456789`,
+            email: `mailto:?subject=${encodeURIComponent('Reçu de deal')}&body=${text}`,
+            copy: ''
+        };
+        if (channel === 'copy') {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(dealReceiptText(receipt));
+            }
+            return;
+        }
+        const link = links[channel];
+        if (link) window.open(link, '_blank', 'noopener,noreferrer');
+    }
+
+    function dealReceiptLayers(receipt) {
+        return `<div id="receiptModalLayer" class="receipt-modal-layer" onclick="if(event.target===this)closeDealReceiptModal()"><div class="receipt-modal-panel"><div class="xsheet-handle"></div><div class="receipt-modal-head"><div><b>Aperçu du reçu</b><small>${receipt.ref}</small></div><button type="button" class="receipt-modal-close" onclick="closeDealReceiptModal()">×</button></div><div class="receipt-modal-card"><div class="receipt-preview-row"><span>Date</span><b>${receipt.date}</b></div><div class="receipt-preview-row"><span>Coût</span><b>${receipt.source}</b></div><div class="receipt-preview-row"><span>Crédit</span><b>${receipt.target}</b></div><div class="receipt-preview-row"><span>Taux</span><b>${receipt.rate}</b></div><div class="receipt-preview-row"><span>Référence</span><b>${receipt.ref}</b></div></div></div></div><div id="receiptShareLayer" class="receipt-share-layer" onclick="if(event.target===this)closeDealShareSheet()"><div class="receipt-share-panel"><div class="xsheet-handle"></div><div class="receipt-share-head"><div><b>Partager</b></div><button type="button" class="receipt-share-close" onclick="closeDealShareSheet()">×</button></div><div class="receipt-share-grid"><button type="button" class="receipt-share-btn" onclick="shareReceiptTo('whatsapp')"><span class="receipt-share-icon">W</span><div><b>WhatsApp</b></div></button><button type="button" class="receipt-share-btn" onclick="shareReceiptTo('telegram')"><span class="receipt-share-icon">T</span><div><b>Telegram</b></div></button><button type="button" class="receipt-share-btn" onclick="shareReceiptTo('messenger')"><span class="receipt-share-icon">M</span><div><b>Messenger</b></div></button><button type="button" class="receipt-share-btn" onclick="shareReceiptTo('email')"><span class="receipt-share-icon">@</span><div><b>Email</b></div></button><button type="button" class="receipt-share-btn" onclick="shareReceiptTo('copy')"><span class="receipt-share-icon">⎘</span><div><b>Copier</b></div></button></div></div></div>`
+    }
+
+    function dealReceiptButtons(receipt) {
+        activeDealReceipt = receipt;
+        return `<div class="receipt-actions"><button type="button" class="secondary" onclick="previewDealReceipt()">${receiptActionIcon('preview')}<span>Aperçu</span></button><button type="button" class="secondary" onclick="downloadDealReceipt()">${receiptActionIcon('download')}<span>Télécharger</span></button><button type="button" class="secondary" onclick="shareDealReceipt()">${receiptActionIcon('share')}<span>Partager</span></button></div>${dealReceiptLayers(receipt)}`
+    }
+
+    function dealReceiptCard(exchange = null, className = '') {
         const receipt = exchange ? dealReceiptDataFromExchange(exchange) : dealReceiptData();
         activeDealReceipt = receipt;
-        return `<section class="receipt-card"><div class="receipt-card-head"><div><b>Reçu du deal</b><small>${receipt.ref}</small></div><span class="tag">Document</span></div><div class="receipt-preview"><div class="receipt-preview-row"><span>Date</span><b>${receipt.date}</b></div><div class="receipt-preview-row"><span>Coût</span><b>${receipt.source}</b></div><div class="receipt-preview-row"><span>Crédit</span><b>${receipt.target}</b></div><div class="receipt-preview-row"><span>Taux</span><b>${receipt.rate}</b></div></div><div class="receipt-actions"><button type="button" class="secondary" onclick="previewDealReceipt()">${receiptActionIcon('preview')}<span>Aperçu</span></button><button type="button" class="secondary" onclick="downloadDealReceipt()">${receiptActionIcon('download')}<span>Télécharger</span></button><button type="button" class="secondary" onclick="shareDealReceipt()">${receiptActionIcon('share')}<span>Partager</span></button></div></section>`
+        return `<section class="receipt-card ${className}"><div class="receipt-card-head"><div class="receipt-card-copy"><b>Reçu du deal</b><small>${receipt.ref}</small></div><span class="tag">PDF</span></div>${dealReceiptButtons(receipt)}</section>`
     }
 
     function obtainSuccessCard() {
         const computed = obtainComputed();
-        return `<section class="obtain-card"><div class="obtain-state"><div class="xsheet-success-mark">✓</div><div><h2 class="obtain-title">${computed.receiveText} obtenus</h2><p class="obtain-sub">Votre cagnotte ${obtainFlow.target} est créditée. Le coût a été prélevé sur ${obtainFlow.source}.</p></div><div class="obtain-actions"><button class="home-exchange-cta" type="button" onclick="viewObtainTargetNzone()">Voir ma cagnotte ${obtainFlow.target}</button></div></div>${dealReceiptCard()}</section>`
+        return `<section class="obtain-card obtain-success-card"><div class="obtain-state"><div class="obtain-success-summary"><div class="xsheet-success-mark">✓</div><div><h2 class="obtain-title">${computed.receiveText} obtenus</h2><p class="obtain-sub">Cagnotte ${obtainFlow.target} créditée · prélèvement effectué en ${obtainFlow.source}</p></div></div><div class="obtain-actions"><button class="home-exchange-cta" type="button" onclick="viewObtainTargetNzone()">Voir ma cagnotte ${obtainFlow.target}</button></div></div>${dealReceiptCard(null, 'success-receipt')}</section>`
     }
 
     function obtainNotifiedCard() {
@@ -11354,7 +12290,7 @@ ${obtainDealCard(sourceCurrency)}${nzonePendingObtainBlock(sourceCurrency)}`
         const editable = userExchangeIsEditable(exchange);
         const partner = exchange.type === 'Achat direct au vendeur' && exchange.seller ? `<div class="seller-detail-row"><span>Vendeur</span><b>${exchange.seller}</b></div>` : '';
         const actions = editable ? `<div class="pending-obtain-card-actions"><button class="seller-wide-cta" type="button" onclick="modifyUserExchange('${exchange.id}')">Modifier</button><button class="seller-offer-action danger" type="button" style="opacity:.72" onclick="archiveUserExchange('${exchange.id}')">Retirer</button></div>` : '';
-        return `${nzoneFlowHeader('Détail du deal', `Cagnotte ${exchange.nzone}`)}<div class="seller-exchange-detail"><section class="seller-detail-panel"><div class="seller-detail-main">${exchange.amount}</div><div class="seller-detail-sub">${exchange.type}</div></section><section class="seller-detail-panel"><div class="seller-detail-row"><span>Parcours</span><b>${exchange.peer}</b></div><div class="seller-detail-row"><span>Statut</span><b>${exchange.status}</b></div>${partner}<div class="seller-detail-row"><span>Repère</span><b>${exchange.rate}</b></div><div class="seller-detail-row"><span>Date</span><b>${exchange.date}</b></div><div class="seller-detail-row"><span>Référence</span><b>${exchange.ref || 'N-ZO'}</b></div></section>${actions}${dealReceiptCard(exchange)}</div>`
+        return `${nzoneFlowHeader('Détail du deal', `Cagnotte ${exchange.nzone}`)}<div class="seller-exchange-detail"><section class="seller-detail-panel"><div class="seller-detail-main">${exchange.amount}</div><div class="seller-detail-sub">${exchange.type}</div></section><section class="seller-detail-panel"><div class="seller-detail-row"><span>Parcours</span><b>${exchange.peer}</b></div><div class="seller-detail-row"><span>Statut</span><b>${exchange.status}</b></div>${partner}<div class="seller-detail-row"><span>Repère</span><b>${exchange.rate}</b></div><div class="seller-detail-row"><span>Date</span><b>${exchange.date}</b></div><div class="seller-detail-row"><span>Référence</span><b>${exchange.ref || 'N-ZO'}</b></div></section>${actions}<section class="receipt-card receipt-actions-only">${dealReceiptButtons(dealReceiptDataFromExchange(exchange))}</section></div>`
     }
 
     function openSellerExchangeDetail(id) {
@@ -11438,7 +12374,7 @@ ${obtainDealCard(sourceCurrency)}${nzonePendingObtainBlock(sourceCurrency)}`
 
     function nzoneDetailScreen() {
         const data = nzoneDetailData();
-        return `${nzoneDetailHeader(data)}${nzoneDetailHero(data)}${nzoneDetailActions()}${nzoneDetailTabs()}${nzoneDetailList(data)}`
+        return `${nzoneDetailHeader(data)}${nzoneDetailHero(data)}${nzoneDetailActions()}`
     }
 
     function currentNzoneMeta() {
@@ -12518,7 +13454,7 @@ ${obtainDealCard(sourceCurrency)}${nzonePendingObtainBlock(sourceCurrency)}`
 
     function xchangeScreen() {
         historyTab = historyTab || 'transactions';
-        return `${appHeader('Historique', 'Transactions et deals')}${historyTabs()}${historyTab === 'transactions' ? historyTransactionsList() : historyDealsList()}`
+        return `${appHeader('Historique')}<div class="history-shell">${historyOverviewCard()}${historyTabs()}${historyTab === 'transactions' ? historyTransactionsList() : historyDealsList()}</div>`
     }
 
     const views = {
