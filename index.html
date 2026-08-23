@@ -1,4 +1,4 @@
-=<!doctype html>
+<!doctype html>
 <html lang="fr">
 <head>
     <meta charset="utf-8">
@@ -5041,58 +5041,6 @@
             outline-offset: 2px
         }
 
-        .auth-role-segment {
-            display: grid;
-            grid-template-columns:1fr 1fr;
-            gap: 8px
-        }
-
-        .auth-role-option {
-            min-height: 58px;
-            border: 1px solid var(--line);
-            border-radius: 18px;
-            background: color-mix(in srgb, var(--card2) 86%, transparent);
-            color: var(--muted);
-            padding: 10px 12px;
-            font: inherit;
-            text-align: left;
-            cursor: pointer
-        }
-
-        .auth-role-option b {
-            display: block;
-            color: var(--text);
-            font-size: 12px;
-            font-weight: 950
-        }
-
-        .auth-role-option span {
-            display: block;
-            margin-top: 3px;
-            font-size: 10px;
-            font-weight: 750;
-            line-height: 1.25
-        }
-
-        .auth-role-option.active {
-            border-color: rgba(11,116,255, .35);
-            background: color-mix(in srgb, #0B74FF 14%, var(--card) 86%);
-            box-shadow: 0 10px 22px rgba(11,116,255, .1)
-        }
-
-        .auth-seller-fields {
-            display: grid;
-            gap: 10px
-        }
-
-        .auth-seller-note {
-            margin-top: -2px;
-            color: var(--muted);
-            font-size: 11px;
-            line-height: 1.35;
-            font-weight: 750
-        }
-
         .auth-date-grid {
             display: grid;
             grid-template-columns: .8fr 1fr 1fr;
@@ -6431,31 +6379,6 @@
             font-size: 11px;
             color: #94a3b8;
             text-align: center
-        }
-
-        /* Minimal N-zo UI refresh */
-        .light {
-            --bg: #f7f8fb;
-            --card: #ffffff;
-            --card2: #f0f3f6;
-            --text: #111827;
-            --muted: #6b7280;
-            --line: rgba(17, 24, 39, .08);
-            --nav: rgba(255, 255, 255, .96);
-            --chip: rgba(11,116,255, .09);
-            --shadow: 0 8px 24px rgba(17, 24, 39, .06)
-        }
-
-        .dark {
-            --bg: #06152c;
-            --card: #0b203b;
-            --card2: #102846;
-            --text: #f8fbff;
-            --muted: #9aa9bd;
-            --line: rgba(255, 255, 255, .08);
-            --nav: rgba(7, 24, 48, .96);
-            --chip: rgba(11,116,255, .14);
-            --shadow: 0 12px 28px rgba(0, 0, 0, .18)
         }
 
         .app,
@@ -8403,70 +8326,6 @@
             text-transform: uppercase;
         }
 
-        .seller-stock-strip {
-            display: flex;
-            gap: 10px;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            -webkit-overflow-scrolling: touch;
-            padding: 4px 28px 12px 24px;
-            scrollbar-width: none
-        }
-
-        .seller-stock-strip::-webkit-scrollbar {
-            display: none
-        }
-
-        .seller-stock-card {
-            flex: 0 0 72%;
-            min-height: 124px;
-            scroll-snap-align: start;
-            border: 1px solid var(--line);
-            border-radius: 24px;
-            background: var(--card);
-            box-shadow: 0 2px 12px rgba(11,66,130,.06);
-            padding: 17px 18px;
-            display: grid;
-            gap: 14px;
-            color: inherit;
-            text-align: left;
-            font: inherit;
-            cursor: pointer
-        }
-
-        .seller-stock-top,
-        .seller-offer-meta {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 12px
-        }
-
-        .seller-stock-main b {
-            display: block;
-            color: var(--text);
-            font-size: 21px;
-            line-height: 1.05;
-            font-weight: 950;
-            letter-spacing: -.04em
-        }
-
-        .seller-stock-main span,
-        .seller-stock-note,
-        .seller-offer-rate,
-        .seller-move-sub {
-            color: var(--muted);
-            font-size: 11px;
-            font-weight: 750
-        }
-
-        .seller-stock-foot {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 12px
-        }
-
         .seller-chip {
             display: inline-flex;
             align-items: center;
@@ -8478,169 +8337,6 @@
             font-size: 10px;
             font-weight: 950;
             white-space: nowrap
-        }
-
-        .seller-mini-cta {
-            border: 0;
-            border-radius: 999px;
-            background: #0B74FF;
-            color: #ffffff;
-            padding: 8px 12px;
-            font-size: 11px;
-            font-weight: 950;
-            cursor: pointer
-        }
-
-        .seller-market-wrap {
-            padding-bottom: 126px
-        }
-
-        .seller-market-summary {
-            margin: 0 20px 12px;
-            display: grid;
-            grid-template-columns:repeat(2, minmax(0, 1fr));
-            gap: 8px
-        }
-
-        .seller-market-stat {
-            min-width: 0;
-            padding: 13px 12px;
-            border: 1px solid var(--line);
-            border-radius: 18px;
-            background: var(--card);
-            box-shadow: var(--shadow)
-        }
-
-        .seller-market-stat.wide {
-            grid-column: 1 / -1
-        }
-
-        .seller-market-stat span,
-        .seller-profile-stat span {
-            display: block;
-            color: var(--muted);
-            font-size: 10px;
-            font-weight: 900;
-            letter-spacing: .04em;
-            text-transform: uppercase
-        }
-
-        .seller-market-stat b,
-        .seller-profile-stat b {
-            display: block;
-            margin-top: 5px;
-            color: var(--text);
-            font-size: 15px;
-            line-height: 1.15;
-            font-weight: 950;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis
-        }
-
-        .seller-market-stat small,
-        .seller-profile-stat small {
-            display: block;
-            margin-top: 4px;
-            color: var(--muted);
-            font-size: 10px;
-            font-weight: 750;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis
-        }
-
-        .seller-profile-stats {
-            margin: 0 28px 22px;
-            display: grid;
-            grid-template-columns:repeat(3, minmax(0, 1fr));
-            gap: 8px
-        }
-
-        .seller-profile-stat {
-            min-width: 0;
-            padding: 11px 0;
-            border-top: 1px solid var(--line);
-            border-bottom: 1px solid var(--line)
-        }
-
-        .seller-card {
-            margin: 0 20px 12px;
-            padding: 18px;
-            border: 1px solid var(--line);
-            border-radius: 26px;
-            background: var(--card);
-            box-shadow: var(--shadow)
-        }
-
-        .seller-card-head {
-            display: flex;
-            align-items: flex-start;
-            justify-content: space-between;
-            gap: 12px;
-            margin-bottom: 14px
-        }
-
-        .seller-card-title {
-            color: var(--text);
-            font-size: 18px;
-            line-height: 1.08;
-            font-weight: 950;
-            letter-spacing: -.035em
-        }
-
-        .seller-publish-line {
-            display: grid;
-            grid-template-columns:auto minmax(0, 1fr) auto auto;
-            align-items: center;
-            gap: 8px;
-            padding: 12px 12px;
-            border: 1px solid var(--line);
-            border-radius: 18px;
-            background: var(--card2);
-            color: var(--muted);
-            font-size: 12px;
-            font-weight: 850
-        }
-
-        .seller-publish-line input {
-            width: 100%;
-            min-width: 0;
-            border: 0;
-            outline: 0;
-            background: transparent;
-            color: var(--text);
-            font: inherit;
-            font-size: 20px;
-            font-weight: 950;
-            letter-spacing: -.035em;
-            text-align: right
-        }
-
-        .seller-publish-line b,
-        .seller-publish-target {
-            color: var(--text);
-            font-size: 13px;
-            font-weight: 950;
-            white-space: nowrap
-        }
-
-        .seller-publish-target {
-            color: #0B74FF
-        }
-
-        .seller-publish-estimate {
-            display: flex;
-            justify-content: space-between;
-            gap: 12px;
-            margin: 12px 2px 14px;
-            color: var(--muted);
-            font-size: 11px;
-            font-weight: 800
-        }
-
-        .seller-publish-estimate b {
-            color: var(--text)
         }
 
         .seller-wide-cta {
@@ -8656,200 +8352,6 @@
             cursor: pointer
         }
 
-        .seller-list {
-            margin: 0 20px 12px;
-            border-top: 1px solid var(--line)
-        }
-
-        .seller-offer-row,
-        .seller-move-row {
-            width: 100%;
-            border: 0;
-            border-bottom: 1px solid var(--line);
-            background: transparent;
-            color: inherit;
-            padding: 13px 0;
-            display: grid;
-            grid-template-columns:minmax(0, 1fr) auto;
-            gap: 14px;
-            text-align: left;
-            font: inherit;
-            cursor: pointer
-        }
-
-        .seller-offer-main b,
-        .seller-move-main b {
-            display: block;
-            color: var(--text);
-            font-size: 14px;
-            line-height: 1.2;
-            font-weight: 950;
-            letter-spacing: -.02em
-        }
-
-        .seller-offer-main small,
-        .seller-move-main small {
-            display: block;
-            margin-top: 4px;
-            color: var(--muted);
-            font-size: 11px;
-            font-weight: 750
-        }
-
-        .seller-status {
-            align-self: start;
-            padding: 5px 8px;
-            border-radius: 999px;
-            background: var(--chip);
-            color: #0B74FF;
-            font-size: 10px;
-            font-weight: 950;
-            white-space: nowrap
-        }
-
-        .seller-move-amount {
-            color: var(--text);
-            font-size: 12px;
-            font-weight: 950;
-            white-space: nowrap
-        }
-
-        .seller-wallet-wrap {
-            padding: 0 20px 126px
-        }
-
-        .seller-wallet-list {
-            border-top: 1px solid var(--line)
-        }
-
-        .seller-wallet-row {
-            width: 100%;
-            border: 0;
-            border-bottom: 1px solid var(--line);
-            background: transparent;
-            color: inherit;
-            padding: 15px 0;
-            display: grid;
-            grid-template-columns:minmax(0, 1fr) auto;
-            align-items: center;
-            gap: 12px;
-            text-align: left;
-            font: inherit;
-            cursor: pointer
-        }
-
-        .seller-wallet-main {
-            min-width: 0;
-            display: grid;
-            gap: 5px
-        }
-
-        .seller-wallet-title {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--text);
-            font-size: 14px;
-            font-weight: 950
-        }
-
-        .seller-wallet-balance {
-            color: var(--text);
-            font-size: 18px;
-            line-height: 1.05;
-            font-weight: 950;
-            letter-spacing: -.035em
-        }
-
-        .seller-wallet-sub {
-            color: var(--muted);
-            font-size: 11px;
-            font-weight: 750;
-            line-height: 1.3
-        }
-
-        .seller-wallet-side {
-            display: grid;
-            justify-items: end;
-            gap: 8px
-        }
-
-        .seller-wallet-sell {
-            border: 0;
-            border-radius: 999px;
-            background: #0B74FF;
-            color: #ffffff;
-            padding: 7px 10px;
-            font-size: 10px;
-            font-weight: 950;
-            cursor: pointer
-        }
-
-        .seller-nzone-stats {
-            margin: -2px 20px 16px;
-            display: grid;
-            grid-template-columns:repeat(3, 1fr);
-            gap: 8px
-        }
-
-        .seller-nzone-stat {
-            min-width: 0;
-            padding: 11px 10px;
-            border: 1px solid var(--line);
-            border-radius: 18px;
-            background: var(--card);
-            box-shadow: var(--shadow);
-            text-align: left;
-            font: inherit
-        }
-
-        button.seller-nzone-stat {
-            cursor: pointer;
-            position: relative;
-            border-color: rgba(11,116,255,.24);
-            background: color-mix(in srgb, var(--card) 88%, #0B74FF 12%)
-        }
-
-        button.seller-nzone-stat:after {
-            content: "›";
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            color: #0B74FF;
-            font-size: 16px;
-            font-weight: 900
-        }
-
-        .seller-nzone-stat span {
-            display: block;
-            color: var(--muted);
-            font-size: 9px;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: .05em
-        }
-
-        .seller-nzone-stat b {
-            display: block;
-            margin-top: 5px;
-            color: var(--text);
-            font-size: 12px;
-            line-height: 1.15;
-            font-weight: 950;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis
-        }
-
-        .seller-nzone-stat em {
-            display: block;
-            margin-top: 5px;
-            color: #0B74FF;
-            font-size: 9px;
-            font-style: normal;
-            font-weight: 950
-        }
-
         .seller-nzone-empty {
             margin: 0 20px 12px;
             padding: 16px;
@@ -8858,13 +8360,6 @@
             font-size: 12px;
             font-weight: 800;
             text-align: center
-        }
-
-        .seller-offer-actions {
-            display: flex;
-            justify-content: flex-end;
-            gap: 8px;
-            margin-top: 10px
         }
 
         .seller-offer-action {
@@ -9171,22 +8666,6 @@
             padding-bottom: 8px;
         }
 
-        .view[data-view="home"] .seller-home-content,
-        .view[data-view="home"].can-scroll .seller-home-content {
-            flex: 1 1 auto;
-            min-height: 0;
-            --home-stack-gap: clamp(10px, 1.2dvh, 13px);
-            align-content: center;
-            gap: var(--home-stack-gap);
-            padding: 12px 0 8px;
-        }
-
-        .view[data-view="home"].can-scroll .seller-home-content {
-            flex: 0 0 auto;
-            align-content: start;
-            padding-bottom: 96px;
-        }
-
         @media (max-width: 480px) {
             .view,
             .view.can-scroll {
@@ -9213,21 +8692,6 @@
                 padding: 18px 0 0;
             }
 
-            .view[data-view="home"] .seller-home-content,
-            .view[data-view="home"].can-scroll .seller-home-content {
-                flex: 1 1 auto;
-                min-height: 0;
-                --home-stack-gap: clamp(10px, 1.2dvh, 13px);
-                align-content: center;
-                gap: var(--home-stack-gap);
-                padding: 12px 0 8px;
-            }
-
-            .view[data-view="home"].can-scroll .seller-home-content {
-                flex: 0 0 auto;
-                align-content: start;
-                padding-bottom: 96px;
-            }
         }
 
         @media (min-width: 481px) {
@@ -9237,21 +8701,6 @@
                 padding-top: 22px;
             }
 
-            .view[data-view="home"] .seller-home-content,
-            .view[data-view="home"].can-scroll .seller-home-content {
-                flex: 1 1 auto;
-                min-height: 0;
-                --home-stack-gap: clamp(9px, 1dvh, 12px);
-                align-content: center;
-                gap: var(--home-stack-gap);
-                padding: 12px 0 8px;
-            }
-
-            .view[data-view="home"].can-scroll .seller-home-content {
-                flex: 0 0 auto;
-                align-content: start;
-                padding-bottom: 96px;
-            }
         }
     </style>
 </head>
@@ -9531,7 +8980,6 @@
         pendingKycAction = '', homeBalanceCurrency = 'XAF', currentNzone = 'EUR',
         nzoneDetailTab = 'transactions', nzoneDetailMenuOpen = false, historyTab = 'transactions', xchangeMode = 'buy',
         xchangeSheet = null, xchangeSheetTimer = null, xchangeNegotiations = {},
-        sellerOffersCurrency = '', sellerHiddenOfferIds = [], sellerExchangeDetailId = '',
         userExchangeDetailId = '', archivedUserExchangeIds = [],
         openNzone = {step: 'choose', currency: '', amount: '', method: '', ref: ''},
         nzoneOperation = {type: '', currency: '', step: 'form', amount: '', method: '', target: '', rate: ''},
@@ -10913,7 +10361,7 @@
         }
         current = v;
         exitBlockingOverlays();
-        const activeNav = ['openNzone', 'nzoneDetail', 'nzoneDeposit', 'nzoneWithdraw', 'nzoneSell', 'history', 'obtain', 'sellerOffers', 'sellerExchangeDetail', 'userExchangeDetail'].includes(v) ? 'wallets' : ['home', 'wallets', 'xchange', 'profile'].includes(v) ? v : '';
+        const activeNav = ['openNzone', 'nzoneDetail', 'nzoneDeposit', 'nzoneWithdraw', 'nzoneSell', 'history', 'obtain', 'userExchangeDetail'].includes(v) ? 'wallets' : ['home', 'wallets', 'xchange', 'profile'].includes(v) ? v : '';
         nav(activeNav);
         app.innerHTML = scrollView(brandHtml(views[v]()), v);
         syncLogo();
@@ -10959,16 +10407,8 @@
         return `<div class="tx"><div class="row"><div class="flag">${i}</div><div class="col"><b>${t}</b><span class="small">${s}</span></div></div><b>${a}</b></div>`
     }
 
-    function methods(list, on = 0) {
-        return list.map((m, i) => `<div class="method ${i === on ? 'active' : ''}"><div class="flag">${m[0]}</div><div class="col"><b>${m[1]}</b><span class="small">Via agrégateur sécurisé</span></div><div class="radio"></div></div>`).join('')
-    }
-
     function flow(t, s) {
         return `<div class="flowhead"><button class="back" onclick="go('home')">←</button><div><div class="flowtitle">${t}</div><div class="sub">${s}</div></div></div>`
-    }
-
-    function success(t, s) {
-        return `${flow('Succès', 'Opération')}<div class="empty"><div><div style="font-size:58px;color:#0B74FF;font-weight:900">✓</div><div class="title" style="margin:12px 0 8px">${t}</div><p class="sub">${s}</p><button class="btn primary" style="margin-top:22px" onclick="go('home')">Retour à l'accueil</button></div></div>`
     }
 
     function setKycStatus(status) {
@@ -11047,25 +10487,6 @@
             {type: 'recharge', method: 'Orange Money CM', nzone: 'XAF', amount: '+500 000 XAF', date: '28 avr. · 14h32', status: 'Confirmé'},
             {type: 'retrait', method: 'SEPA Instant', nzone: 'EUR', amount: '-300,00 EUR', date: '22 avr. · 10h05', status: 'Confirmé'},
             {type: 'recharge', method: 'Faster Payments', nzone: 'GBP', amount: '+640,00 GBP', date: '14 avr. · 15h00', status: 'Confirmé'}
-        ],
-        SELLER_STOCKS = [
-            {currency: 'EUR', flag: '🇪🇺', amount: '2 450 EUR', available: '2 200 EUR', current: '250 EUR', target: 'XAF', accent: '#0B74FF'},
-            {currency: 'GBP', flag: '🇬🇧', amount: '640 GBP', available: '520 GBP', current: '120 GBP', target: 'XAF', accent: '#7c3aed'},
-            {currency: 'XAF', flag: '🇨🇲', amount: '1 250 000 XAF', available: '1 250 000 XAF', current: '0 XAF', target: 'EUR', accent: '#16a34a'}
-        ],
-        SELLER_ACTIVE_OFFERS = [
-            {id: 'offer-eur-xaf-250', currency: 'EUR', target: 'XAF', title: '250 EUR pour 163 750 XAF', rate: '1 EUR = 655 XAF', meta: 'N-Zone EUR'},
-            {id: 'offer-gbp-xaf-120', currency: 'GBP', target: 'XAF', title: '120 GBP pour 92 040 XAF', rate: '1 GBP = 767 XAF', meta: 'N-Zone GBP'}
-        ],
-        SELLER_SOLD_OFFERS = [
-            {id: 'sale-eur-250', currency: 'EUR', target: 'XAF', buyer: 'Nadia Mbarga', type: 'Vente réalisée', amount: '250 EUR → 163 750 XAF', sold: '250 EUR', received: '163 750 XAF', rate: '1 EUR = 655 XAF', date: 'Aujourd’hui · 10h18', ref: 'NX-260514-1048'},
-            {id: 'sale-gbp-120', currency: 'GBP', target: 'XAF', buyer: 'Marc Kengne', type: 'Vente réalisée', amount: '120 GBP → 92 040 XAF', sold: '120 GBP', received: '92 040 XAF', rate: '1 GBP = 767 XAF', date: 'Hier · 17h26', ref: 'NX-260513-1726'},
-            {id: 'sale-eur-180', currency: 'EUR', target: 'XAF', buyer: 'Amina Kotto', type: 'Vente réalisée', amount: '180 EUR → 117 900 XAF', sold: '180 EUR', received: '117 900 XAF', rate: '1 EUR = 655 XAF', date: '12 mai 2026 · 14h05', ref: 'NX-260512-1405'}
-        ],
-        SELLER_RECENT = [
-            {currency: 'EUR', title: 'Vente EUR réglée', sub: '250 EUR vers XAF · aujourd’hui 10h18', amount: '+163 750 XAF'},
-            {currency: 'GBP', title: 'Vente GBP réglée', sub: '120 GBP vers XAF · hier 17h26', amount: '+92 040 XAF'},
-            {currency: 'EUR', title: 'Dépôt EUR confirmé', sub: 'SEPA Instant · hier 16h05', amount: '+500 EUR'}
         ],
         HOME_BALANCES = {
             XAF: {label: 'XAF', amount: '1 250 000 XAF', country: 'Cameroun', flag: '🇨🇲'},
@@ -11152,9 +10573,7 @@
                 {id: 'sell-lina', avatar: 'LN', peer: 'Lina N.', verified: false, activity: '51 achats réalisés', pair: 'XOF → EUR', quote: 'XOF', value: '655.95', unit: 'pour 1 EUR', range: 'Demande 120 EUR min.', eta: 'il y a 25 min', status: 'active', trade: {baseCurrency: 'EUR', quoteCurrency: 'XOF', debit: 'N-zone EUR', credit: 'N-zone XOF', rateValue: 655.95, requiredAmount: 120}}
             ]
         },
-        XCHANGE_BALANCES = {XAF: 1250000, EUR: 2450, GBP: 640, XOF: 820000},
-        CM = [['🇨🇲', 'Orange Money'], ['🇨🇲', 'MTN Mobile Money'], ['💳', 'Carte locale'], ['🏦', 'Virement local']],
-        EU = [['🇪🇺', 'SEPA Instant'], ['💳', 'Visa / Mastercard'], ['🍏', 'Apple Pay'], ['🔵', 'PayPal']];
+        XCHANGE_BALANCES = {XAF: 1250000, EUR: 2450, GBP: 640, XOF: 820000};
 
     function selectHomeBalance(currency) {
         if (!HOME_BALANCES[currency]) return;
@@ -11731,199 +11150,8 @@
         return `<div class="section">Transactions récentes</div><div class="recent-activity-list">${HOME_RECENT.map(homeRecentRow).join('')}<button class="recent-activity-link" type="button" onclick="go('wallets')">N-zones →</button></div>`
     }
 
-    function sellerSetNzone(currency) {
-        currentNzone = currency || 'EUR';
-        if (HOME_BALANCES[currentNzone]) homeBalanceCurrency = currentNzone
-    }
-
-    function startSellerSell(currency) {
-        sellerSetNzone(currency);
-        startNzoneOperation('sell')
-    }
-
-    function openSellerOffer(currency) {
-        sellerSetNzone(currency);
-        nzoneDetailTab = 'exchanges';
-        nzoneDetailMenuOpen = false;
-        go('nzoneDetail')
-    }
-
-    function sellerAccent(currency) {
-        return {XAF: '#16a34a', EUR: '#0B74FF', GBP: '#7c3aed', XOF: '#d97706'}[currency] || '#0B74FF'
-    }
-
-    function sellerStockByCurrency(currency) {
-        const stock = SELLER_STOCKS.find(item => item.currency === currency);
-        if (stock) return stock;
-        const data = nzoneDetailData(currency);
-        return {
-            currency,
-            flag: data.flag,
-            amount: data.balance,
-            available: data.balance,
-            current: `0 ${currency}`,
-            target: defaultNzoneTarget(currency),
-            accent: sellerAccent(currency)
-        }
-    }
-
-    function sellerOffersForCurrency(currency) {
-        return SELLER_ACTIVE_OFFERS.filter(offer => offer.currency === currency && !sellerHiddenOfferIds.includes(offer.id))
-    }
-
-    function sellerActiveOffers() {
-        return SELLER_ACTIVE_OFFERS.filter(offer => !sellerHiddenOfferIds.includes(offer.id))
-    }
-
-    function sellerSoldOffersForCurrency(currency) {
-        return SELLER_SOLD_OFFERS.filter(offer => offer.currency === currency)
-    }
-
-    function sellerAmountNumber(text) {
-        return Number(String(text || '').replace(/[^\d.,]/g, '').replace(',', '.')) || 0
-    }
-
-    function sellerOfferAmountValue(offer) {
-        const match = String(offer.title || '').match(/^([\d\s.,]+)/);
-        return sellerAmountNumber(match ? match[1] : 0)
-    }
-
-    function sellerCurrentAmountValue(currency) {
-        return sellerOffersForCurrency(currency).reduce((sum, offer) => sum + sellerOfferAmountValue(offer), 0)
-    }
-
-    function sellerStockLiveValue(stock) {
-        return xamount(sellerCurrentAmountValue(stock.currency), stock.currency)
-    }
-
-    function sellerStockAvailableValue(stock) {
-        return xamount(Math.max(0, sellerAmountNumber(stock.amount) - sellerCurrentAmountValue(stock.currency)), stock.currency)
-    }
-
-    function sellerCurrentSummary() {
-        const parts = SELLER_STOCKS.map(stock => {
-            const value = sellerCurrentAmountValue(stock.currency);
-            return value > 0 ? xamount(value, stock.currency) : ''
-        }).filter(Boolean);
-        return parts.join(' · ') || '0'
-    }
-
-    function sellerReceivedTotal() {
-        const total = SELLER_SOLD_OFFERS.reduce((sum, offer) => sum + sellerAmountNumber(offer.received), 0);
-        return xamount(total, 'XAF')
-    }
-
-    function sellerRecentForCurrency(currency) {
-        return SELLER_RECENT.filter(item => item.currency === currency)
-    }
-
-    function sellerDraftAmount(currency) {
-        return {EUR: 250, GBP: 120, XAF: 50000, XOF: 50000}[currency] || Math.max(nzoneMeta(currency)?.min || 10, 10)
-    }
-
-    function sellerStockCard(stock, index) {
-        const soft = index === 0 ? 'linear-gradient(145deg, rgba(11,116,255,.12), var(--card))' : 'var(--card)';
-        const hasCurrent = sellerCurrentAmountValue(stock.currency) > 0;
-        const action = hasCurrent ? `openSellerOffers('${stock.currency}')` : `openNzoneDetail('${stock.currency}')`;
-        return `<article class="seller-stock-card" role="button" tabindex="0" onclick="${action}" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();${action}}" style="background:${soft};border-color:color-mix(in srgb, ${stock.accent} 24%, var(--line) 76%)"><div class="seller-stock-top"><span class="home-nzone-badge" style="color:${stock.accent};background:${stock.accent}18">N-Zone ${stock.currency}</span><span style="font-size:20px">${stock.flag}</span></div><div class="seller-stock-main"><b>${stock.amount}</b><span>Disponible ${sellerStockAvailableValue(stock)}</span></div><div class="seller-stock-foot"><span class="seller-stock-note">En cours ${sellerStockLiveValue(stock)}</span><span class="seller-chip">${hasCurrent ? 'Ventes' : 'Détail'}</span></div></article>`
-    }
-
-    function sellerStockCarousel() {
-        const openCard = `<button class="seller-stock-card" type="button" onclick="startOpenNzone()" style="align-items:center;justify-items:center;place-content:center;text-align:center;border:1.5px dashed var(--line);background:var(--card)"><span style="width:42px;height:42px;border-radius:16px;display:grid;place-items:center;background:var(--chip);color:#0B74FF;font-size:24px;font-weight:800">+</span><span style="color:var(--text);font-size:12px;font-weight:900">Ouvrir une N-Zone</span></button>`;
-        return `<section class="home-nzone-carousel-block"><div class="home-nzone-carousel-title">Stock disponible</div><div class="seller-stock-strip">${SELLER_STOCKS.map(sellerStockCard).join('')}${openCard}</div></section>`
-    }
-
-    function sellerPublishHomeCard() {
-        return `<section class="seller-card"><div class="seller-card-head"><div><h2 class="seller-card-title">Publier une vente</h2></div><span class="seller-chip">Ventes</span></div><div class="seller-publish-line"><span>Je vends</span><input value="250" inputmode="decimal" aria-label="Montant à vendre"><b>EUR</b><span class="seller-publish-target">contre XAF</span></div><div class="seller-publish-estimate"><span>≈ <b>163 750 XAF</b></span><span>1 EUR = 655 XAF</span></div><button class="seller-wide-cta" type="button" onclick="startSellerSell('EUR')">Publier</button></section>`
-    }
-
-    function sellerOfferRow(offer) {
-        return `<div class="seller-offer-row"><div class="seller-offer-main"><b>${offer.title}</b><small>${offer.meta} · ${offer.rate}</small><div class="seller-offer-actions"><button class="seller-offer-action" type="button" onclick="editSellerOffer('${offer.id}')">Modifier</button><button class="seller-offer-action danger" type="button" onclick="deleteSellerOffer('${offer.id}')">Supprimer</button></div></div></div>`
-    }
-
-    function sellerOffersBlock() {
-        const offers = sellerActiveOffers();
-        return `<div class="section-row"><div class="section">Ventes en cours</div><button class="section-link" type="button" onclick="startSellerSell('EUR')">Publier →</button></div><div class="seller-list">${offers.map(sellerOfferRow).join('')}</div>`
-    }
-
-    function sellerMarketSummaryBlock() {
-        const active = sellerActiveOffers();
-        const last = SELLER_SOLD_OFFERS[0];
-        return `<section class="seller-market-summary"><div class="seller-market-stat wide"><span>En vente</span><b>${sellerCurrentSummary()}</b><small>Visible aux acheteurs</small></div><div class="seller-market-stat"><span>Ventes</span><b>${active.length}</b><small>en cours</small></div><div class="seller-market-stat"><span>Réalisées</span><b>${SELLER_SOLD_OFFERS.length}</b><small>${sellerReceivedTotal()}</small></div>${last ? `<div class="seller-market-stat wide"><span>Dernier règlement</span><b>${last.received}</b><small>${last.buyer} · ${last.date}</small></div>` : ''}</section>`
-    }
-
-    function sellerMarketActiveBlock() {
-        const offers = sellerActiveOffers();
-        const rows = offers.length ? offers.map(sellerOfferRow).join('') : '<div class="seller-nzone-empty">Aucune vente en cours.</div>';
-        return `<div class="section-row"><div class="section">Ventes en cours</div><button class="section-link" type="button" onclick="startSellerSell('EUR')">Publier →</button></div><div class="seller-list">${rows}</div>`
-    }
-
-    function sellerMarketHistoryBlock() {
-        const rows = SELLER_SOLD_OFFERS.slice(0, 3).map(sellerExchangeRow).join('');
-        return `<div class="section-row"><div class="section">Ventes réalisées</div><button class="section-link" type="button" onclick="go('wallets')">N-Zones →</button></div><div class="seller-list">${rows}</div>`
-    }
-
-    function sellerRecentRow(item) {
-        return `<button class="seller-move-row" type="button" onclick="openSellerOffer('${item.currency}')"><div class="seller-move-main"><b>${item.title}</b><small>${item.sub}</small></div><span class="seller-move-amount">${item.amount}</span></button>`
-    }
-
-    function sellerRecentMovements() {
-        return `<div class="section-row"><div class="section">Mouvements récents</div><button class="section-link" type="button" onclick="go('wallets')">N-Zones →</button></div><div class="seller-list">${SELLER_RECENT.map(sellerRecentRow).join('')}</div>`
-    }
-
-    function openSellerOffers(currency = '') {
-        sellerOffersCurrency = currency || '';
-        if (currency) sellerSetNzone(currency);
-        go('sellerOffers')
-    }
-
-    function editSellerOffer(id) {
-        const offer = SELLER_ACTIVE_OFFERS.find(item => item.id === id);
-        if (!offer) return;
-        sellerSetNzone(offer.currency);
-        startNzoneOperation('sell')
-    }
-
-    function deleteSellerOffer(id) {
-        if (!sellerHiddenOfferIds.includes(id)) sellerHiddenOfferIds.push(id);
-        if (current === 'sellerOffers') go('sellerOffers');
-        else if (current === 'home') go('home');
-        else if (current === 'xchange') go('xchange')
-    }
-
-    function sellerOffersScreen() {
-        const offers = sellerOffersCurrency ? sellerOffersForCurrency(sellerOffersCurrency) : sellerActiveOffers();
-        const title = sellerOffersCurrency ? `Ventes ${sellerOffersCurrency}` : 'Ventes en cours';
-        const sub = sellerOffersCurrency ? `N-Zone ${sellerOffersCurrency}` : 'Toutes les N-Zones';
-        const rows = offers.length ? offers.map(sellerOfferRow).join('') : '<div class="seller-nzone-empty">Aucune vente en cours.</div>';
-        const back = sellerOffersCurrency ? 'nzoneDetail' : 'home';
-        return `<div class="flowhead"><button class="back" onclick="go('${back}')">←</button><div><div class="flowtitle">${title}</div><div class="sub">${sub}</div></div></div><div class="seller-list">${rows}</div><div style="padding:0 20px 126px"><button class="seller-wide-cta" type="button" onclick="startSellerSell('${sellerOffersCurrency || 'EUR'}')">Publier une vente</button></div>`
-    }
-
-    function sellerHomeContextBlock() {
-        return `<button class="home-market-inline" type="button" onclick="openSellerOffers()" aria-label="Voir les ventes en cours"><span class="home-market-inline-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6 7.5h12M6 12h12M6 16.5h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="4" cy="7.5" r=".9" fill="currentColor"/><circle cx="4" cy="12" r=".9" fill="currentColor"/><circle cx="4" cy="16.5" r=".9" fill="currentColor"/></svg></span><span class="home-market-inline-copy"><strong>Ventes en cours</strong><small>${sellerActiveOffers().length} ventes en cours · ${SELLER_SOLD_OFFERS.length} réalisées</small></span><span class="home-market-inline-arrow" aria-hidden="true">›</span></button>`
-    }
-
     function userHomeScreen() {
         return `${appHeader('Hervé Nzengue', '', '', 'Bonjour,')}<div class="home-content">${homeNzoneCarousel()}${homeTicker()}${homeExchangeCard()}${homeOngoingExchangeLine()}${homePendingObtainLine()}</div>`
-    }
-
-    function sellerHomeScreen() {
-        return `${appHeader('Espace vendeur', '', '', 'Bonjour,')}<div class="home-content seller-home-content">${sellerStockCarousel()}${homeTicker()}${sellerPublishHomeCard()}${sellerHomeContextBlock()}</div>`
-    }
-
-    function sellerNzoneRow(currency) {
-        const data = nzoneDetailData(currency);
-        const stock = sellerStockByCurrency(currency);
-        const offers = sellerOffersForCurrency(currency);
-        const status = offers.length ? 'En cours' : 'Disponible';
-        return `<div class="seller-wallet-row" role="button" tabindex="0" onclick="openNzoneDetail('${currency}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openNzoneDetail('${currency}')}"><div class="seller-wallet-main"><div class="seller-wallet-title"><span>${data.flag}</span><span>N-Zone ${currency}</span></div><div class="seller-wallet-balance">${stock.amount}</div><div class="seller-wallet-sub">Disponible ${sellerStockAvailableValue(stock)} · En cours ${sellerStockLiveValue(stock)}</div></div><div class="seller-wallet-side"><span class="seller-status">${status}</span><button class="seller-wallet-sell" type="button" onclick="event.stopPropagation();openSellerOffers('${currency}')">Voir</button></div></div>`
-    }
-
-    function sellerWalletsScreen() {
-        const currencies = openedNzoneCurrencies();
-        const rows = currencies.map(sellerNzoneRow).join('');
-        return `${appHeader('N-Zones vendeur', 'Stock par devise', '')}<div class="seller-wallet-wrap"><div class="seller-wallet-list">${rows}</div><button type="button" onclick="startOpenNzone()" style="width:100%;padding:16px;border:1.5px dashed var(--line);border-radius:16px;background:transparent;color:var(--muted);font-family:inherit;font-size:13px;font-weight:800;cursor:pointer;margin-top:12px;display:flex;align-items:center;justify-content:center;gap:8px"><span style="width:24px;height:24px;border-radius:8px;background:var(--chip);color:#0B74FF;display:grid;place-items:center;font-size:14px">+</span> Ouvrir une N-Zone</button></div>`
     }
 
     function nzonesList() {
@@ -12293,83 +11521,11 @@ ${obtainDealCard(sourceCurrency)}${nzonePendingObtainBlock(sourceCurrency)}`
         return `${nzoneFlowHeader('Détail du deal', `Cagnotte ${exchange.nzone}`)}<div class="seller-exchange-detail"><section class="seller-detail-panel"><div class="seller-detail-main">${exchange.amount}</div><div class="seller-detail-sub">${exchange.type}</div></section><section class="seller-detail-panel"><div class="seller-detail-row"><span>Parcours</span><b>${exchange.peer}</b></div><div class="seller-detail-row"><span>Statut</span><b>${exchange.status}</b></div>${partner}<div class="seller-detail-row"><span>Repère</span><b>${exchange.rate}</b></div><div class="seller-detail-row"><span>Date</span><b>${exchange.date}</b></div><div class="seller-detail-row"><span>Référence</span><b>${exchange.ref || 'N-ZO'}</b></div></section>${actions}<section class="receipt-card receipt-actions-only">${dealReceiptButtons(dealReceiptDataFromExchange(exchange))}</section></div>`
     }
 
-    function openSellerExchangeDetail(id) {
-        sellerExchangeDetailId = id;
-        const sale = SELLER_SOLD_OFFERS.find(item => item.id === id);
-        if (sale) sellerSetNzone(sale.currency);
-        go('sellerExchangeDetail')
-    }
-
-    function sellerExchangeRow(exchange) {
-        const dateParts = String(exchange.date || '').split('·').map(part => part.trim()).filter(Boolean);
-        const dateLabel = dateParts.join(' · ');
-        return `<button class="seller-offer-row" type="button" onclick="openSellerExchangeDetail('${exchange.id}')"><div class="seller-offer-main"><b>${exchange.amount}</b><small>${exchange.buyer} · ${dateLabel}</small></div><span class="home-market-inline-arrow" aria-hidden="true">›</span></button>`
-    }
-
-    function sellerExchangeDetailData() {
-        return SELLER_SOLD_OFFERS.find(item => item.id === sellerExchangeDetailId) || sellerSoldOffersForCurrency(currentNzone)[0] || SELLER_SOLD_OFFERS[0]
-    }
-
-    function sellerExchangeDetailScreen() {
-        const sale = sellerExchangeDetailData();
-        if (!sale) return `${nzoneFlowHeader('Vente réalisée', 'Historique')}<div class="seller-nzone-empty">Aucun détail disponible.</div>`;
-        sellerSetNzone(sale.currency);
-        return `${nzoneFlowHeader('Vente réalisée', `N-Zone ${sale.currency}`)}<div class="seller-exchange-detail"><section class="seller-detail-panel"><div class="seller-detail-main">${sale.amount}</div><div class="seller-detail-sub">${sale.date}</div></section><section class="seller-detail-panel"><div class="seller-detail-row"><span>Acheteur</span><b>${sale.buyer}</b></div><div class="seller-detail-row"><span>Devise vendue</span><b>${sale.sold}</b></div><div class="seller-detail-row"><span>Montant reçu</span><b>${sale.received}</b></div><div class="seller-detail-row"><span>Taux</span><b>${sale.rate}</b></div><div class="seller-detail-row"><span>Référence</span><b>${sale.ref}</b></div></section></div>`
-    }
-
     function nzoneDetailList(data) {
         const items = nzoneDetailTab === 'deals' ? data.exchanges : data.transactions;
         if (!items.length) return `<div id="nzoneHistory" class="empty"><div><div class="title" style="font-size:18px">Aucune transaction pour le moment</div></div></div>`;
         const rows = items.map(item => nzoneDetailTab === 'deals' ? nzoneExchangeRow(item) : nzoneTransactionRow(item)).join('');
         return `<div id="nzoneHistory" class="nzone-list">${rows}</div>`
-    }
-
-    function sellerNzoneStats(data) {
-        const stock = sellerStockByCurrency(currentNzone);
-        return `<div class="seller-nzone-stats"><div class="seller-nzone-stat"><span>Total</span><b>${stock.amount}</b></div><div class="seller-nzone-stat"><span>Disponible</span><b>${sellerStockAvailableValue(stock)}</b></div><button class="seller-nzone-stat" type="button" onclick="openSellerOffers('${currentNzone}')"><span>En cours</span><b>${sellerStockLiveValue(stock)}</b><em>Voir</em></button></div>`
-    }
-
-    function sellerNzoneActions() {
-        return `<div class="nzone-flow-actions">
-  <button type="button" class="nzone-flow-action" onclick="startNzoneOperation('deposit')"><span class="nzone-flow-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="6.5" rx="6" ry="3"/><path d="M6 6.5v4.8c0 1.7 2.7 3.1 6 3.1s6-1.4 6-3.1V6.5"/><path d="M12 16.5v4"/><path d="M10 18.5h4"/></svg></span><span class="nzone-flow-copy"><strong>Dépôt</strong><small>Alimenter</small></span></button>
-  <button type="button" class="nzone-flow-action" onclick="startNzoneOperation('withdraw')"><span class="nzone-flow-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 7.5h12.5A2.5 2.5 0 0 1 20 10v6a2.5 2.5 0 0 1-2.5 2.5H6.5A2.5 2.5 0 0 1 4 16V9a2.5 2.5 0 0 1 2.5-2.5H17"/><path d="M16 11.5h4v3h-4a1.5 1.5 0 0 1 0-3Z"/><path d="M8 15.5h5"/></svg></span><span class="nzone-flow-copy"><strong>Retrait</strong><small>Récupérer</small></span></button>
-</div>`
-    }
-
-    function sellerNzonePublishCard(currency) {
-        const stock = sellerStockByCurrency(currency);
-        const target = stock.target || defaultNzoneTarget(currency);
-        const amount = sellerDraftAmount(currency);
-        const receive = nzoneIndicativeReceive(amount, currency, target);
-        return `<section class="seller-card"><div class="seller-card-head"><div><h2 class="seller-card-title">Publier une vente</h2></div><span class="seller-chip">N-Zone ${currency}</span></div><div class="seller-publish-line"><span>Je vends</span><input value="${amount}" inputmode="decimal" aria-label="Montant à vendre"><b>${currency}</b><span class="seller-publish-target">contre ${target}</span></div><div class="seller-publish-estimate"><span>≈ <b>${xamount(receive, target)}</b></span><span>${nzoneIndicativeRateLabel(currency, target)}</span></div><button class="seller-wide-cta" type="button" onclick="startSellerSell('${currency}')">Publier</button></section>`
-    }
-
-    function sellerNzoneOffersBlock(currency) {
-        const offers = sellerOffersForCurrency(currency);
-        const body = offers.length ? `<div class="seller-list">${offers.map(sellerOfferRow).join('')}</div>` : `<div class="seller-nzone-empty">Aucune offre en cours sur cette N-Zone.</div>`;
-        return `<div class="section-row"><div class="section">Ventes en cours</div><button class="section-link" type="button" onclick="startSellerSell('${currency}')">Publier →</button></div>${body}`
-    }
-
-    function sellerNzoneMovementsBlock(currency) {
-        const movements = sellerRecentForCurrency(currency);
-        const body = movements.length ? `<div class="seller-list">${movements.map(sellerRecentRow).join('')}</div>` : `<div class="seller-nzone-empty">Aucun mouvement récent sur cette N-Zone.</div>`;
-        return `<div class="section-row"><div class="section">Mouvements récents</div><button class="section-link" type="button" onclick="go('wallets')">N-Zones →</button></div>${body}`
-    }
-
-    function sellerNzoneLedgerData(data) {
-        return {
-            ...data,
-            transactions: data.transactions.filter(item => ['Recharge', 'Retrait'].includes(item.type)).map(item => ({
-                ...item,
-                type: item.type === 'Recharge' ? 'Dépôt' : item.type
-            })),
-            exchanges: sellerSoldOffersForCurrency(currentNzone)
-        }
-    }
-
-    function sellerNzoneDetailScreen(data) {
-        const sellerData = {...data, balance_hold: `0 ${currentNzone}`};
-        return `${nzoneDetailHeader(sellerData)}${nzoneDetailHero(sellerData)}${sellerNzoneStats(sellerData)}${sellerNzoneActions()}${sellerNzonePublishCard(currentNzone)}${nzoneDetailTabs()}${nzoneDetailList(sellerNzoneLedgerData(sellerData))}`
     }
 
     function nzoneDetailScreen() {
@@ -13084,22 +12240,6 @@ ${obtainDealCard(sourceCurrency)}${nzonePendingObtainBlock(sourceCurrency)}`
         return `<section class="profile-hub-section"><div class="profile-section-label">Assistance</div><div class="profile-hub-list">${profileMenuItem('?', 'Support N-zo', 'Aide, FAQ et contact')}${profileMenuItem('CG', 'Confidentialité', 'Conditions et données')}</div></section>`
     }
 
-    function sellerProfileIdentity() {
-        const kyc = profileKycMeta();
-        return `<section class="profile-hub-head"><div class="profile-hub-avatar">${profileState.initials}</div><div class="profile-hub-copy"><div class="profile-name">${profileState.name}</div><div class="profile-hub-meta">Vendeur N-zo · ${profileState.country} ${profileState.flag}</div></div><span class="profile-hub-badge ${kyc.className}">${kyc.className === 'verified' ? 'Vendeur vérifié' : kyc.label}</span></section>`
-    }
-
-    function sellerProfileActivity() {
-        const active = sellerActiveOffers().length;
-        return `<section class="profile-hub-section"><div class="profile-section-label">Activité vendeur</div></section><section class="seller-profile-stats"><div class="seller-profile-stat"><span>En cours</span><b>${active}</b><small>ventes</small></div><div class="seller-profile-stat"><span>Réalisées</span><b>${SELLER_SOLD_OFFERS.length}</b><small>historique</small></div><div class="seller-profile-stat"><span>Volume</span><b>${sellerReceivedTotal()}</b><small>reçu</small></div></section>`
-    }
-
-    function sellerProfileMenu() {
-        const kyc = profileKycMeta();
-        const verified = kyc.className === 'verified' ? 'Niveau 2' : kyc.label;
-        return `<section class="profile-hub-section"><div class="profile-section-label">Vendeur</div><div class="profile-hub-list">${profileMenuItem('ID', 'Identité vendeur', 'KYC · profil de vente', {badge: verified, badgeClass: kyc.className === 'verified' ? 'verified' : 'off', onclick: "go('kyc')"})}${profileMenuItem('NZ', 'N-Zones de règlement', 'Dépôt · retrait · stock vendeur', {onclick: "go('wallets')"})}${profileMenuItem('LM', 'Limites de vente', 'Montants minimums et devises')}${profileMenuItem('NT', 'Notifications ventes', 'Ventes réalisées · règlements')}${profileMenuItem('2F', 'Sécurité', 'Mot de passe · double vérification')}</div></section>`
-    }
-
     function profileInfoCard() {
         return `<div class="section">Mes informations</div><div class="profile-card">${profileInfoRow('Nom complet', profileState.name, {locked: true})}${profileInfoRow('Date de naissance', profileState.birthdate, {locked: true})}${profileInfoRow('Email', profileState.email, {field: 'email'})}${profileInfoRow('Téléphone', profileState.phone, {field: 'phone'})}${profileInfoRow('Pays de résidence', `${profileState.country} ${profileState.flag}`, {field: 'country'})}</div>`
     }
@@ -13448,11 +12588,7 @@ ${obtainDealCard(sourceCurrency)}${nzonePendingObtainBlock(sourceCurrency)}`
         return offers.map(offerCard).join('')
     }
 
-    function sellerMarketScreen() {
-        return `${appHeader('Ventes', 'Publications et règlements')}<div class="seller-market-wrap">${sellerMarketSummaryBlock()}${sellerPublishHomeCard()}${sellerMarketActiveBlock()}${sellerMarketHistoryBlock()}</div>`
-    }
-
-    function xchangeScreen() {
+    function historyScreen() {
         historyTab = historyTab || 'transactions';
         return `${appHeader('Historique')}<div class="history-shell">${historyOverviewCard()}${historyTabs()}${historyTab === 'transactions' ? historyTransactionsList() : historyDealsList()}</div>`
     }
@@ -13467,24 +12603,12 @@ ${obtainDealCard(sourceCurrency)}${nzonePendingObtainBlock(sourceCurrency)}`
         nzoneDeposit: () => nzoneCashScreen('deposit'),
         nzoneWithdraw: () => nzoneCashScreen('withdraw'),
         nzoneSell: () => nzoneSellScreen(),
-        sellerOffers: () => sellerOffersScreen(),
-        sellerExchangeDetail: () => sellerExchangeDetailScreen(),
         userExchangeDetail: () => userExchangeDetailScreen(),
         obtain: () => obtainScreen(),
-        xchange: () => xchangeScreen(),
-        tradeDetail: () => `${flow('Détail de l’offre', 'NzoPX')}<div class="card"><div class="row"><span>Pair</span><b>Amina K.</b></div><div class="row" style="margin-top:12px"><span>Paire</span><b>EUR → XAF</b></div><div class="row" style="margin-top:12px"><span>Taux</span><b>1 EUR = 655,00 XAF</b></div><div class="row" style="margin-top:12px"><span>Publiée</span><b>il y a 15 min</b></div></div><div class="note">Écran de détail uniquement pour la démo. La confirmation de transaction reste hors de cet écran.</div>`,
-        createOffer: () => `${flow('Publier une offre', 'CreateOfferScreen')}<div class="field"><label>Type</label><select><option>Je vends</option><option>J’achète</option></select></div><div class="field"><label>Paire</label><select><option>EUR → XAF</option><option>GBP → XAF</option><option>XAF → EUR</option></select></div><div class="field"><label>Montant disponible</label><input value="500"></div><div class="field"><label>Votre taux</label><input value="655.00"></div><div class="card"><button class="btn primary" onclick="go('xchange')">Prévisualiser l’offre</button></div>`,
-        fx: () => `${header('Devises', 'Achat & vente, pas trading')}<div class="note">On évite les graphiques agressifs : l’utilisateur choisit simplement acheter ou vendre une devise.</div><div class="actions" style="grid-template-columns:1fr 1fr"><div class="act" onclick="action('buy')"><b>↗</b><span>Acheter devise</span></div><div class="act" onclick="action('sell')"><b>↘</b><span>Vendre devise</span></div></div><div class="card"><div class="row"><span>Taux EUR/XAF</span><b>655,96</b></div><div class="row" style="margin-top:12px"><span>Source</span><span class="tag warn">Officiel fallback</span></div></div>`,
-        history: () => xchangeScreen(),
+        xchange: () => historyScreen(),
+        history: () => historyScreen(),
         profile: () => profileScreen(),
-        kyc: () => kycScreen(),
-        deposit: () => `${flow('Dépôt', 'Pays & méthode')}<div class="field"><label>N-zone à créditer</label><select><option>XAF · Cameroun</option><option>EUR · France</option><option>GBP · Royaume-Uni</option></select></div><div class="field"><label>Montant</label><input value="250000"></div><div class="section">Méthodes au Cameroun</div><div class="card">${methods(CM, 1)}</div><div class="section">Méthodes en Europe</div><div class="card">${methods(EU, 0)}</div><div class="card"><button class="btn primary" onclick="go('sd')">Confirmer le dépôt</button></div>`,
-        withdraw: () => `${flow('Retrait', 'Destination locale')}<div class="field"><label>N-zone source</label><select><option>XAF · 1 250 000 XAF</option><option>EUR · 2 450,00 €</option></select></div><div class="field"><label>Montant</label><input value="80000"></div><div class="card">${methods(CM, 0)}</div><div class="card"><button class="btn primary" onclick="go('sw')">Confirmer le retrait</button></div>`,
-        buy: () => `${flow('Acheter devise', 'Simple et guidé')}<div class="fx"><div class="fxcard"><div class="small">Je paie</div><b>655 960 XAF</b></div><div class="switch">⇄</div><div class="fxcard"><div class="small">Je reçois</div><b>1 000 EUR</b></div></div><div class="card"><div class="row"><span>Taux appliqué</span><b>655,96</b></div><div class="row" style="margin-top:10px"><span>Source</span><span class="tag warn">Officiel fallback</span></div></div><div class="card"><button class="btn primary" onclick="go('sf')">Acheter maintenant</button></div>`,
-        sell: () => `${flow('Vendre devise', 'Conversion maîtrisée')}<div class="fx"><div class="fxcard"><div class="small">Je vends</div><b>500 GBP</b></div><div class="switch">⇄</div><div class="fxcard"><div class="small">Je reçois</div><b>383 500 XAF</b></div></div><div class="card"><button class="btn primary" onclick="go('sf')">Vendre maintenant</button></div>`,
-        sd: () => success('Dépôt confirmé', 'Votre N-zone sera créditée après confirmation.'),
-        sw: () => success('Retrait lancé', 'Le paiement est envoyé vers le moyen local sélectionné.'),
-        sf: () => success('Conversion créée', 'La devise achetée ou vendue sera visible dans le compte concerné.')
+        kyc: () => kycScreen()
     };
     authPhoneCountry = detectPhoneCountry();
     populateBirthDateSelects();
