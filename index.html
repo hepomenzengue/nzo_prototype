@@ -17,7 +17,7 @@
     <meta name="twitter:description" content="Le bon montant au bon taux">
     <meta name="twitter:image" content="https://nzo-prototype.netlify.app/opengraph.png">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
 
         * {
             box-sizing: border-box;
@@ -33,8 +33,8 @@
         body {
             min-height: 100dvh;
             background: #fff;
-            font-family: Inter, system-ui, sans-serif;
-            color: #071c3f;
+            font-family: Poppins, system-ui, sans-serif;
+            color: #3A1811;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -54,7 +54,7 @@
             border-radius: 999px;
             padding: 8px 10px;
             background: #fff;
-            box-shadow: 0 12px 34px rgba(2, 22, 59, .08)
+            box-shadow: 0 12px 34px rgba(42, 20, 13, .08)
         }
 
         .control-group {
@@ -94,17 +94,17 @@
         }
 
         .ctrl.on, .ctrl:hover {
-            background: #02163b;
+            background: #3A1811;
             color: white
         }
 
         .ctrl.brand {
-            background: rgba(11,116,255, .12);
-            color: #075CCC
+            background: rgba(159,34,32,.12);
+            color: #7A1613
         }
 
         .ctrl.theme {
-            background: #02163b;
+            background: #3A1811;
             color: #ffffff
         }
 
@@ -114,7 +114,7 @@
         }
 
         .ctrl.profile.active {
-            background: #0B74FF;
+            background: #9F2220;
             color: #ffffff
         }
 
@@ -132,7 +132,7 @@
         }
 
         .control-menu[open] > summary {
-            background: #02163b;
+            background: #3A1811;
             color: #ffffff
         }
 
@@ -148,7 +148,7 @@
             border: 1px solid #e7edf5;
             border-radius: 22px;
             background: rgba(255, 255, 255, .98);
-            box-shadow: 0 20px 48px rgba(2, 22, 59, .14);
+            box-shadow: 0 20px 48px rgba(42, 20, 13, .14);
             backdrop-filter: blur(18px)
         }
 
@@ -169,8 +169,8 @@
 
         .control-submenu button:hover,
         .control-nested[open] > summary {
-            background: rgba(11,116,255, .12);
-            color: #075CCC
+            background: rgba(159,34,32,.12);
+            color: #7A1613
         }
 
         .control-nested > summary {
@@ -182,7 +182,7 @@
         .control-nested > summary:after {
             content: "⌄";
             font-size: 13px;
-            color: #0B74FF
+            color: #9F2220
         }
 
         .control-nested[open] > summary:after {
@@ -196,7 +196,7 @@
             padding: 6px;
             border: 1px solid #eef3f8;
             border-radius: 16px;
-            background: #f8fbff
+            background: #FBF3E8
         }
 
         .mobile-prototype-menu {
@@ -218,7 +218,7 @@
             border-radius: 52px;
             padding: 12px;
             position: relative;
-            box-shadow: 0 30px 90px rgba(2, 22, 59, .18)
+            box-shadow: 0 30px 90px rgba(42, 20, 13, .18)
         }
 
         .phone:before {
@@ -242,42 +242,42 @@
         }
 
         .dark {
-            --bg: #06152c;
-            --card: #0b203b;
-            --card2: #102846;
-            --text: #f8fbff;
-            --muted: #9aa9bd;
-            --line: rgba(255,255,255,.08);
-            --nav: rgba(7,24,48,.96);
-            --chip: rgba(11,116,255,.14);
-            --shadow: 0 12px 28px rgba(0,0,0,.18);
-            --data-loader: url('nzo_loader_data_black_mode.svg')
+            --bg: #1C0D08;
+            --card: #3A1811;
+            --card2: #4A241A;
+            --text: #F9ECDD;
+            --muted: #C9A896;
+            --line: rgba(249,236,221,.08);
+            --nav: rgba(28,13,8,.96);
+            --chip: rgba(244,117,33,.18);
+            --shadow: 0 12px 28px rgba(0,0,0,.35);
+            --data-loader: url('nzo_header_icon_clean.png')
         }
 
         .light {
-            --bg: #f7f8fb;
-            --card: #ffffff;
-            --card2: #f0f3f6;
-            --text: #111827;
-            --muted: #6b7280;
-            --line: rgba(17,24,39,.08);
-            --nav: rgba(255,255,255,.96);
-            --chip: rgba(11,116,255,.09);
-            --shadow: 0 8px 24px rgba(17,24,39,.06);
-            --data-loader: url('nzo_loader_data_light_mode.svg')
+            --bg: #F9ECDD;
+            --card: #FFFFFF;
+            --card2: #F3E2CC;
+            --text: #3A1811;
+            --muted: #8A6F63;
+            --line: rgba(58,24,17,.10);
+            --nav: rgba(250,246,241,.96);
+            --chip: rgba(159,34,32,.09);
+            --shadow: 0 8px 24px rgba(58,24,17,.08);
+            --data-loader: url('nzo_header_icon_clean.png')
         }
 
         /* Bottom navigation light */
         .light .nav {
             background: rgba(255, 255, 255, .96);
-            box-shadow: 0 -10px 28px rgba(11, 66, 130, .08);
+            box-shadow: 0 -10px 28px rgba(58, 24, 17, .10);
             border: 0;
-            border-top: 1px solid #dce8f5;
+            border-top: 1px solid #EDE0D2;
         }
 
         .light .header {
             background: #ffffff;
-            border-bottom: 1px solid #ebebeb;
+            border-bottom: 1px solid #EFE3D3;
         }
 
         .light .header .logo {
@@ -287,7 +287,7 @@
 
         .light .card {
             background: #ffffff;
-            border: 1px solid #dce8f5;
+            border: 1px solid #EDE0D2;
             box-shadow: var(--shadow);
         }
 
@@ -298,55 +298,55 @@
         .light .offer-card,
         .light .offer-card.sell-mode {
             background: #ffffff;
-            border: 1px solid #ebebeb;
+            border: 1px solid #EFE3D3;
             box-shadow: none;
         }
 
         /* Champs de formulaire light */
-        .light .auth-input,
         .light .field input,
         .light .field select {
-            background: #f5f5f5;
-            border: 1px solid #e0e0e0;
-            color: #0a0a0a;
+            background: #ffffff;
+            border: 0;
+            color: #2A140D;
         }
 
-        .light .auth-input:focus-within {
-            background: #ffffff;
-            border-color: #0B74FF;
-            box-shadow: 0 0 0 3px rgba(11,116,255,.10);
+        .light .auth-input {
+            background: transparent;
+            border: 0;
+            box-shadow: none;
+            color: #2A140D;
         }
 
         /* Chips et tags brand en light */
         .light .pill.teal,
         .light .tag {
-            background: rgba(11,116,255, .09);
-            color: #075CCC;
+            background: rgba(159,34,32,.09);
+            color: #7A1613;
         }
 
         .light .filter-chip,
         .light .xfilter,
         .light .xchange-filter-picker {
-            background: #f5f5f5;
-            border: 1px solid #e0e0e0;
-            color: #0a0a0a;
+            background: #F6EDE0;
+            border: 1px solid #E4D2BC;
+            color: #2A140D;
             box-shadow: none;
         }
 
         .light .filter-chip.active,
         .light .xfilter.active,
         .light .xchange-filter-picker[open] {
-            background: rgba(11,116,255,.10);
-            border: 1px solid rgba(11,116,255,.25);
-            color: #075CCC;
+            background: rgba(159,34,32,.10);
+            border: 1px solid rgba(159,34,32,.25);
+            color: #7A1613;
             box-shadow: none;
         }
 
         .light .xfilter-menu[open],
         .light .xfilter-menu.active[open] {
             background: #ffffff;
-            border: 1px solid #ebebeb;
-            color: #0a0a0a;
+            border: 1px solid #EFE3D3;
+            color: #2A140D;
             box-shadow: none;
         }
 
@@ -355,9 +355,9 @@
         }
 
         .light .note {
-            background: rgba(11,116,255, .07);
-            color: #075CCC;
-            border: 1px solid rgba(11,116,255,.15);
+            background: rgba(159,34,32,.07);
+            color: #7A1613;
+            border: 1px solid rgba(159,34,32,.15);
         }
 
         /* Badges statut light */
@@ -374,7 +374,7 @@
         /* Séparateurs light */
         .light .auth-divider:before,
         .light .auth-divider:after {
-            background: #e0e0e0;
+            background: #E4D2BC;
         }
 
         /* Textes muted light - minimum lisible */
@@ -382,11 +382,11 @@
         .light .hello,
         .light .caption,
         .light .balance-caption {
-            color: #5a5a5a;
+            color: #6B5347;
         }
 
         .light .section {
-            color: #999999;
+            color: #A68976;
             font-size: 11px;
             letter-spacing: .05em;
             text-transform: uppercase;
@@ -406,7 +406,7 @@
         .light .profile-sheet-panel {
             background: #ffffff;
             border: none;
-            border-top: 1px solid #ebebeb;
+            border-top: 1px solid #EFE3D3;
             box-shadow: 0 -8px 32px rgba(0,0,0,.08);
         }
 
@@ -441,15 +441,15 @@
         }
 
         .dark .theme-toggle {
-            background: rgba(7, 27, 56, .82);
-            border-color: rgba(145, 163, 189, .18);
-            color: #f5f8ff
+            background: rgba(58, 24, 17, .82);
+            border-color: rgba(201, 168, 150, .18);
+            color: #F9ECDD
         }
 
         .light .theme-toggle {
             background: #ffffff;
-            border-color: #ebebeb;
-            color: #0a0a0a;
+            border-color: #EFE3D3;
+            color: #2A140D;
             box-shadow: none
         }
 
@@ -489,7 +489,7 @@
             display: block;
             width: 14px;
             height: 7px;
-            background: #0B74FF;
+            background: #9F2220;
             border-radius: 2px;
             margin: 1px
         }
@@ -579,7 +579,7 @@
             width: 42px;
             height: 42px;
             border-radius: 16px;
-            background: linear-gradient(135deg, #0B74FF, #78ffdf);
+            background: linear-gradient(135deg, #9F2220, #78ffdf);
             color: #062447;
             display: grid;
             place-items: center;
@@ -602,7 +602,7 @@
         }
 
         .hero {
-            background: linear-gradient(160deg, #02163b, #062d62 58%, #064e5b);
+            background: linear-gradient(160deg, #3A1811, #062d62 58%, #064e5b);
             color: white;
             position: relative;
             overflow: hidden
@@ -615,7 +615,7 @@
             top: -75px;
             width: 190px;
             height: 190px;
-            border: 36px solid rgba(11,116,255, .14);
+            border: 36px solid rgba(159,34,32,.14);
             border-radius: 50%
         }
 
@@ -653,10 +653,10 @@
         }
 
         .balance-tab.active {
-            background: color-mix(in srgb, #0B74FF 18%, var(--card) 82%);
-            border-color: rgba(11,116,255,.35);
+            background: color-mix(in srgb, #9F2220 18%, var(--card) 82%);
+            border-color: rgba(159,34,32,.35);
             color: var(--text);
-            box-shadow: 0 6px 16px rgba(11,116,255,.12)
+            box-shadow: 0 6px 16px rgba(159,34,32,.12)
         }
 
         .balance-caption {
@@ -709,7 +709,7 @@
         .light .card.hero {
             background: #ffffff !important;
             color: var(--text) !important;
-            border: 1px solid #ebebeb !important;
+            border: 1px solid #EFE3D3 !important;
             box-shadow: none !important
         }
 
@@ -728,8 +728,8 @@
 
         /* Pills/chips de devise dans le hero */
         .light .card.hero .balance-tabs {
-            background: #f5f5f5 !important;
-            border: 1px solid #e0e0e0 !important
+            background: #F6EDE0 !important;
+            border: 1px solid #E4D2BC !important
         }
 
         .light .card.hero .balance-tab {
@@ -740,21 +740,21 @@
         /* Pill/chip active (devise sélectionnée) */
         .light .card.hero .balance-tab.active,
         .light .card.hero .pill.active {
-            background: #0B74FF !important;
+            background: #9F2220 !important;
             color: #ffffff !important
         }
 
         /* Badge pays et badge KYC dans le hero */
         .light .card.hero .balance-country,
         .light .card.hero .pill {
-            background: #f5f5f5 !important;
+            background: #F6EDE0 !important;
             color: var(--text) !important;
-            border: 1px solid #e0e0e0 !important
+            border: 1px solid #E4D2BC !important
         }
 
         .pill.teal, .tag {
             background: var(--chip);
-            color: #0B74FF
+            color: #9F2220
         }
 
         .tag {
@@ -779,7 +779,7 @@
             padding: 12px 14px;
             border-radius: 18px;
             background: var(--chip);
-            color: #0B74FF;
+            color: #9F2220;
             font-size: 12px;
             font-weight: 800;
             line-height: 1.45
@@ -810,7 +810,7 @@
             border-radius: 15px;
             background: var(--chip);
             margin: 0 auto 8px;
-            color: #0B74FF;
+            color: #9F2220;
             font-size: 20px
         }
 
@@ -835,7 +835,7 @@
             min-height: 82px;
             border: 1px solid var(--line);
             border-radius: 24px;
-            background: linear-gradient(145deg, color-mix(in srgb, var(--card) 94%, #0B74FF 6%), var(--card));
+            background: linear-gradient(145deg, color-mix(in srgb, var(--card) 94%, #9F2220 6%), var(--card));
             color: var(--text);
             box-shadow: var(--shadow);
             padding: 13px;
@@ -849,8 +849,8 @@
         .quick-action.featured {
             grid-column: 1 / -1;
             min-height: 76px;
-            background: linear-gradient(135deg, rgba(11,116,255, .28), var(--card));
-            border-color: rgba(11,116,255, .34)
+            background: linear-gradient(135deg, rgba(159,34,32,.28), var(--card));
+            border-color: rgba(159,34,32,.34)
         }
 
         .quick-action b {
@@ -860,7 +860,7 @@
             display: grid;
             place-items: center;
             background: var(--chip);
-            color: #0B74FF;
+            color: #9F2220;
             font-size: 19px;
             flex: none
         }
@@ -889,9 +889,9 @@
             width: calc(100% - 32px);
             margin: 0 16px 16px;
             padding: 17px;
-            border: 1px solid rgba(11,116,255, .32);
+            border: 1px solid rgba(159,34,32,.32);
             border-radius: 28px;
-            background: radial-gradient(circle at 90% 0, rgba(11,116,255, .26), transparent 38%), linear-gradient(145deg, color-mix(in srgb, var(--card) 86%, #0B74FF 14%), var(--card));
+            background: radial-gradient(circle at 90% 0, rgba(159,34,32,.26), transparent 38%), linear-gradient(145deg, color-mix(in srgb, var(--card) 86%, #9F2220 14%), var(--card));
             color: var(--text);
             box-shadow: var(--shadow);
             cursor: pointer;
@@ -909,7 +909,7 @@
             bottom: -58px;
             width: 150px;
             height: 150px;
-            border: 28px solid rgba(11,116,255, .1);
+            border: 28px solid rgba(159,34,32,.1);
             border-radius: 50%
         }
 
@@ -925,7 +925,7 @@
             width: 48px;
             height: 48px;
             border-radius: 18px;
-            background: #0B74FF;
+            background: #9F2220;
             color: #ffffff;
             display: grid;
             place-items: center;
@@ -936,7 +936,7 @@
 
         .market-kicker {
             display: block;
-            color: #0B74FF;
+            color: #9F2220;
             font-size: 11px;
             font-weight: 950;
             letter-spacing: .05em;
@@ -965,7 +965,7 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            color: #0B74FF;
+            color: #9F2220;
             font-size: 12px;
             font-weight: 950;
             position: relative;
@@ -986,7 +986,7 @@
             align-items: center;
             gap: 8px;
             padding: 9px 10px;
-            border: 1px solid rgba(11,116,255, .14);
+            border: 1px solid rgba(159,34,32,.14);
             border-radius: 16px;
             background: color-mix(in srgb, var(--card) 74%, var(--chip) 26%)
         }
@@ -995,7 +995,7 @@
             padding: 5px 7px;
             border-radius: 999px;
             background: var(--chip);
-            color: #0B74FF;
+            color: #9F2220;
             font-size: 9px;
             font-weight: 950
         }
@@ -1044,7 +1044,7 @@
             border: 0;
             padding: 0;
             background: transparent;
-            color: #0B74FF;
+            color: #9F2220;
             font: inherit;
             font-size: 12px;
             font-weight: 950;
@@ -1104,7 +1104,7 @@
             height: 38px;
             border-radius: 14px;
             background: var(--chip);
-            color: #0B74FF;
+            color: #9F2220;
             display: grid;
             place-items: center;
             font-size: 12px;
@@ -1151,8 +1151,8 @@
         }
 
         .home-offer-intent.buy {
-            background: rgba(11,116,255, .14);
-            color: #0B74FF
+            background: rgba(159,34,32,.14);
+            color: #9F2220
         }
 
         .home-offer-intent.sell {
@@ -1197,7 +1197,7 @@
             border: 0;
             border-radius: 16px;
             padding: 11px 12px;
-            background: #0B74FF;
+            background: #9F2220;
             color: #ffffff;
             font-size: 12px;
             font-weight: 950;
@@ -1223,7 +1223,7 @@
 
         .home-offers-dot.active {
             width: 20px;
-            background: #0B74FF
+            background: #9F2220
         }
 
         .xchange-context {
@@ -1231,7 +1231,7 @@
             padding: 16px;
             border: 1px solid var(--line);
             border-radius: 26px;
-            background: linear-gradient(145deg, color-mix(in srgb, var(--card) 90%, #0B74FF 10%), var(--card));
+            background: linear-gradient(145deg, color-mix(in srgb, var(--card) 90%, #9F2220 10%), var(--card));
             box-shadow: var(--shadow)
         }
 
@@ -1280,7 +1280,7 @@
             border-radius: 999px;
             display: grid;
             place-items: center;
-            background: #0B74FF;
+            background: #9F2220;
             color: #ffffff;
             font-size: 10px;
             font-weight: 950
@@ -1313,7 +1313,7 @@
             touch-action: pan-x;
             scroll-snap-type: x proximity;
             scrollbar-width: thin;
-            scrollbar-color: rgba(11,116,255, .55) transparent;
+            scrollbar-color: rgba(159,34,32,.55) transparent;
             padding-bottom: 8px;
             cursor: grab
         }
@@ -1327,14 +1327,14 @@
         }
 
         .xzone-slider::-webkit-scrollbar-thumb {
-            background: rgba(11,116,255, .55);
+            background: rgba(159,34,32,.55);
             border-radius: 999px
         }
 
         .xzone-card {
             flex: 0 0 172px;
             scroll-snap-align: start;
-            border: 1px solid rgba(11,116,255, .22);
+            border: 1px solid rgba(159,34,32,.22);
             border-radius: 19px;
             background: var(--chip);
             color: var(--text);
@@ -1343,8 +1343,8 @@
         }
 
         .xzone-card.active {
-            background: rgba(11,116,255, .2);
-            border-color: rgba(11,116,255, .48)
+            background: rgba(159,34,32,.2);
+            border-color: rgba(159,34,32,.48)
         }
 
         .xzone-card span {
@@ -1383,10 +1383,10 @@
         }
 
         .xchange-toggle button.active {
-            background: color-mix(in srgb, #0B74FF 18%, var(--card) 82%);
-            border-color: rgba(11,116,255,.35);
+            background: color-mix(in srgb, #9F2220 18%, var(--card) 82%);
+            border-color: rgba(159,34,32,.35);
             color: var(--text);
-            box-shadow: 0 10px 22px rgba(11,116,255,.12)
+            box-shadow: 0 10px 22px rgba(159,34,32,.12)
         }
 
         .xsearch {
@@ -1437,7 +1437,7 @@
             -webkit-overflow-scrolling: touch;
             touch-action: pan-x;
             scrollbar-width: thin;
-            scrollbar-color: rgba(11,116,255, .55) transparent;
+            scrollbar-color: rgba(159,34,32,.55) transparent;
             margin: 0 0 14px;
             padding: 0 16px 8px
         }
@@ -1447,7 +1447,7 @@
         }
 
         .xfilters::-webkit-scrollbar-thumb {
-            background: rgba(11,116,255, .55);
+            background: rgba(159,34,32,.55);
             border-radius: 999px
         }
 
@@ -1477,8 +1477,8 @@
         .xfilter-menu[open] {
             min-width: 174px;
             border-radius: 20px;
-            border-color: rgba(11,116,255, .38);
-            background: color-mix(in srgb, var(--card) 94%, #0B74FF 6%);
+            border-color: rgba(159,34,32,.38);
+            background: color-mix(in srgb, var(--card) 94%, #9F2220 6%);
             box-shadow: 0 16px 34px rgba(0, 0, 0, .16)
         }
 
@@ -1509,7 +1509,7 @@
         }
 
         .xfilter-menu[open] summary {
-            color: #0B74FF;
+            color: #9F2220;
             background: transparent;
             border-radius: 0
         }
@@ -1518,7 +1518,7 @@
             display: grid;
             gap: 4px;
             padding: 2px 6px 7px;
-            border-top: 1px solid rgba(11,116,255, .12);
+            border-top: 1px solid rgba(159,34,32,.12);
             background: transparent
         }
 
@@ -1538,13 +1538,13 @@
 
         .xfilter-options button:hover, .xfilter-options button:focus-visible {
             outline: 0;
-            background: rgba(11,116,255, .12);
+            background: rgba(159,34,32,.12);
             color: var(--text);
-            box-shadow: inset 0 0 0 1px rgba(11,116,255, .2)
+            box-shadow: inset 0 0 0 1px rgba(159,34,32,.2)
         }
 
         .xfilter-options button.selected {
-            background: #0B74FF;
+            background: #9F2220;
             color: #ffffff
         }
 
@@ -1554,9 +1554,9 @@
         }
 
         .xfilter.active {
-            border-color: rgba(11,116,255, .42);
-            background: rgba(11,116,255, .16);
-            color: #0B74FF
+            border-color: rgba(159,34,32,.42);
+            background: rgba(159,34,32,.16);
+            color: #9F2220
         }
 
         .xfilter-menu.active[open] {
@@ -1571,8 +1571,8 @@
             padding: 16px;
             border: 1px solid var(--line);
             border-radius: 22px;
-            background: linear-gradient(145deg, color-mix(in srgb, var(--card) 94%, #0B74FF 6%), var(--card));
-            box-shadow: 0 16px 34px rgba(2, 22, 59, .08)
+            background: linear-gradient(145deg, color-mix(in srgb, var(--card) 94%, #9F2220 6%), var(--card));
+            box-shadow: 0 16px 34px rgba(42, 20, 13, .08)
         }
 
         .offer-card.mini-offer:before {
@@ -1580,7 +1580,7 @@
             position: absolute;
             inset: 0;
             pointer-events: none;
-            background: radial-gradient(circle at 92% 0%, rgba(11,116,255,.16), transparent 34%)
+            background: radial-gradient(circle at 92% 0%, rgba(159,34,32,.16), transparent 34%)
         }
 
         .offer-card.mini-offer > * {
@@ -1590,7 +1590,7 @@
 
         .offer-card.sell-mode {
             border-style: dashed;
-            border-color: rgba(11,116,255, .34)
+            border-color: rgba(159,34,32,.34)
         }
 
         .offer-top, .offer-rate, .offer-foot {
@@ -1613,7 +1613,7 @@
             border-radius: 14px;
             display: grid;
             place-items: center;
-            background: linear-gradient(135deg, #02163B, #0B74FF);
+            background: linear-gradient(135deg, #3A1811, #9F2220);
             color: #ffffff;
             font-size: 12px;
             font-weight: 950;
@@ -1633,7 +1633,7 @@
         }
 
         .offer-pair {
-            color: #0B74FF;
+            color: #9F2220;
             font-size: 12px;
             font-weight: 950;
             white-space: nowrap
@@ -1663,8 +1663,8 @@
         }
 
         .offer-badge.buy-mode {
-            background: rgba(11,116,255, .16);
-            color: #0B74FF
+            background: rgba(159,34,32,.16);
+            color: #9F2220
         }
 
         .offer-route {
@@ -1683,8 +1683,8 @@
             min-height: 30px;
             padding: 0 11px;
             border-radius: 999px;
-            background: color-mix(in srgb, var(--card) 74%, #0B74FF 8%);
-            border: 1px solid rgba(11,116,255,.14);
+            background: color-mix(in srgb, var(--card) 74%, #9F2220 8%);
+            border: 1px solid rgba(159,34,32,.14);
             color: var(--text);
             font-size: 11px;
             font-weight: 950
@@ -1693,7 +1693,7 @@
         .offer-route i {
             height: 1px;
             border-radius: 999px;
-            background: linear-gradient(90deg, rgba(11,116,255,.14), rgba(11,116,255,.5), rgba(11,116,255,.14))
+            background: linear-gradient(90deg, rgba(159,34,32,.14), rgba(159,34,32,.5), rgba(159,34,32,.14))
         }
 
         .offer-badge.sell-mode {
@@ -1759,7 +1759,7 @@
         .offer-foot {
             margin-top: 14px;
             padding-top: 13px;
-            border-top: 1px solid rgba(11,116,255,.12)
+            border-top: 1px solid rgba(159,34,32,.12)
         }
 
         .offer-limit span {
@@ -1794,7 +1794,7 @@
         }
 
         .offer-cta {
-            background: #0B74FF;
+            background: #9F2220;
             color: #ffffff
         }
 
@@ -1821,8 +1821,8 @@
             margin-top: 12px;
             padding: 7px 10px;
             border-radius: 999px;
-            background: rgba(11,116,255, .14);
-            color: #0B74FF;
+            background: rgba(159,34,32,.14);
+            color: #9F2220;
             font-size: 10px;
             font-weight: 950
         }
@@ -1852,7 +1852,7 @@
             height: 32px;
             border-radius: 12px;
             background: var(--chip);
-            color: #0B74FF;
+            color: #9F2220;
             font-size: 11px
         }
 
@@ -1906,7 +1906,7 @@
         }
 
         .offer-conversion-side.target strong {
-            color: #0B74FF
+            color: #9F2220
         }
 
         .offer-conversion-pivot {
@@ -1915,7 +1915,7 @@
             min-width: 30px;
             height: 20px;
             border-radius: 999px;
-            background: rgba(11,116,255,.08);
+            background: rgba(159,34,32,.08);
             color: var(--muted);
             font-style: normal;
             font-size: 8px;
@@ -1941,7 +1941,7 @@
             width: 4px;
             height: 4px;
             border-radius: 999px;
-            background: rgba(11,116,255,.5)
+            background: rgba(159,34,32,.5)
         }
 
         .offer-card.mini-offer .offer-foot {
@@ -1969,7 +1969,7 @@
             position: absolute;
             inset: 0;
             border: 0;
-            background: rgba(2, 12, 29, .58);
+            background: rgba(28, 13, 8, .58);
             cursor: pointer
         }
 
@@ -2001,7 +2001,7 @@
             padding: 6px 9px;
             border-radius: 999px;
             background: var(--chip);
-            color: #0B74FF;
+            color: #9F2220;
             font-size: 10px;
             font-weight: 950
         }
@@ -2058,7 +2058,7 @@
         .xsheet-kyc {
             display: inline-flex;
             margin-left: 6px;
-            color: #0B74FF;
+            color: #9F2220;
             font-size: 10px;
             font-weight: 950
         }
@@ -2077,14 +2077,20 @@
         }
 
         .xsheet-input {
-            min-height: 50px;
-            border: 1px solid var(--line);
-            border-radius: 18px;
-            background: var(--card2);
+            min-height: 54px;
+            border: 0;
+            border-radius: 20px;
+            background: var(--card);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, .06);
             display: flex;
             align-items: center;
             gap: 8px;
-            padding: 0 13px
+            padding: 0 18px;
+            transition: box-shadow .2s ease
+        }
+
+        .xsheet-input:focus-within {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, .06), 0 0 0 2px rgba(159,34,32,.28)
         }
 
         .xsheet-input input {
@@ -2123,9 +2129,9 @@
             gap: 12px;
             margin-top: 8px;
             padding: 11px 12px;
-            border: 1px solid rgba(11,116,255, .22);
+            border: 1px solid rgba(159,34,32,.22);
             border-radius: 18px;
-            background: rgba(11,116,255, .1);
+            background: rgba(159,34,32,.1);
             color: var(--text)
         }
 
@@ -2171,7 +2177,7 @@
         }
 
         .xsheet-choice button.active {
-            background: #0B74FF;
+            background: #9F2220;
             color: #ffffff
         }
 
@@ -2200,10 +2206,10 @@
         }
 
         .xsheet-spinner {
-            width: 86px;
-            height: 86px;
+            width: 72px;
+            height: 72px;
             border: 0;
-            border-radius: 0;
+            border-radius: 22px;
             background: center / contain no-repeat var(--data-loader);
             animation: nzoLoaderSoft 1.8s ease-in-out infinite
         }
@@ -2226,8 +2232,8 @@
             border-radius: 20px;
             display: grid;
             place-items: center;
-            background: rgba(11,116,255, .16);
-            color: #0B74FF;
+            background: rgba(159,34,32,.16);
+            color: #9F2220;
             font-size: 28px;
             font-weight: 950
         }
@@ -2436,7 +2442,7 @@
             padding: 6px 9px;
             border-radius: 999px;
             background: var(--chip);
-            color: #0B74FF;
+            color: #9F2220;
             font-size: 10px;
             font-weight: 950;
             white-space: nowrap
@@ -2454,7 +2460,7 @@
 
         .nzone-balance {
             margin-top: 18px;
-            color: #0B74FF;
+            color: #9F2220;
             font-size: 31px;
             line-height: 1;
             font-weight: 950;
@@ -2495,7 +2501,7 @@
             height: 34px;
             border-radius: 13px;
             background: var(--chip);
-            color: #0B74FF;
+            color: #9F2220;
             display: grid;
             place-items: center;
             font-size: 16px
@@ -2534,7 +2540,7 @@
             height: 34px;
             border-radius: 14px;
             background: var(--chip);
-            color: #0B74FF;
+            color: #9F2220;
             display: grid;
             place-items: center;
             flex: none
@@ -2631,7 +2637,7 @@
             padding: 0 6px;
             border-radius: 999px;
             background: var(--chip);
-            color: #0B74FF;
+            color: #9F2220;
             font-size: 10px;
             font-weight: 900;
             white-space: nowrap
@@ -2645,9 +2651,9 @@
         }
 
         .history-tab.active {
-            border-color: rgba(11,116,255,.35);
-            background: linear-gradient(180deg, color-mix(in srgb, #0B74FF 14%, var(--card) 86%), color-mix(in srgb, #0B74FF 8%, var(--card) 92%));
-            box-shadow: 0 10px 22px rgba(11,116,255,.10);
+            border-color: rgba(159,34,32,.35);
+            background: linear-gradient(180deg, color-mix(in srgb, #9F2220 14%, var(--card) 86%), color-mix(in srgb, #9F2220 8%, var(--card) 92%));
+            box-shadow: 0 10px 22px rgba(159,34,32,.10);
             color: var(--text)
         }
 
@@ -2665,10 +2671,10 @@
         }
 
         .nzone-tab.active {
-            background: color-mix(in srgb, #0B74FF 18%, var(--card) 82%);
-            border-color: rgba(11,116,255,.35);
+            background: color-mix(in srgb, #9F2220 18%, var(--card) 82%);
+            border-color: rgba(159,34,32,.35);
             color: var(--text);
-            box-shadow: 0 10px 22px rgba(11,116,255,.12)
+            box-shadow: 0 10px 22px rgba(159,34,32,.12)
         }
 
         .nzone-list {
@@ -2695,7 +2701,7 @@
         .history-hero {
             border: 1px solid var(--line);
             border-radius: 28px;
-            background: linear-gradient(180deg, color-mix(in srgb, #0B74FF 10%, var(--card) 90%), var(--card));
+            background: linear-gradient(180deg, color-mix(in srgb, #9F2220 10%, var(--card) 90%), var(--card));
             box-shadow: var(--shadow);
             padding: 16px
         }
@@ -2712,7 +2718,7 @@
             padding: 6px 9px;
             border-radius: 999px;
             background: var(--chip);
-            color: #0B74FF;
+            color: #9F2220;
             font-size: 10px;
             font-weight: 950;
             letter-spacing: .04em;
@@ -2812,8 +2818,8 @@
             border-radius: 13px;
             display: grid;
             place-items: center;
-            background: color-mix(in srgb, #0B74FF 12%, var(--card) 88%);
-            color: #0B74FF;
+            background: color-mix(in srgb, #9F2220 12%, var(--card) 88%);
+            color: #9F2220;
             font-size: 16px;
             font-weight: 950
         }
@@ -2874,8 +2880,8 @@
             border-radius: 13px;
             display: grid;
             place-items: center;
-            background: color-mix(in srgb, #0B74FF 12%, var(--card) 88%);
-            color: #0B74FF;
+            background: color-mix(in srgb, #9F2220 12%, var(--card) 88%);
+            color: #9F2220;
             font-size: 16px;
             font-weight: 950
         }
@@ -2940,8 +2946,8 @@
             border-radius: 14px;
             display: grid;
             place-items: center;
-            background: color-mix(in srgb, #0B74FF 12%, var(--card) 88%);
-            color: #0B74FF;
+            background: color-mix(in srgb, #9F2220 12%, var(--card) 88%);
+            color: #9F2220;
             font-size: 18px;
             font-weight: 950
         }
@@ -3040,7 +3046,7 @@
         }
 
         .nzone-entry-icon.trade {
-            color: #0B74FF
+            color: #9F2220
         }
 
         .nzone-entry-icon.in {
@@ -3168,7 +3174,7 @@
             touch-action: pan-x;
             padding-bottom: 6px;
             scrollbar-width: thin;
-            scrollbar-color: rgba(11,116,255, .55) transparent;
+            scrollbar-color: rgba(159,34,32,.55) transparent;
             cursor: grab
         }
 
@@ -3181,7 +3187,7 @@
         }
 
         .sell-targets::-webkit-scrollbar-thumb {
-            background: rgba(11,116,255, .55);
+            background: rgba(159,34,32,.55);
             border-radius: 999px
         }
 
@@ -3197,8 +3203,8 @@
         }
 
         .sell-target.active {
-            border-color: rgba(11,116,255, .52);
-            background: rgba(11,116,255, .14)
+            border-color: rgba(159,34,32,.52);
+            background: rgba(159,34,32,.14)
         }
 
         .sell-target b {
@@ -3222,7 +3228,7 @@
             padding: 4px 7px;
             border-radius: 999px;
             background: var(--chip);
-            color: #0B74FF;
+            color: #9F2220;
             font-size: 9px;
             font-weight: 950;
             white-space: nowrap
@@ -3301,7 +3307,7 @@
             border-top: 1px solid var(--line);
             padding: 14px 0;
             background: transparent;
-            color: #0B74FF;
+            color: #9F2220;
             font: inherit;
             font-size: 12px;
             font-weight: 950;
@@ -3311,10 +3317,16 @@
 
         .nzone-exchange-field {
             background: var(--card);
-            border: 1px solid var(--line);
-            border-radius: 18px;
-            padding: 13px 14px;
-            margin: 0 16px 12px
+            border: 0;
+            border-radius: 22px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, .06);
+            padding: 14px 18px 15px;
+            margin: 0 16px 12px;
+            transition: box-shadow .2s ease
+        }
+
+        .nzone-exchange-field:focus-within {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, .06), 0 0 0 2px rgba(159,34,32,.28)
         }
 
         .nzone-exchange-field label {
@@ -3418,9 +3430,9 @@
             display: grid;
             gap: 6px;
             padding: 8px;
-            border: 1px solid rgba(11,116,255, .22);
+            border: 1px solid rgba(159,34,32,.22);
             border-radius: 18px;
-            background: color-mix(in srgb, var(--card) 96%, #0B74FF 4%);
+            background: color-mix(in srgb, var(--card) 96%, #9F2220 4%);
             box-shadow: 0 18px 34px rgba(0, 0, 0, .18)
         }
 
@@ -3439,12 +3451,12 @@
         .nzone-picker-option:hover,
         .nzone-picker-option:focus-visible {
             outline: 0;
-            background: rgba(11,116,255, .1);
-            box-shadow: inset 0 0 0 1px rgba(11,116,255, .16)
+            background: rgba(159,34,32,.1);
+            box-shadow: inset 0 0 0 1px rgba(159,34,32,.16)
         }
 
         .nzone-picker-option.selected {
-            background: rgba(11,116,255, .14)
+            background: rgba(159,34,32,.14)
         }
 
         .nzone-picker-line {
@@ -3483,10 +3495,10 @@
             flex: none;
             min-width: 0;
             padding: 8px 12px;
-            border: 1px solid rgba(11,116,255, .42);
+            border: 1px solid rgba(159,34,32,.42);
             border-radius: 999px;
-            background: rgba(11,116,255, .12);
-            color: #0B74FF;
+            background: rgba(159,34,32,.12);
+            color: #9F2220;
             box-shadow: var(--shadow)
         }
 
@@ -3517,7 +3529,7 @@
             width: var(--picker-width, 204px);
             margin-top: 0;
             z-index: 120;
-            box-shadow: 0 18px 38px rgba(2, 22, 59, .18)
+            box-shadow: 0 18px 38px rgba(42, 20, 13, .18)
         }
 
         .xchange-filter-picker .nzone-picker-line {
@@ -3538,7 +3550,7 @@
             width: 64px;
             height: 64px;
             border-radius: 999px;
-            background: #0B74FF;
+            background: #9F2220;
             color: #ffffff;
             display: grid;
             place-items: center;
@@ -3675,7 +3687,7 @@
             border: 0;
             border-radius: 10px;
             background: var(--chip);
-            color: #0B74FF;
+            color: #9F2220;
             font-size: 13px;
             font-weight: 900;
             cursor: pointer
@@ -3719,7 +3731,7 @@
             border: 1px solid var(--line);
             border-radius: 12px;
             padding: 6px 12px;
-            background: color-mix(in srgb, var(--card2) 82%, transparent);
+            background: var(--card);
             color: var(--muted);
             font-size: 11px;
             font-weight: 900;
@@ -3728,10 +3740,10 @@
         }
 
         .profile-segment button.active {
-            background: color-mix(in srgb, #0B74FF 18%, var(--card) 82%);
-            border-color: rgba(11,116,255,.35);
-            color: var(--text);
-            box-shadow: 0 6px 16px rgba(11,116,255,.12)
+            background: #9F2220;
+            border-color: #9F2220;
+            color: #ffffff;
+            box-shadow: 0 6px 16px rgba(159,34,32,.25)
         }
 
         .profile-switch {
@@ -3766,13 +3778,13 @@
         }
 
         .profile-switch.on .profile-switch-track {
-            background: rgba(11,116,255, .22);
-            border-color: rgba(11,116,255, .34)
+            background: rgba(159,34,32,.22);
+            border-color: rgba(159,34,32,.34)
         }
 
         .profile-switch.on .profile-switch-track i {
             left: 21px;
-            background: #0B74FF
+            background: #9F2220
         }
 
         .profile-switch-text {
@@ -3819,7 +3831,7 @@
             border-radius: 18px;
             display: grid;
             place-items: center;
-            background: linear-gradient(135deg, #02163B, #0B74FF);
+            background: linear-gradient(135deg, #3A1811, #9F2220);
             color: #ffffff;
             font-size: 19px;
             font-weight: 950;
@@ -3937,7 +3949,7 @@
             display: grid;
             place-items: center;
             background: var(--chip);
-            color: #0B74FF;
+            color: #9F2220;
             font-size: 10px;
             font-weight: 950;
             flex: none
@@ -4065,7 +4077,7 @@
         }
 
         .profile-sheet-message.ok {
-            color: #0B74FF
+            color: #9F2220
         }
 
         .open-nzone-option {
@@ -4091,8 +4103,8 @@
         }
 
         .open-nzone-option.active {
-            border-color: rgba(11,116,255, .48);
-            background: rgba(11,116,255, .13)
+            border-color: rgba(159,34,32,.48);
+            background: rgba(159,34,32,.13)
         }
 
         .open-nzone-main {
@@ -4114,7 +4126,7 @@
             padding: 5px 8px;
             border-radius: 999px;
             background: var(--chip);
-            color: #0B74FF;
+            color: #9F2220;
             font-size: 9px;
             font-weight: 950;
             white-space: nowrap
@@ -4138,9 +4150,9 @@
         .checkout-card {
             margin: 0 16px 12px;
             padding: 14px;
-            border: 1px solid rgba(11,116,255, .20);
+            border: 1px solid rgba(159,34,32,.20);
             border-radius: 28px;
-            background: linear-gradient(155deg, color-mix(in srgb, #0B74FF 10%, var(--card)) 0%, var(--card) 42%, var(--card));
+            background: linear-gradient(155deg, color-mix(in srgb, #9F2220 10%, var(--card)) 0%, var(--card) 42%, var(--card));
             box-shadow: var(--shadow)
         }
 
@@ -4164,7 +4176,7 @@
             display: grid;
             place-items: center;
             background: #ffffff;
-            border: 1px solid rgba(11,116,255,.16);
+            border: 1px solid rgba(159,34,32,.16);
             overflow: hidden
         }
 
@@ -4204,7 +4216,7 @@
             padding: 7px 10px;
             border-radius: 999px;
             background: var(--chip);
-            color: #0B74FF;
+            color: #9F2220;
             font-size: 10px;
             font-weight: 950
         }
@@ -4292,9 +4304,9 @@
         }
 
         .checkout-method.active {
-            border-color: rgba(11,116,255, .52);
-            background: color-mix(in srgb, #0B74FF 12%, var(--card));
-            box-shadow: 0 12px 26px rgba(11, 116, 255, .12)
+            border-color: rgba(159,34,32,.52);
+            background: color-mix(in srgb, #9F2220 12%, var(--card));
+            box-shadow: 0 12px 26px rgba(159, 34, 32, .12)
         }
 
         .checkout-method-main {
@@ -4311,7 +4323,7 @@
             display: grid;
             place-items: center;
             background: var(--chip);
-            color: #0B74FF;
+            color: #9F2220;
             font-size: 10px;
             font-weight: 950;
             letter-spacing: -.02em;
@@ -4334,8 +4346,8 @@
         }
 
         .checkout-method.active .checkout-method-check {
-            border-color: #0B74FF;
-            background: radial-gradient(circle, #0B74FF 0 42%, transparent 46%)
+            border-color: #9F2220;
+            background: radial-gradient(circle, #9F2220 0 42%, transparent 46%)
         }
 
         .checkout-detail {
@@ -4446,7 +4458,7 @@
 
         .nav button.active {
             background: var(--chip);
-            color: #0B74FF
+            color: #9F2220
         }
 
         .btn {
@@ -4465,7 +4477,7 @@
         }
 
         .primary {
-            background: #0B74FF;
+            background: #9F2220;
             color: #ffffff
         }
 
@@ -4501,10 +4513,16 @@
 
         .field {
             background: var(--card);
-            border: 1px solid var(--line);
-            border-radius: 19px;
-            padding: 13px 14px;
-            margin: 0 16px 12px
+            border: 0;
+            border-radius: 22px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, .06);
+            padding: 14px 18px 15px;
+            margin: 0 16px 12px;
+            transition: box-shadow .2s ease
+        }
+
+        .field:focus-within {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, .06), 0 0 0 2px rgba(159,34,32,.28)
         }
 
         .field label {
@@ -4512,7 +4530,11 @@
             font-size: 11px;
             color: var(--muted);
             font-weight: 900;
-            margin-bottom: 7px
+            margin-bottom: 5px
+        }
+
+        .field:focus-within label {
+            color: #9F2220
         }
 
         .field input, .field select {
@@ -4521,8 +4543,9 @@
             outline: 0;
             background: transparent;
             color: var(--text);
-            font-size: 18px;
-            font-weight: 900
+            font-size: 22px;
+            font-weight: 900;
+            letter-spacing: -.02em
         }
 
         .radio {
@@ -4534,7 +4557,7 @@
         }
 
         .method.active .radio {
-            border: 6px solid #0B74FF
+            border: 6px solid #9F2220
         }
 
         .fx {
@@ -4556,7 +4579,7 @@
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            background: #0B74FF;
+            background: #9F2220;
             color: #ffffff;
             display: grid;
             place-items: center;
@@ -4582,7 +4605,7 @@
         }
 
         .splash {
-            background: #ffffff;
+            background: #9F2220;
             padding: 16px;
             z-index: 80
         }
@@ -4608,7 +4631,9 @@
             width: 86%;
             height: 86%;
             border: 0;
-            display: block
+            display: block;
+            object-fit: contain;
+            filter: brightness(0) invert(1)
         }
 
         .splash-status {
@@ -4634,7 +4659,7 @@
             width: 40%;
             height: 100%;
             border-radius: inherit;
-            background: #0B74FF;
+            background: #F0A72C;
             animation: splashLoad 1.7s ease-in-out infinite
         }
 
@@ -4645,7 +4670,7 @@
             display: none;
             overflow: hidden;
             background: #ffffff;
-            color: #02163B;
+            color: #3A1811;
             touch-action: pan-y
         }
 
@@ -4687,7 +4712,7 @@
             z-index: 3;
             border: 0;
             background: transparent;
-            color: #65738a;
+            color: #8A6F63;
             font: inherit;
             font-size: 12px;
             font-weight: 800;
@@ -4715,9 +4740,9 @@
             display: grid;
             place-items: center;
             background: #f7fbff;
-            border: 1px solid #dce8f5;
-            box-shadow: 0 16px 34px rgba(11, 66, 130, .08);
-            color: #0B74FF;
+            border: 1px solid #EDE0D2;
+            box-shadow: 0 16px 34px rgba(58, 24, 17, .10);
+            color: #9F2220;
             font-size: 48px;
             line-height: 1;
             margin-bottom: 28px
@@ -4732,7 +4757,7 @@
             stroke-width: 2.4;
             stroke-linecap: round;
             stroke-linejoin: round;
-            color: #0B74FF
+            color: #9F2220
         }
 
         .onb-icon text {
@@ -4747,7 +4772,7 @@
         }
 
         .onb-title {
-            color: #02163B;
+            color: #3A1811;
             font-size: 26px;
             line-height: 1.16;
             font-weight: 900;
@@ -4758,7 +4783,7 @@
         .onb-subtitle {
             max-width: 302px;
             margin: 14px auto 0;
-            color: #65738a;
+            color: #8A6F63;
             font-size: 14px;
             font-weight: 500;
             line-height: 1.6
@@ -4797,24 +4822,24 @@
             border: 0;
             border-radius: 999px;
             padding: 0;
-            background: #dce8f5;
+            background: #EDE0D2;
             cursor: pointer
         }
 
         .onb-dot.active {
-            background: #0B74FF
+            background: #9F2220
         }
 
         .onb-next, .onb-final-primary {
             border: 0;
             border-radius: 999px;
-            background: #0B74FF;
+            background: #9F2220;
             color: #ffffff;
             font: inherit;
             font-size: 14px;
             font-weight: 900;
             cursor: pointer;
-            box-shadow: 0 14px 34px rgba(11,116,255, .26)
+            box-shadow: 0 14px 34px rgba(159,34,32,.26)
         }
 
         .onb-next {
@@ -4835,7 +4860,7 @@
         .onb-login-link {
             border: 0;
             background: transparent;
-            color: #65738a;
+            color: #8A6F63;
             font: inherit;
             font-size: 12px;
             font-weight: 800;
@@ -4988,14 +5013,49 @@
 
         .auth-fields {
             display: grid;
-            gap: 12px;
-            margin-top: 12px
+            gap: 0;
+            margin-top: 16px;
+            border-radius: 26px;
+            background: var(--card);
+            box-shadow: 0 2px 14px rgba(0, 0, 0, .07);
+            overflow: hidden
+        }
+
+        .auth-fields.is-plain {
+            background: transparent;
+            box-shadow: none;
+            border-radius: 0;
+            overflow: visible;
+            gap: 12px
+        }
+
+        .auth-fields.is-plain .auth-field {
+            padding: 0;
+            border-top: 0
         }
 
         .auth-field {
             display: flex;
             flex-direction: column;
-            gap: 7px
+            gap: 3px;
+            padding: 13px 20px 14px;
+            border-top: 1px solid var(--line)
+        }
+
+        .auth-field.is-first-visible {
+            border-top: 0
+        }
+
+        .auth-field-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px
+        }
+
+        .auth-field:focus-within > .auth-label,
+        .auth-field:focus-within > .auth-field-top > .auth-label {
+            color: #9F2220
         }
 
         .auth-hidden {
@@ -5009,35 +5069,118 @@
             color: var(--muted)
         }
 
-        .auth-contact-switch {
+        .auth-label.sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap
+        }
+
+        .auth-eye-btn {
+            flex: none;
+            width: 32px;
+            height: 32px;
+            border: 0;
+            border-radius: 10px;
+            background: transparent;
+            color: var(--muted);
             display: grid;
-            grid-template-columns:1fr 1fr;
-            gap: 8px
+            place-items: center;
+            cursor: pointer
+        }
+
+        .auth-eye-btn svg {
+            width: 19px;
+            height: 19px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.7;
+            stroke-linecap: round;
+            stroke-linejoin: round
+        }
+
+        .auth-eye-slash {
+            opacity: 0;
+            transition: opacity .15s ease
+        }
+
+        .auth-eye-btn.is-open {
+            color: #9F2220
+        }
+
+        .auth-eye-btn.is-open .auth-eye-slash {
+            opacity: 1
+        }
+
+        .auth-date-unified {
+            padding: 0;
+            gap: 6px;
+            justify-content: flex-start
+        }
+
+        .auth-date-part {
+            flex: none;
+            min-width: 0;
+            border: 0;
+            background: transparent;
+            color: var(--text);
+            font: inherit;
+            font-size: 15px;
+            font-weight: 800;
+            text-align: left;
+            padding: 0;
+            cursor: pointer;
+            white-space: nowrap
+        }
+
+        .auth-date-part.is-empty {
+            color: var(--muted);
+            font-weight: 800
+        }
+
+        .auth-date-sep {
+            color: var(--line);
+            font-weight: 700;
+            font-style: normal;
+            flex: none
+        }
+
+        .auth-contact-switch {
+            display: inline-grid;
+            grid-template-columns:auto auto;
+            gap: 2px;
+            padding: 3px;
+            border-radius: 999px;
+            background: color-mix(in srgb, var(--card2) 70%, transparent);
+            flex: none
         }
 
         .auth-contact-option {
-            min-height: 42px;
-            border: 1px solid var(--line);
-            border-radius: 16px;
-            background: color-mix(in srgb, var(--card2) 82%, transparent);
+            min-height: 26px;
+            padding: 0 12px;
+            border: 0;
+            border-radius: 999px;
+            background: transparent;
             color: var(--muted);
             font: inherit;
-            font-size: 12px;
-            font-weight: 900;
+            font-size: 11px;
+            font-weight: 850;
             letter-spacing: .02em;
             cursor: pointer;
             transition: .2s ease
         }
 
         .auth-contact-option.active {
-            background: color-mix(in srgb, #0B74FF 18%, var(--card) 82%);
-            border-color: rgba(11,116,255, .35);
-            color: var(--text);
-            box-shadow: 0 10px 22px rgba(11,116,255, .12)
+            background: var(--card);
+            color: #9F2220;
+            font-weight: 900;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, .07)
         }
 
         .auth-contact-option:focus-visible, .auth-country-select:focus-visible {
-            outline: 2px solid rgba(11,116,255, .3);
+            outline: 2px solid rgba(159,34,32,.3);
             outline-offset: 2px
         }
 
@@ -5055,18 +5198,13 @@
         .auth-input {
             display: flex;
             align-items: center;
-            gap: 12px;
-            border: 1px solid var(--line);
-            border-radius: 20px;
-            background: color-mix(in srgb, var(--card2) 88%, transparent);
-            padding: 0 14px;
-            min-height: 58px;
-            transition: .2s ease
-        }
-
-        .auth-input:focus-within {
-            border-color: rgba(11,116,255, .5);
-            box-shadow: 0 0 0 4px rgba(11,116,255, .12)
+            gap: 10px;
+            border: 0;
+            border-radius: 0;
+            background: transparent;
+            box-shadow: none;
+            padding: 0;
+            min-height: 26px
         }
 
         .auth-icon {
@@ -5074,7 +5212,7 @@
             height: 34px;
             border-radius: 12px;
             background: var(--chip);
-            color: #0B74FF;
+            color: #9F2220;
             display: grid;
             place-items: center;
             font-size: 16px;
@@ -5092,11 +5230,12 @@
         .auth-prefix {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             min-height: 42px;
-            padding: 0 8px 0 6px;
-            border-radius: 15px;
-            background: var(--chip);
+            padding: 0 10px 0 0;
+            margin-right: 2px;
+            border-right: 1px solid var(--line);
+            background: transparent;
             flex: none
         }
 
@@ -5106,7 +5245,7 @@
             padding: 0 12px;
             font-size: 18px;
             font-weight: 900;
-            color: #0B74FF
+            color: #9F2220
         }
 
         .auth-prefix-flag {
@@ -5127,7 +5266,7 @@
         }
 
         .auth-country-select option {
-            color: #071c3f
+            color: #3A1811
         }
 
         .auth-input input {
@@ -5166,7 +5305,7 @@
         }
 
         .auth-input select option {
-            color: #071c3f
+            color: #3A1811
         }
 
         .auth-picker-input {
@@ -5223,7 +5362,7 @@
             border: 1px solid var(--line);
             border-radius: 24px;
             background: var(--card);
-            box-shadow: 0 24px 60px rgba(2, 22, 59, .22);
+            box-shadow: 0 24px 60px rgba(42, 20, 13, .22);
             display: flex;
             flex-direction: column
         }
@@ -5284,7 +5423,7 @@
         }
 
         .auth-picker-option.selected {
-            color: #0B74FF
+            color: #9F2220
         }
 
         .auth-step-tag {
@@ -5293,11 +5432,64 @@
             padding: 6px 12px;
             border-radius: 999px;
             background: color-mix(in srgb, var(--chip) 90%, transparent);
-            color: #0B74FF;
+            color: #9F2220;
             font-size: 10px;
             font-weight: 900;
             letter-spacing: .08em;
             text-transform: uppercase
+        }
+
+        .auth-progress {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            width: min(100%, 160px)
+        }
+
+        .auth-progress span {
+            flex: 1 1 0;
+            height: 5px;
+            border-radius: 999px;
+            background: var(--card2);
+            border: 1px solid var(--line);
+            overflow: hidden;
+            position: relative
+        }
+
+        .auth-progress span:before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            background: #9F2220;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform .25s ease
+        }
+
+        .auth-progress span.done:before,
+        .auth-progress span.current:before {
+            transform: scaleX(1)
+        }
+
+        .auth-progress span.current:before {
+            background: #F0A72C
+        }
+
+        .auth-head.compact {
+            gap: 8px;
+            margin-bottom: 14px
+        }
+
+        .auth-head.compact .logo.big {
+            width: 44px !important;
+            height: 44px !important;
+            border-radius: 14px;
+            margin: 0 auto
+        }
+
+        .auth-head.compact .auth-title {
+            font-size: 22px
         }
 
         .auth-inline-actions {
@@ -5334,7 +5526,9 @@
             justify-content: flex-end;
             color: var(--muted);
             font-size: 11px;
-            line-height: 1.3
+            line-height: 1.3;
+            background: none;
+            border: 0
         }
 
         .auth-inline-question {
@@ -5348,7 +5542,7 @@
         .auth-inline-link {
             border: 0;
             background: transparent;
-            color: #0B74FF;
+            color: #9F2220;
             font: inherit;
             font-size: 12px;
             font-weight: 900;
@@ -5370,18 +5564,19 @@
         .auth-check {
             display: flex;
             align-items: flex-start;
-            gap: 10px;
-            padding: 14px 14px 13px;
-            border: 1px solid var(--line);
-            border-radius: 18px;
-            background: color-mix(in srgb, var(--card2) 86%, transparent);
+            gap: 12px;
+            padding: 16px 20px;
+            border: 0;
+            border-radius: 24px;
+            background: var(--card);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, .06);
             color: var(--text);
             cursor: pointer
         }
 
         .auth-check input {
             margin: 2px 0 0;
-            accent-color: #0B74FF;
+            accent-color: #9F2220;
             flex: none
         }
 
@@ -5424,22 +5619,22 @@
 
         .auth-otp input {
             width: 100%;
-            height: 56px;
-            border: 1px solid var(--line);
-            border-radius: 18px;
-            background: color-mix(in srgb, var(--card2) 88%, transparent);
+            height: 58px;
+            border: 0;
+            border-radius: 20px;
+            background: var(--card);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, .07);
             color: var(--text);
             font: inherit;
             font-size: 22px;
             font-weight: 900;
             text-align: center;
             outline: 0;
-            transition: .2s ease
+            transition: box-shadow .2s ease
         }
 
         .auth-otp input:focus {
-            border-color: rgba(11,116,255, .5);
-            box-shadow: 0 0 0 4px rgba(11,116,255, .12)
+            box-shadow: 0 2px 10px rgba(0, 0, 0, .07), 0 0 0 2px rgba(159,34,32,.4)
         }
 
         .auth-loading {
@@ -5453,12 +5648,12 @@
         }
 
         .auth-spinner {
-            width: 56px;
-            height: 56px;
-            border-radius: 0;
+            width: 60px;
+            height: 60px;
+            border-radius: 19px;
             border: 0;
             background: center / contain no-repeat var(--data-loader);
-            animation: none
+            animation: nzoLoaderSoft 1.8s ease-in-out infinite
         }
 
         .auth-loading-text {
@@ -5475,7 +5670,7 @@
         }
 
         .auth-error.ok {
-            color: #0B74FF
+            color: #9F2220
         }
 
         .auth-submit {
@@ -5543,13 +5738,13 @@
         }
 
         .auth-social.apple .auth-social-mark {
-            background: #071c3f;
+            background: #3A1811;
             color: #fff
         }
 
         .dark .auth-social.apple .auth-social-mark {
-            background: #f4f8ff;
-            color: #07152b
+            background: #F9ECDD;
+            color: #2A140D
         }
 
         .auth-mode-switch {
@@ -5569,7 +5764,7 @@
         .auth-mode-link {
             border: 0;
             background: transparent;
-            color: #0B74FF;
+            color: #9F2220;
             font: inherit;
             font-weight: 900;
             cursor: pointer;
@@ -5577,11 +5772,16 @@
         }
 
         .auth-legal-preview {
-            border: 1px solid var(--line);
-            border-radius: 18px;
-            background: var(--card2);
+            border: 0;
+            border-radius: 999px;
+            background: var(--card);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, .06);
             padding: 0;
             overflow: hidden
+        }
+
+        .auth-legal-preview[open] {
+            border-radius: 24px
         }
 
         .auth-legal-preview summary {
@@ -5590,7 +5790,7 @@
             align-items: center;
             justify-content: space-between;
             gap: 12px;
-            padding: 12px 14px;
+            padding: 16px 20px;
             cursor: pointer;
             color: var(--text);
             font-size: 12px;
@@ -5603,7 +5803,7 @@
 
         .auth-legal-preview summary:after {
             content: "⌄";
-            color: #0B74FF;
+            color: #9F2220;
             transition: transform .18s ease
         }
 
@@ -5636,10 +5836,11 @@
         .deal-advanced-criteria,
         .receipt-card {
             margin-top: 12px;
-            padding: 14px;
-            border: 1px solid var(--line);
-            border-radius: 18px;
-            background: var(--card2)
+            padding: 16px 18px;
+            border: 0;
+            border-radius: 22px;
+            background: var(--card);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, .06)
         }
 
         .deal-advanced-criteria summary {
@@ -5660,7 +5861,7 @@
 
         .deal-advanced-criteria summary:after {
             content: "⌄";
-            color: #0B74FF;
+            color: #9F2220;
             transition: transform .18s ease
         }
 
@@ -5700,15 +5901,22 @@
         .deal-advanced-field input,
         .deal-advanced-field select {
             width: 100%;
-            min-height: 46px;
-            border: 1px solid var(--line);
-            border-radius: 16px;
-            background: var(--card);
+            min-height: 48px;
+            border: 0;
+            border-radius: 18px;
+            background: var(--card2);
             color: var(--text);
-            padding: 0 13px;
+            padding: 0 16px;
             font: inherit;
             font-size: 14px;
-            font-weight: 750
+            font-weight: 750;
+            outline: 0;
+            transition: box-shadow .2s ease
+        }
+
+        .deal-advanced-field input:focus,
+        .deal-advanced-field select:focus {
+            box-shadow: 0 0 0 2px rgba(159,34,32,.28)
         }
 
         .deal-advanced-field-wide {
@@ -5741,7 +5949,7 @@
         }
 
         .deal-period-head b {
-            color: #0B74FF;
+            color: #9F2220;
             font-size: 12px;
             font-weight: 950;
             text-align: right
@@ -5768,7 +5976,7 @@
         }
 
         .deal-period-option:hover {
-            border-color: rgba(11,116,255,.28);
+            border-color: rgba(159,34,32,.28);
             transform: translateY(-1px)
         }
 
@@ -5805,21 +6013,21 @@
             width: 10px;
             height: 10px;
             border-radius: 50%;
-            border: 2px solid #cbd5e1;
+            border: 2px solid #D8C4AE;
             box-sizing: border-box;
             background: transparent;
             flex: none
         }
 
         .deal-period-option:has(input:checked) {
-            background: color-mix(in srgb, #0B74FF 12%, var(--card) 88%);
-            border-color: rgba(11,116,255,.38);
-            box-shadow: 0 10px 24px rgba(11,116,255,.10)
+            background: color-mix(in srgb, #9F2220 12%, var(--card) 88%);
+            border-color: rgba(159,34,32,.38);
+            box-shadow: 0 10px 24px rgba(159,34,32,.10)
         }
 
         .deal-period-option:has(input:checked):before {
-            border-color: #0B74FF;
-            background: #0B74FF;
+            border-color: #9F2220;
+            background: #9F2220;
             box-shadow: inset 0 0 0 2px #ffffff
         }
 
@@ -5843,7 +6051,7 @@
 
         .receipt-card-head .tag {
             background: var(--chip);
-            color: #0B74FF;
+            color: #9F2220;
             border: 0
         }
 
@@ -5878,7 +6086,7 @@
             padding: 12px 13px;
             border: 1px solid var(--line);
             border-radius: 18px;
-            background: color-mix(in srgb, #0B74FF 8%, var(--card) 92%)
+            background: color-mix(in srgb, #9F2220 8%, var(--card) 92%)
         }
 
         .receipt-preview-cta b {
@@ -5902,7 +6110,7 @@
             display: grid;
             place-items: center;
             background: var(--chip);
-            color: #0B74FF;
+            color: #9F2220;
             font-style: normal;
             font-size: 16px;
             font-weight: 950;
@@ -5949,7 +6157,7 @@
 
         .obtain-card.obtain-success-card {
             padding: 18px;
-            border-color: color-mix(in srgb, #0B74FF 14%, var(--line));
+            border-color: color-mix(in srgb, #9F2220 14%, var(--line));
             box-shadow: 0 18px 48px rgba(15, 38, 72, .08)
         }
 
@@ -5973,12 +6181,12 @@
             height: 42px;
             border-radius: 15px;
             font-size: 21px;
-            background: color-mix(in srgb, #0B74FF 12%, var(--card));
-            box-shadow: inset 0 0 0 1px rgba(11,116,255,.08)
+            background: color-mix(in srgb, #9F2220 12%, var(--card));
+            box-shadow: inset 0 0 0 1px rgba(159,34,32,.08)
         }
 
         .obtain-success-card .obtain-title {
-            color: #0B74FF;
+            color: #9F2220;
             font-size: 21px;
             line-height: 1.05
         }
@@ -5996,7 +6204,7 @@
         .obtain-success-card .home-exchange-cta {
             min-height: 46px;
             border-radius: 16px;
-            box-shadow: 0 12px 26px rgba(11,116,255,.18)
+            box-shadow: 0 12px 26px rgba(159,34,32,.18)
         }
 
         .obtain-success-card .success-receipt {
@@ -6046,7 +6254,7 @@
         .obtain-success-card .success-receipt .receipt-action-icon {
             width: 18px;
             height: 18px;
-            color: #0B74FF
+            color: #9F2220
         }
 
         .receipt-actions-only {
@@ -6080,7 +6288,7 @@
         .receipt-actions-only .receipt-action-icon {
             width: 18px;
             height: 18px;
-            color: #0B74FF
+            color: #9F2220
         }
 
         .receipt-action-icon {
@@ -6122,7 +6330,7 @@
             gap: 10px;
             padding: 10px 12px;
             border-radius: 18px;
-            background: color-mix(in srgb, #0B74FF 10%, var(--card2) 90%)
+            background: color-mix(in srgb, #9F2220 10%, var(--card2) 90%)
         }
 
         .nzone-menu-head-mark {
@@ -6130,7 +6338,7 @@
             height: 34px;
             border-radius: 13px;
             background: var(--chip);
-            color: #0B74FF;
+            color: #9F2220;
             display: grid;
             place-items: center;
             font-size: 15px;
@@ -6221,7 +6429,7 @@
             display: none;
             align-items: flex-end;
             justify-content: center;
-            background: rgba(2, 12, 29, .58)
+            background: rgba(28, 13, 8, .58)
         }
 
         .receipt-modal-panel,
@@ -6330,7 +6538,7 @@
             display: grid;
             place-items: center;
             background: var(--chip);
-            color: #0B74FF;
+            color: #9F2220;
             font-size: 15px;
             font-weight: 950;
             flex: none
@@ -6536,7 +6744,7 @@
         .primary,
         .offer-cta,
         .home-offer-buy {
-            background: #0B74FF;
+            background: #9F2220;
             color: #ffffff
         }
 
@@ -6562,7 +6770,7 @@
         .switch {
             border-radius: 16px;
             background: var(--chip);
-            color: #0B74FF
+            color: #9F2220
         }
 
         .nav {
@@ -6590,7 +6798,7 @@
 
         .nav button.active {
             background: transparent;
-            color: #0B74FF
+            color: #9F2220
         }
 
         .nav b,
@@ -6636,7 +6844,7 @@
             border: 0;
             border-radius: 999px;
             padding: 0 16px;
-            background: #0B74FF;
+            background: #9F2220;
             color: #ffffff;
             font: inherit;
             font-size: 13px;
@@ -6645,7 +6853,7 @@
         }
 
         .mini-pill-btn.navy {
-            background: #02163B;
+            background: #3A1811;
             color: #ffffff
         }
 
@@ -6733,9 +6941,9 @@
         }
 
         .mini-action.primary {
-            background: linear-gradient(135deg, #0B74FF, #075CCC);
+            background: linear-gradient(135deg, #9F2220, #7A1613);
             color: #ffffff;
-            border-color: rgba(11,116,255,.3)
+            border-color: rgba(159,34,32,.3)
         }
 
         .mini-action.primary span,
@@ -6756,7 +6964,7 @@
             display: grid;
             place-items: center;
             background: var(--chip);
-            color: #0B74FF;
+            color: #9F2220;
             font-size: 24px;
             font-weight: 500
         }
@@ -6916,7 +7124,7 @@
         }
 
         .mini-label {
-            color: #0B74FF;
+            color: #9F2220;
             font-size: 12px;
             font-weight: 850;
             letter-spacing: .06em;
@@ -6948,7 +7156,7 @@
         }
 
         .mini-arrow {
-            color: #0B74FF;
+            color: #9F2220;
             font-weight: 700
         }
 
@@ -6974,7 +7182,7 @@
             width: 180px;
             height: 180px;
             border-radius: 50%;
-            border: 30px solid rgba(11,116,255,.08);
+            border: 30px solid rgba(159,34,32,.08);
             pointer-events: none
         }
 
@@ -7012,7 +7220,7 @@
             display: grid;
             place-items: center;
             background: var(--chip);
-            color: #0B74FF;
+            color: #9F2220;
             font-size: 22px;
             font-weight: 750;
             flex: none
@@ -7082,7 +7290,7 @@
         }
 
         .mini-tab.active {
-            background: #0B74FF;
+            background: #9F2220;
             color: #ffffff
         }
 
@@ -7119,7 +7327,7 @@
         }
 
         .mini-wallet-actions button.primary {
-            background: #0B74FF;
+            background: #9F2220;
             color: #ffffff
         }
 
@@ -7139,7 +7347,7 @@
             display: grid;
             place-items: center;
             background: var(--chip);
-            color: #0B74FF
+            color: #9F2220
         }
 
         .mini-activity-amount.in {
@@ -7177,7 +7385,7 @@
         }
 
         .mini-filter button.active {
-            background: #0B74FF;
+            background: #9F2220;
             color: #ffffff
         }
 
@@ -7222,7 +7430,7 @@
             width: 56px;
             height: 56px;
             border-radius: 18px;
-            background: #0B74FF;
+            background: #9F2220;
             color: #ffffff;
             font-size: 22px
         }
@@ -7256,18 +7464,18 @@
         }
 
         .light .app {
-            background: linear-gradient(180deg, #fbfdff 0%, #f5f9ff 48%, #ffffff 100%)
+            background: linear-gradient(180deg, #FDF8F2 0%, #F7EEE1 48%, #ffffff 100%)
         }
 
         .light .status {
-            background: #fbfdff;
-            color: #101827
+            background: #FDF8F2;
+            color: #2A140D
         }
 
         .light .mini-header,
         .light .flowhead,
         .light .nzone-detail-head {
-            color: #101827
+            color: #2A140D
         }
 
         .light .hello,
@@ -7275,12 +7483,12 @@
         .light .mini-subtitle,
         .light .sub,
         .light .mini-row-sub {
-            color: #647185
+            color: #7A6154
         }
 
         .light .section,
         .light .mini-section {
-            color: #66758a
+            color: #8A6F63
         }
 
         .light .mini-action,
@@ -7295,14 +7503,14 @@
         .light .recent-activity-list,
         .light .nzone-list,
         .light .checkout-card {
-            background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
-            border-color: #dce8f5;
-            box-shadow: 0 1px 2px rgba(15, 23, 42, .04), 0 14px 30px rgba(11, 66, 130, .08)
+            background: linear-gradient(180deg, #ffffff 0%, #FDF8F2 100%);
+            border-color: #EDE0D2;
+            box-shadow: 0 1px 2px rgba(42, 20, 13, .04), 0 14px 30px rgba(58, 24, 17, .10)
         }
 
         .light .checkout-card {
-            background: linear-gradient(155deg, #eef6ff 0%, #ffffff 42%, #fbfdff 100%);
-            border-color: #dce8f5
+            background: linear-gradient(155deg, #F5E8D6 0%, #ffffff 42%, #FDF8F2 100%);
+            border-color: #EDE0D2
         }
 
         .light .mini-action b,
@@ -7313,14 +7521,14 @@
         .light .checkout-mark,
         .light .market-mark,
         .light .auth-icon {
-            background: #e8f2ff;
-            color: #0B74FF
+            background: #F5DDD6;
+            color: #9F2220
         }
 
         .light .mini-action.primary {
-            background: linear-gradient(135deg, #0B74FF, #075CCC);
-            border-color: rgba(11,116,255,.3);
-            box-shadow: 0 16px 32px rgba(11, 116, 255, .20)
+            background: linear-gradient(135deg, #9F2220, #7A1613);
+            border-color: rgba(159,34,32,.3);
+            box-shadow: 0 16px 32px rgba(159, 34, 32, .20)
         }
 
         .light .mini-action.primary b {
@@ -7339,17 +7547,17 @@
         }
 
         .light .mini-ticker {
-            background: linear-gradient(90deg, #eef6ff, #f8fbff);
-            border-top: 1px solid #dce8f5;
-            border-bottom: 1px solid #dce8f5
+            background: linear-gradient(90deg, #F5E8D6, #FBF3E8);
+            border-top: 1px solid #EDE0D2;
+            border-bottom: 1px solid #EDE0D2
         }
 
         .light .mini-ticker span {
-            color: #66758a
+            color: #8A6F63
         }
 
         .light .mini-ticker b {
-            color: #172033
+            color: #2A140D
         }
 
         .light .mini-ticker i {
@@ -7358,20 +7566,20 @@
 
         .light .nav {
             background: rgba(255, 255, 255, .97);
-            border-top-color: #dce8f5;
-            box-shadow: 0 -12px 30px rgba(11, 66, 130, .09)
+            border-top-color: #EDE0D2;
+            box-shadow: 0 -12px 30px rgba(58, 24, 17, .09)
         }
 
         .light .nav button {
-            color: #6f7d90
+            color: #8A7264
         }
 
         .light .nav button.active {
-            color: #0B74FF
+            color: #9F2220
         }
 
         .light .nav button.active b {
-            background: #e8f2ff;
+            background: #F5DDD6;
             border-radius: 14px
         }
 
@@ -7394,20 +7602,20 @@
                 right: auto;
                 transform: translateX(-50%);
                 z-index: 220;
-                font-family: Inter, system-ui, sans-serif
+                font-family: Poppins, system-ui, sans-serif
             }
 
             .mobile-prototype-menu summary {
                 min-width: 42px;
                 height: 42px;
-                border: 1px solid rgba(15, 23, 42, .12);
+                border: 1px solid rgba(42, 20, 13, .12);
                 border-radius: 999px;
                 display: grid;
                 place-items: center;
                 padding: 0 14px;
                 background: rgba(255, 255, 255, .92);
                 color: #07111f;
-                box-shadow: 0 14px 34px rgba(15, 23, 42, .16);
+                box-shadow: 0 14px 34px rgba(42, 20, 13, .16);
                 backdrop-filter: blur(14px);
                 cursor: pointer;
                 font-size: 12px;
@@ -7425,10 +7633,10 @@
                 grid-template-columns: 1fr 1fr;
                 gap: 8px;
                 padding: 10px;
-                border: 1px solid rgba(15, 23, 42, .12);
+                border: 1px solid rgba(42, 20, 13, .12);
                 border-radius: 18px;
                 background: rgba(255, 255, 255, .96);
-                box-shadow: 0 20px 48px rgba(15, 23, 42, .18);
+                box-shadow: 0 20px 48px rgba(42, 20, 13, .18);
                 backdrop-filter: blur(18px)
             }
 
@@ -7459,17 +7667,17 @@
             }
 
             .mobile-prototype-panel .brand {
-                background: rgba(11,116,255, .12);
-                color: #075CCC
+                background: rgba(159,34,32,.12);
+                color: #7A1613
             }
 
             .mobile-prototype-panel .theme {
-                background: #02163b;
+                background: #3A1811;
                 color: #ffffff
             }
 
             .mobile-prototype-panel .profile.active {
-                background: #0B74FF;
+                background: #9F2220;
                 color: #ffffff
             }
 
@@ -7539,7 +7747,7 @@
             width: 120px;
             height: 120px;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(11,116,255,.06) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(159,34,32,.06) 0%, transparent 70%);
             pointer-events: none;
         }
         .home-exchange-title {
@@ -7575,7 +7783,7 @@
             transition: border-color .15s ease;
         }
         .home-currency-field:focus-within {
-            border-color: #0B74FF;
+            border-color: #9F2220;
         }
         .home-currency-field span {
             font-size: 9px;
@@ -7608,29 +7816,29 @@
             display: grid;
             place-items: center;
             background: var(--chip);
-            color: #0B74FF;
+            color: #9F2220;
             font-size: 18px;
             justify-self: center;
-            border: 1.5px solid rgba(11,116,255,.2);
+            border: 1.5px solid rgba(159,34,32,.2);
         }
         .home-exchange-cta {
             width: 100%;
             min-height: 50px;
             border: 0;
             border-radius: 17px;
-            background: #0B74FF;
+            background: #9F2220;
             color: #ffffff;
             font-family: inherit;
             font-size: 15px;
             font-weight: 900;
             cursor: pointer;
             letter-spacing: .01em;
-            box-shadow: 0 6px 20px rgba(11,116,255,.3);
+            box-shadow: 0 6px 20px rgba(159,34,32,.3);
             transition: transform .12s ease, box-shadow .12s ease;
         }
         .home-exchange-cta:active {
             transform: scale(.98);
-            box-shadow: 0 3px 10px rgba(11,116,255,.2);
+            box-shadow: 0 3px 10px rgba(159,34,32,.2);
         }
 
         .home-currency-btn {
@@ -7649,7 +7857,7 @@
             transition: border-color .15s ease;
         }
         .home-currency-btn:focus, .home-currency-btn:hover {
-            border-color: #0B74FF;
+            border-color: #9F2220;
         }
         .home-currency-label {
             font-size: 10px;
@@ -7692,10 +7900,10 @@
             max-height: 260px;
             overflow-y: auto;
             padding: 8px;
-            border: 1px solid rgba(11,116,255,.2);
+            border: 1px solid rgba(159,34,32,.2);
             border-radius: 18px;
-            background: color-mix(in srgb, var(--card) 96%, #0B74FF 4%);
-            box-shadow: 0 18px 38px rgba(2, 22, 59, .18)
+            background: color-mix(in srgb, var(--card) 96%, #9F2220 4%);
+            box-shadow: 0 18px 38px rgba(42, 20, 13, .18)
         }
 
         .deal-currency-title {
@@ -7726,7 +7934,7 @@
         .deal-currency-option:hover,
         .deal-currency-option:focus-visible {
             outline: 0;
-            background: rgba(11,116,255,.1)
+            background: rgba(159,34,32,.1)
         }
 
         .deal-currency-option b {
@@ -7826,16 +8034,19 @@
 
         .obtain-estimate,
         .obtain-error {
-            margin-top: 10px;
+            margin-top: 12px;
             color: var(--muted);
-            font-size: 11px;
+            font-size: 12px;
             font-weight: 750;
+            line-height: 1.5;
             text-align: center
         }
 
         .obtain-estimate b {
-            color: #0B74FF;
-            font-weight: 950
+            color: #9F2220;
+            font-size: 14px;
+            font-weight: 900;
+            letter-spacing: .01em
         }
 
         .obtain-error {
@@ -7852,8 +8063,9 @@
         }
 
         .obtain-loader-mark {
-            width: 96px;
-            height: 96px;
+            width: 76px;
+            height: 76px;
+            border-radius: 24px;
             background: center / contain no-repeat var(--data-loader);
             animation: nzoLoaderSoft 1.8s ease-in-out infinite
         }
@@ -7861,11 +8073,11 @@
         @keyframes nzoLoaderSoft {
             0%, 100% {
                 transform: scale(.96);
-                filter: drop-shadow(0 0 0 rgba(11,116,255,0))
+                filter: drop-shadow(0 0 0 rgba(159,34,32,0))
             }
             50% {
                 transform: scale(1.04);
-                filter: drop-shadow(0 10px 22px rgba(11,116,255,.18))
+                filter: drop-shadow(0 10px 22px rgba(159,34,32,.18))
             }
         }
 
@@ -7889,7 +8101,7 @@
         }
 
         .obtain-step b {
-            color: #0B74FF;
+            color: #9F2220;
             font-size: 10px;
             font-weight: 950
         }
@@ -7921,7 +8133,7 @@
         }
 
         .obtain-line.hero b {
-            color: #0B74FF;
+            color: #9F2220;
             font-size: 18px;
             letter-spacing: -.035em
         }
@@ -7961,9 +8173,9 @@
 
         .obtain-inline-form {
             display: grid;
-            grid-template-columns: minmax(0, 1fr) 44px minmax(0, 1fr);
-            align-items: center;
-            gap: 10px;
+            grid-template-columns: minmax(0, 1fr);
+            align-items: stretch;
+            gap: 6px;
             margin: 14px 0 10px;
             color: var(--muted);
             font-size: 12px;
@@ -8043,16 +8255,20 @@
         }
 
         .obtain-inline-switch {
-            width: 44px;
-            height: 44px;
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
             display: grid;
             place-items: center;
-            background: var(--chip);
-            color: #0B74FF;
-            font-size: 18px;
-            border: 1.5px solid rgba(11,116,255,.2);
-            justify-self: center
+            background: var(--card);
+            color: #9F2220;
+            font-size: 15px;
+            border: 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
+            justify-self: center;
+            margin: -21px 0;
+            position: relative;
+            z-index: 2
         }
 
         .obtain-form-card .home-currency-label {
@@ -8064,7 +8280,12 @@
 
         .obtain-form-card .home-currency-btn {
             justify-content: center;
-            min-height: 86px
+            min-height: 78px;
+            border: 0;
+            background: var(--card);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, .06);
+            border-radius: 22px;
+            padding: 14px 18px
         }
 
         .obtain-form-card .obtain-amount-field {
@@ -8086,15 +8307,25 @@
 
         .obtain-form-card .obtain-amount-row input {
             min-width: 0;
+            width: 100%;
             border: 0;
             outline: 0;
             background: transparent;
             color: var(--text);
             font: inherit;
-            font-size: 17px;
-            font-weight: 950;
-            letter-spacing: -.03em;
-            text-align: left
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: -.02em;
+            text-align: left;
+            text-overflow: ellipsis
+        }
+
+        .obtain-form-card .obtain-amount-row input.is-long {
+            font-size: 19px
+        }
+
+        .obtain-form-card .obtain-amount-row input.is-xlong {
+            font-size: 16px
         }
 
         .obtain-form-card .obtain-amount-row input::placeholder {
@@ -8104,7 +8335,7 @@
         .obtain-form-card .obtain-inline-target {
             border: 0;
             background: var(--chip);
-            color: #0B74FF;
+            color: #9F2220;
             border-radius: 999px;
             padding: 0 10px;
             min-height: 28px;
@@ -8121,7 +8352,8 @@
         }
 
         .obtain-form-card .obtain-cost-field .home-currency-code {
-            font-size: 17px;
+            font-size: 24px;
+            font-weight: 900;
             line-height: 1.05;
             white-space: nowrap
         }
@@ -8137,8 +8369,8 @@
         .obtain-inline-target {
             border: 0;
             border-radius: 999px;
-            background: rgba(11,116,255,.1);
-            color: #0B74FF;
+            background: rgba(159,34,32,.1);
+            color: #9F2220;
             padding: 7px 10px;
             font-family: inherit;
             cursor: pointer
@@ -8165,14 +8397,14 @@
             position: absolute;
             inset: 12px;
             border-radius: 999px;
-            border: 1px solid rgba(11,116,255,.16);
+            border: 1px solid rgba(159,34,32,.16);
             animation: obtainPulse 2.2s ease-in-out infinite
         }
 
         .obtain-loader-wrap:after {
             inset: 0;
             animation-delay: .35s;
-            border-color: rgba(11,116,255,.09)
+            border-color: rgba(159,34,32,.09)
         }
 
         .obtain-loader-dot {
@@ -8180,7 +8412,7 @@
             width: 8px;
             height: 8px;
             border-radius: 999px;
-            background: #0B74FF;
+            background: #9F2220;
             opacity: .25;
             animation: obtainBlink 1.25s ease-in-out infinite
         }
@@ -8235,8 +8467,8 @@
             margin-bottom: 12px;
             padding: 5px 9px;
             border-radius: 999px;
-            background: rgba(11,116,255,.1);
-            color: #0B74FF;
+            background: rgba(159,34,32,.1);
+            color: #9F2220;
             font-size: 10px;
             font-weight: 950
         }
@@ -8262,7 +8494,7 @@
         }
 
         .obtain-value-main b {
-            color: #0B74FF;
+            color: #9F2220;
             font-size: 31px;
             line-height: 1;
             font-weight: 950;
@@ -8296,12 +8528,14 @@
 
 
         .light .home-nzone-card {
-            background: var(--nzone-bg);
-            border: 1.5px solid var(--nzone-border);
+            background: var(--card);
+            border: 1.5px solid var(--line);
+            border-top: 3px solid var(--nzone-accent);
         }
         .dark .home-nzone-card {
             background: var(--card);
             border: 1px solid var(--line);
+            border-top: 3px solid var(--nzone-accent);
         }
         .home-nzone-badge {
             font-size: 10px;
@@ -8333,7 +8567,7 @@
             padding: 0 9px;
             border-radius: 999px;
             background: var(--chip);
-            color: #0B74FF;
+            color: #9F2220;
             font-size: 10px;
             font-weight: 950;
             white-space: nowrap
@@ -8344,7 +8578,7 @@
             min-height: 46px;
             border: 0;
             border-radius: 16px;
-            background: #0B74FF;
+            background: #9F2220;
             color: #ffffff;
             font: inherit;
             font-size: 13px;
@@ -8391,7 +8625,7 @@
             border: 1px solid var(--line);
             border-radius: 24px;
             background: linear-gradient(180deg, var(--card), color-mix(in srgb, var(--card2) 72%, transparent));
-            box-shadow: 0 10px 22px rgba(11, 116, 255, .05)
+            box-shadow: 0 10px 22px rgba(159, 34, 32, .05)
         }
 
         .seller-detail-main {
@@ -8446,7 +8680,7 @@
         }
 
         .seller-exchange-detail .seller-wide-cta {
-            background: #0B74FF;
+            background: #9F2220;
             color: #ffffff;
             border: 0
         }
@@ -8459,9 +8693,11 @@
         .pending-obtain-line {
             width: calc(100% - 56px);
             margin: 0 28px;
-            padding: 2px 0 4px;
-            border: 0;
-            background: transparent;
+            padding: 14px 16px;
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            background: var(--card);
+            box-shadow: var(--shadow);
             color: inherit;
             display: grid;
             grid-template-columns:minmax(0, 1fr) auto;
@@ -8487,7 +8723,7 @@
         }
 
         .pending-obtain-line i {
-            color: #0B74FF;
+            color: #9F2220;
             font-style: normal;
             font-weight: 950
         }
@@ -8516,97 +8752,15 @@
             gap: 8px
         }
 
-        .home-market-inline {
-            width: calc(100% - 56px);
-            margin: 0 28px 20px;
-            padding: 4px 0 8px;
-            border: 0;
-            background: transparent;
-            color: var(--text);
-            display: grid;
-            grid-template-columns: auto minmax(0, 1fr) auto;
-            align-items: center;
-            column-gap: 12px;
-            font: inherit;
-            text-align: left;
-            cursor: pointer;
-        }
-
-        .home-market-inline-icon {
-            width: 34px;
-            height: 34px;
-            display: grid;
-            place-items: center;
-            color: #0B74FF;
-            opacity: .96;
-            flex: none;
-        }
-
-        .home-market-inline-icon svg {
-            width: 24px;
-            height: 24px;
-            display: block;
-        }
-
-        .home-market-inline-copy {
-            min-width: 0;
-            display: grid;
-            gap: 2px;
-        }
-
-        .home-market-inline-copy strong {
-            display: block;
-            color: var(--text);
-            font-size: 14px;
-            line-height: 1.15;
-            font-weight: 820;
-            letter-spacing: -.01em;
-        }
-
-        .home-market-inline-copy small {
-            display: block;
-            color: var(--muted);
-            font-size: 12px;
-            line-height: 1.3;
-            font-weight: 520;
-        }
-
-        .home-market-inline-arrow {
-            color: #0B74FF;
-            font-size: 16px;
-            font-weight: 600;
-            opacity: .9;
-            transform: translateX(0);
-            transition: transform .18s ease, opacity .18s ease;
-        }
-
-        .home-market-inline:hover .home-market-inline-arrow {
-            transform: translateX(2px);
-            opacity: 1;
-        }
-
-        .home-market-inline:active {
-            transform: scale(.995);
-        }
-
-
-        .light .home-market-inline-icon {
-            color: #0B74FF;
-        }
-
-        .dark .home-market-inline-icon {
-            color: #4ea0ff;
-        }
-
         .light .home-exchange-card {
-            background: var(--card2);
+            background: var(--card);
             border-color: var(--line);
         }
 
         .light .home-nzone-dock {
-            background: linear-gradient(145deg, #edf6ff 0%, #ffffff 44%, #fbfdff 100%);
-            border-color: #dce8f5;
-            box-shadow: 0 1px 2px rgba(15, 23, 42, .04), 0 14px 30px rgba(11, 66, 130, .08);
+            background: linear-gradient(145deg, #F5E8D6 0%, #ffffff 44%, #FDF8F2 100%);
+            border-color: #EDE0D2;
+            box-shadow: 0 1px 2px rgba(42, 20, 13, .04), 0 14px 30px rgba(58, 24, 17, .10);
         }
 
         .light .home-nzone-center,
@@ -8615,7 +8769,7 @@
         }
 
         .light .home-nzone-dock-foot {
-            background: #f3f8ff;
+            background: #F7EEE1;
         }
 
         .dark .home-exchange-card {
@@ -8658,12 +8812,6 @@
 
         .view[data-view="home"] .home-exchange-card {
             margin: 0 20px;
-        }
-
-        .view[data-view="home"] .home-market-inline {
-            margin: 0 28px;
-            padding-top: 4px;
-            padding-bottom: 8px;
         }
 
         @media (max-width: 480px) {
@@ -8780,9 +8928,10 @@
         <div id="auth" class="auth">
             <form class="auth-shell" onsubmit="submitAuth(event)">
                 <div class="auth-panel">
-                    <div class="auth-head">
+                    <div id="authHead" class="auth-head">
                         <button id="authBackBtn" class="auth-back-btn auth-hidden" type="button" onclick="goBackAuth()" aria-label="Retour">←</button>
                         <img id="authLogo" class="logo big" data-auth-logo>
+                        <div id="authProgress" class="auth-progress auth-hidden" aria-hidden="true"><span></span><span></span><span></span></div>
                         <div id="authTitle" class="title auth-title">Connectez-vous</div>
                         <p id="authSubtitle" class="sub auth-sub">Accédez à votre espace N-Z0.</p>
                         <span id="authStepTag" class="auth-step-tag auth-hidden">Étape 1/3</span>
@@ -8795,18 +8944,18 @@
                         <label id="signupNameField" class="auth-field auth-hidden">
                             <span class="auth-label">Nom complet</span>
                             <span class="auth-input">
-                                <span class="auth-icon">✦</span>
                                 <input id="signupName" type="text" placeholder="ex. Hervé Ndzi" autocomplete="name" oninput="clearAuthError()">
                             </span>
                         </label>
                         <div id="identifierField" class="auth-field">
-                            <span id="identifierLabel" class="auth-label">Email</span>
-                            <div class="auth-contact-switch" role="tablist" aria-label="Choix du contact">
-                                <button id="authEmailOption" class="auth-contact-option active" type="button" onclick="setAuthContactType('email')" aria-pressed="true">Email</button>
-                                <button id="authPhoneOption" class="auth-contact-option" type="button" onclick="setAuthContactType('phone')" aria-pressed="false">Téléphone</button>
-                            </div>
+                            <span class="auth-field-top">
+                                <span id="identifierLabel" class="auth-label">Email</span>
+                                <span class="auth-contact-switch" role="tablist" aria-label="Choix du contact">
+                                    <button id="authEmailOption" class="auth-contact-option active" type="button" onclick="setAuthContactType('email')" aria-pressed="true">Email</button>
+                                    <button id="authPhoneOption" class="auth-contact-option" type="button" onclick="setAuthContactType('phone')" aria-pressed="false">Téléphone</button>
+                                </span>
+                            </span>
                             <span class="auth-input">
-                                <span id="emailPrefix" class="auth-prefix auth-prefix-email">@</span>
                                 <span id="phonePrefix" class="auth-prefix auth-hidden">
                                     <span id="phoneCountryFlag" class="auth-prefix-flag">🇨🇲</span>
                                     <select id="phoneCountrySelect" class="auth-country-select" onchange="changePhoneCountry(this.value)" aria-label="Pays du téléphone">
@@ -8822,30 +8971,26 @@
                         </div>
                         <label id="signupBirthField" class="auth-field auth-hidden">
                             <span class="auth-label">Date de naissance</span>
-                            <div class="auth-date-grid">
-                                <span class="auth-input auth-picker-input">
-                                    <input id="signupBirthDay" type="hidden" value="">
-                                    <button class="auth-picker-button" type="button" onclick="openAuthPicker('birthDay')" aria-label="Jour de naissance"><span id="signupBirthDayLabel">Jour</span><em>⌄</em></button>
-                                </span>
-                                <span class="auth-input auth-picker-input">
-                                    <input id="signupBirthMonth" type="hidden" value="">
-                                    <button class="auth-picker-button" type="button" onclick="openAuthPicker('birthMonth')" aria-label="Mois de naissance"><span id="signupBirthMonthLabel">Mois</span><em>⌄</em></button>
-                                </span>
-                                <span class="auth-input auth-picker-input">
-                                    <input id="signupBirthYear" type="hidden" value="">
-                                    <button class="auth-picker-button" type="button" onclick="openAuthPicker('birthYear')" aria-label="Année de naissance"><span id="signupBirthYearLabel">Année</span><em>⌄</em></button>
-                                </span>
-                            </div>
+                            <span class="auth-input auth-date-unified">
+                                <button class="auth-date-part is-empty" id="signupBirthDayBtn" type="button" onclick="openAuthPicker('birthDay')" aria-label="Jour de naissance"><span id="signupBirthDayLabel">Jour</span></button>
+                                <em class="auth-date-sep">/</em>
+                                <button class="auth-date-part is-empty" id="signupBirthMonthBtn" type="button" onclick="openAuthPicker('birthMonth')" aria-label="Mois de naissance"><span id="signupBirthMonthLabel">Mois</span></button>
+                                <em class="auth-date-sep">/</em>
+                                <button class="auth-date-part is-empty" id="signupBirthYearBtn" type="button" onclick="openAuthPicker('birthYear')" aria-label="Année de naissance"><span id="signupBirthYearLabel">Année</span></button>
+                                <input id="signupBirthDay" type="hidden" value="">
+                                <input id="signupBirthMonth" type="hidden" value="">
+                                <input id="signupBirthYear" type="hidden" value="">
+                            </span>
                         </label>
                         <label id="passwordField" class="auth-field">
                             <span class="auth-label">Mot de passe</span>
                             <span class="auth-input">
-                                <span class="auth-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17 10h-1V8a4 4 0 0 0-8 0v2H7a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2zm-7-2a2 2 0 1 1 4 0v2h-4V8zm2 8.75A1.75 1.75 0 1 1 12 13.25a1.75 1.75 0 0 1 0 3.5z"/></svg></span>
                                 <input id="loginPassword" type="password" placeholder="Votre mot de passe" autocomplete="current-password" oninput="clearAuthError()">
+                                <button class="auth-eye-btn" type="button" onclick="togglePasswordVisibility(this)" aria-label="Afficher le mot de passe"><svg viewBox="0 0 24 24"><path d="M2 12c2-4.2 5.8-7 10-7s8 2.8 10 7c-2 4.2-5.8 7-10 7s-8-2.8-10-7z"/><circle cx="12" cy="12" r="3"/><path class="auth-eye-slash" d="M3 3l18 18"/></svg></button>
                             </span>
                         </label>
                         <div id="signupLegalField" class="auth-field auth-hidden">
-                            <span class="auth-label">Avant l’envoi du code</span>
+                            <span class="auth-label sr-only">Avant l’envoi du code</span>
                             <details class="auth-legal-preview">
                                 <summary>Voir les CGU</summary>
                                 <div class="auth-legal-preview-body">
@@ -8919,7 +9064,6 @@
         APP_ICON_LIGHT = 'nzo_header_icon_clean.png',
         AUTH_VISUAL_DARK = 'nzo_auth_logo_dark_aligned.png',
         AUTH_VISUAL_LIGHT = 'nzo_auth_logo_light_aligned.png',
-        SPLASH_SVG_URL = 'nzo_splashscreen.svg',
         SPLASH_DURATION = 3800,
         AUTH_PHONE_COUNTRIES = [
             {key: 'CM', name: 'Cameroun', code: '+237', flag: '🇨🇲', sample: '6 99 00 11 22', groups: [1, 2, 2, 2, 2], maxDigits: 9, timezones: ['Africa/Douala'], locales: ['fr-cm', 'en-cm']},
@@ -8967,11 +9111,11 @@
             }
         ],
         SLIDE_FALLBACK_GRADIENTS = [
-            'linear-gradient(160deg, #02163b, #062d62 58%, #064e5b)',
-            'linear-gradient(160deg, #06152c, #0c2346)',
-            'linear-gradient(160deg, #071b38, #062d62)',
-            'linear-gradient(160deg, #02163b, #064e5b)',
-            'linear-gradient(160deg, #06152c, #071b38)'
+            'linear-gradient(160deg, #3A1811, #9F2220 58%, #F47521)',
+            'linear-gradient(160deg, #1C0D08, #3A1811)',
+            'linear-gradient(160deg, #7A1613, #9F2220)',
+            'linear-gradient(160deg, #3A1811, #F0A72C)',
+            'linear-gradient(160deg, #1C0D08, #4A241A)'
         ];
     let theme = 'light', current = 'home', prototypeProfile = 'user', splashTimer = null,
         authMode = 'login', authOtpSource = 'login', authPendingContact = '',
@@ -9322,6 +9466,8 @@
     }
 
     function authVisual() {
+        const compact = document.getElementById('authHead')?.classList.contains('compact');
+        if (compact) return L();
         return theme === 'dark' ? AUTH_VISUAL_DARK : AUTH_VISUAL_LIGHT
     }
 
@@ -9344,7 +9490,7 @@
     }
 
     function mountSplashAnimation() {
-        document.getElementById('splashVisual').innerHTML = `<object class="splash-svg" type="image/svg+xml" data="${SPLASH_SVG_URL}" aria-label="Logo animé N-Z0"></object>`
+        document.getElementById('splashVisual').innerHTML = `<img class="splash-svg" src="${AUTH_VISUAL_LIGHT}" alt="" aria-label="Logo N-Z0">`
     }
 
     function scheduleSplashHide() {
@@ -9611,6 +9757,15 @@
         setAuthMessage('')
     }
 
+    function togglePasswordVisibility(btn) {
+        const input = btn.parentElement.querySelector('input');
+        if (!input) return;
+        const reveal = input.type === 'password';
+        input.type = reveal ? 'text' : 'password';
+        btn.classList.toggle('is-open', reveal);
+        btn.setAttribute('aria-label', reveal ? 'Masquer le mot de passe' : 'Afficher le mot de passe')
+    }
+
     function syncSignupProfileUi() {
         signupProfile = 'user'
     }
@@ -9711,6 +9866,7 @@
         const targetLabel = document.getElementById(config.label);
         if (field) field.value = value;
         if (targetLabel) targetLabel.textContent = `${config.prefix || ''}${label || config.empty || value}`;
+        document.getElementById(config.field + 'Btn')?.classList.toggle('is-empty', !value);
         closeAuthPicker();
         clearAuthError()
     }
@@ -9776,7 +9932,6 @@
         const country = currentPhoneCountry();
         const input = document.getElementById('loginIdentifier');
         document.getElementById('identifierLabel').textContent = isPhone ? 'Téléphone' : 'Email';
-        document.getElementById('emailPrefix').classList.toggle('auth-hidden', isPhone);
         document.getElementById('phonePrefix').classList.toggle('auth-hidden', !isPhone);
         document.getElementById('phoneCountryFlag').textContent = country.flag;
         document.getElementById('phoneCountrySelect').value = country.key;
@@ -9974,8 +10129,20 @@
 
         document.getElementById('authLoading').classList.toggle('auth-hidden', !social);
         document.getElementById('authFields').classList.toggle('auth-hidden', social);
-        document.getElementById('authStepTag').classList.toggle('auth-hidden', !signup);
-        document.getElementById('authStepTag').textContent = `Étape ${signupStep}/3`;
+        const signupOtp = otp && authOtpSource === 'signup';
+        const inSignupFlow = signup || signupOtp;
+        const flowStep = signupOtp ? 3 : signupStep;
+        document.getElementById('authStepTag').classList.toggle('auth-hidden', !inSignupFlow);
+        document.getElementById('authStepTag').textContent = `Étape ${flowStep}/3`;
+        document.getElementById('authFields').classList.toggle('is-plain', signupLegal || otp);
+        document.getElementById('authHead').classList.toggle('compact', signup || otp);
+        document.getElementById('authProgress').classList.toggle('auth-hidden', !inSignupFlow);
+        document.querySelectorAll('#authProgress span').forEach((seg, i) => {
+            const n = i + 1;
+            seg.classList.toggle('done', n < flowStep);
+            seg.classList.toggle('current', n === flowStep)
+        });
+        syncAuthLogoImage(document.getElementById('authLogo'));
         document.getElementById('signupNameField').classList.toggle('auth-hidden', !signupInfo);
         document.getElementById('signupBirthField').classList.toggle('auth-hidden', !signupInfo);
         document.getElementById('signupLegalField').classList.toggle('auth-hidden', !signupLegal);
@@ -9985,7 +10152,11 @@
         document.getElementById('authSubmitBtn').classList.toggle('auth-hidden', social);
         document.getElementById('authSocialWrap').classList.toggle('auth-hidden', forgot || otp || social || signup);
         document.getElementById('loginPassword').autocomplete = signup ? 'new-password' : 'current-password';
-        document.getElementById('loginPassword').placeholder = signup ? 'Créez un mot de passe' : 'Votre mot de passe';
+        document.getElementById('loginPassword').placeholder = signup ? '8 caractères minimum' : 'Votre mot de passe';
+
+        const authRows = [...document.querySelectorAll('#authFields > .auth-field')];
+        authRows.forEach(row => row.classList.remove('is-first-visible'));
+        authRows.find(row => !row.classList.contains('auth-hidden'))?.classList.add('is-first-visible');
 
         if (mode === 'login') {
             document.getElementById('authTitle').textContent = 'Connectez-vous';
@@ -10602,7 +10773,7 @@
     function homeNzoneCarousel() {
         const gradients = {
             XAF: ['#f0fdf4','#dcfce7','#16a34a'],
-            EUR: ['#eff6ff','#dbeafe','#0B74FF'],
+            EUR: ['#FFF7E8','#FDECC8','#F0A72C'],
             GBP: ['#faf5ff','#ede9fe','#7c3aed'],
             XOF: ['#fffbeb','#fef3c7','#d97706']
         };
@@ -10616,7 +10787,7 @@
                 `--nzone-border:${g[1]};` +
                 `--nzone-accent:${g[2]};` +
                 `flex:0 0 72%;scroll-snap-align:start;border-radius:24px;padding:18px 20px;` +
-                `box-shadow:0 2px 12px rgba(11,66,130,.06);display:flex;flex-direction:column;` +
+                `box-shadow:0 2px 12px rgba(58, 24, 17, .06);display:flex;flex-direction:column;` +
                 `justify-content:space-between;min-height:116px;` +
                 `transform:scale(${active ? '1' : '.94'});opacity:${active ? '1' : '.65'};` +
                 `transition:transform .2s ease,opacity .2s ease;cursor:pointer" ` +
@@ -10646,7 +10817,7 @@
             `<div id="homeNzoneCarousel" style="display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:4px 28px 12px 24px;scrollbar-width:none">` +
             `${cards}` +
             `<button style="${openS}" type="button" onclick="startOpenNzone()">` +
-            `<span style="width:38px;height:38px;border-radius:14px;display:grid;place-items:center;background:var(--chip);color:#0B74FF;font-size:22px">+</span>` +
+            `<span style="width:38px;height:38px;border-radius:14px;display:grid;place-items:center;background:var(--chip);color:#9F2220;font-size:22px">+</span>` +
             `<span style="font-size:12px;font-weight:800;color:var(--text)">Ouvrir une cagnotte</span>` +
             `</button>` +
             `</div></section>`;
@@ -10699,7 +10870,7 @@
             '</div>' +
             '<button class="home-exchange-cta" type="button" onclick="startObtainFromHome()">Obtenir</button>' +
             '<div style="display:flex;justify-content:center;margin-top:12px">' +
-              '<span id="hRate2" style="display:inline-flex;align-items:center;gap:5px;background:var(--chip);color:#0B74FF;font-size:11px;font-weight:750;padding:5px 12px;border-radius:999px">' +
+              '<span id="hRate2" style="display:inline-flex;align-items:center;gap:5px;background:var(--chip);color:#9F2220;font-size:11px;font-weight:750;padding:5px 12px;border-radius:999px">' +
                 defaultRate + ' · taux indicatif' +
               '</span>' +
             '</div>' +
@@ -10810,9 +10981,30 @@
         if (error) error.textContent = ''
     }
 
+    function groupDigits(value) {
+        const raw = String(value || '').replace(/[^\d.,]/g, '');
+        if (!raw) return '';
+        const sep = raw.search(/[.,]/);
+        const intPart = sep === -1 ? raw : raw.slice(0, sep);
+        const rest = sep === -1 ? '' : raw.slice(sep);
+        return intPart.replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + rest
+    }
+
     function setObtainAmount(value) {
-        obtainFlow.amount = String(value || '').replace(/[^\d.,\s]/g, '');
+        const formatted = groupDigits(value);
+        obtainFlow.amount = formatted;
         obtainFlow.error = '';
+        const input = document.querySelector('.obtain-form-card .obtain-amount-row input');
+        if (input && input.value !== formatted) {
+            input.value = formatted;
+            const end = formatted.length;
+            try { input.setSelectionRange(end, end) } catch (e) {}
+        }
+        if (input) {
+            const len = formatted.replace(/\s/g, '').length;
+            input.classList.toggle('is-long', len > 7 && len <= 10);
+            input.classList.toggle('is-xlong', len > 10)
+        }
         syncObtainEstimate()
     }
 
@@ -11167,8 +11359,8 @@
 
     function nzoneRow(currency) {
         const data = nzoneDetailData(currency);
-        const accents = { XAF: '#22a06b', EUR: '#0B74FF', GBP: '#7c3aed', XOF: '#d97706' };
-        const accent = accents[currency] || '#0B74FF';
+        const accents = { XAF: '#22a06b', EUR: '#F0A72C', GBP: '#7c3aed', XOF: '#d97706' };
+        const accent = accents[currency] || '#9F2220';
         return `<div class="nzone nzone-clickable" role="button" tabindex="0" onclick="openNzoneDetail('${currency}')" onkeydown="if(event.key==='Enter'){openNzoneDetail('${currency}')}">
   <div class="nzone-main">
     <div class="flag">${data.flag}</div>
@@ -11184,7 +11376,7 @@
     function walletsScreen() {
         const currencies = openedNzoneCurrencies();
         const rows = currencies.map(nzoneRow).join('');
-        const addBtn = `<button type="button" onclick="startOpenNzone()" style="width:100%;padding:16px;border:1.5px dashed var(--line);border-radius:16px;background:transparent;color:var(--muted);font-family:inherit;font-size:13px;font-weight:800;cursor:pointer;margin-top:8px;display:flex;align-items:center;justify-content:center;gap:8px"><span style="width:24px;height:24px;border-radius:8px;background:var(--chip);color:#0B74FF;display:grid;place-items:center;font-size:14px">+</span> Ouvrir une N-Zone</button>`;
+        const addBtn = `<button type="button" onclick="startOpenNzone()" style="width:100%;padding:16px;border:1.5px dashed var(--line);border-radius:16px;background:transparent;color:var(--muted);font-family:inherit;font-size:13px;font-weight:800;cursor:pointer;margin-top:8px;display:flex;align-items:center;justify-content:center;gap:8px"><span style="width:24px;height:24px;border-radius:8px;background:var(--chip);color:#9F2220;display:grid;place-items:center;font-size:14px">+</span> Ouvrir une N-Zone</button>`;
         return `${appHeader('N-Zones', 'Vos espaces devises', '')}
 <div style="padding:0 20px 24px">
   <div style="padding:0 2px">${rows}</div>
@@ -11611,8 +11803,18 @@ ${obtainDealCard(sourceCurrency)}${nzonePendingObtainBlock(sourceCurrency)}`
         return `<div class="flowhead"><button class="back" onclick="go('nzoneDetail')">←</button><div><div class="flowtitle">${title}</div><div class="sub">${sub}</div></div></div>`
     }
 
-    function updateNzoneOperationAmount(value) {
+    function applyGroupedInput(el, raw) {
+        if (!el) return;
+        const formatted = groupDigits(raw);
+        if (el.value !== formatted) {
+            el.value = formatted;
+            try { el.setSelectionRange(formatted.length, formatted.length) } catch (e) {}
+        }
+    }
+
+    function updateNzoneOperationAmount(value, el) {
         nzoneOperation.amount = String(value || '').replace(/[^\d.]/g, '');
+        applyGroupedInput(el, nzoneOperation.amount);
         const meta = currentNzoneMeta();
         if (!meta) return;
         const amount = Number(nzoneOperation.amount) || 0;
@@ -11799,7 +12001,7 @@ ${obtainDealCard(sourceCurrency)}${nzonePendingObtainBlock(sourceCurrency)}`
         const title = type === 'sell' ? 'Offre de vente publiée' : type === 'withdraw' ? 'Retrait lancé' : 'Dépôt confirmé';
         const detail = type === 'sell' ? `${amount} proposés contre ${nzoneOperation.target}` : type === 'withdraw' ? `${amount} en cours de retrait` : `${amount} ajoutés à la N-zone`;
         const market = type === 'sell' ? `<button class="btn secondary" onclick="go('xchange')">Voir le marché</button>` : '';
-        return `${nzoneFlowHeader(title, nzoneDetailData().name)}<div class="card"><div style="font-size:42px;color:#0B74FF;font-weight:950">✓</div><div class="title" style="font-size:21px;margin-top:10px">${title}</div><p class="sub" style="margin-top:10px">${detail}</p><button class="btn primary" style="margin-top:18px" onclick="go('nzoneDetail')">Retour à la N-zone</button>${market}</div>`
+        return `${nzoneFlowHeader(title, nzoneDetailData().name)}<div class="card"><div style="font-size:42px;color:#9F2220;font-weight:950">✓</div><div class="title" style="font-size:21px;margin-top:10px">${title}</div><p class="sub" style="margin-top:10px">${detail}</p><button class="btn primary" style="margin-top:18px" onclick="go('nzoneDetail')">Retour à la N-zone</button>${market}</div>`
     }
 
     function nzoneCashScreen(type) {
@@ -11811,7 +12013,7 @@ ${obtainDealCard(sourceCurrency)}${nzonePendingObtainBlock(sourceCurrency)}`
         const invalid = amount < meta.min || !nzoneOperation.method;
         const verb = type === 'withdraw' ? 'retirer' : 'déposer';
         const button = type === 'withdraw' ? `Retirer depuis ma N-zone ${meta.currency}` : `Déposer sur ma N-zone ${meta.currency}`;
-        return `${nzoneFlowHeader(nzoneOperationTitle(type), nzoneDetailData().name)}${nzoneOperationSummary(meta)}<div class="field"><label>Montant à ${verb}</label><input type="number" min="${meta.min}" value="${nzoneOperation.amount}" oninput="updateNzoneOperationAmount(this.value)"><small id="nzoneOpAmountHint" class="xsheet-hint ${amount < meta.min ? 'error' : ''}">${amount < meta.min ? `Minimum : ${xamount(meta.min, meta.currency)}` : `Minimum requis : ${xamount(meta.min, meta.currency)}`}</small></div>${nzoneCheckout(meta, type)}<div class="card"><button id="nzoneOpSubmit" class="btn primary" onclick="submitNzoneOperation('${type}')" ${invalid ? 'disabled' : ''}>${button}</button><button class="xsheet-link" style="width:100%;margin-top:12px" onclick="go('nzoneDetail')">Annuler</button></div>`
+        return `${nzoneFlowHeader(nzoneOperationTitle(type), nzoneDetailData().name)}${nzoneOperationSummary(meta)}<div class="field"><label>Montant à ${verb}</label><input type="text" inputmode="decimal" value="${groupDigits(nzoneOperation.amount)}" oninput="updateNzoneOperationAmount(this.value, this)"><small id="nzoneOpAmountHint" class="xsheet-hint ${amount < meta.min ? 'error' : ''}">${amount < meta.min ? `Minimum : ${xamount(meta.min, meta.currency)}` : `Minimum requis : ${xamount(meta.min, meta.currency)}`}</small></div>${nzoneCheckout(meta, type)}<div class="card"><button id="nzoneOpSubmit" class="btn primary" onclick="submitNzoneOperation('${type}')" ${invalid ? 'disabled' : ''}>${button}</button><button class="xsheet-link" style="width:100%;margin-top:12px" onclick="go('nzoneDetail')">Annuler</button></div>`
     }
 
     function nzoneSellTargetOptions(meta) {
@@ -11826,7 +12028,7 @@ ${obtainDealCard(sourceCurrency)}${nzonePendingObtainBlock(sourceCurrency)}`
         const meta = currentNzoneMeta();
         const amount = Number(nzoneOperation.amount) || 0;
         const invalid = amount < meta.min || !nzoneOperation.target || !nzoneOperation.rate;
-        return `${nzoneFlowHeader('Vendre des devises', nzoneDetailData().name)}<div class="nzone-exchange-field"><label>N-zone source</label>${nzoneSellSourcePicker()}</div><div class="nzone-exchange-field"><label>Je veux vendre</label><div class="nzone-exchange-control"><input type="number" min="${meta.min}" value="${nzoneOperation.amount}" oninput="updateNzoneOperationAmount(this.value)"><span class="nzone-exchange-unit">${meta.currency}</span></div><small id="nzoneOpAmountHint" class="xsheet-hint ${amount < meta.min ? 'error' : ''}">${amount < meta.min ? `Minimum : ${xamount(meta.min, meta.currency)}` : `Minimum requis : ${xamount(meta.min, meta.currency)}`}</small></div><div class="nzone-exchange-field"><label>Contre</label>${nzoneSellTargetPicker(meta)}</div><div class="nzone-exchange-field"><label>Taux indicatif</label><div id="nzoneSellRateValue" class="nzone-exchange-display">${nzoneIndicativeRateLabel(meta.currency, nzoneOperation.target)}</div></div><div class="nzone-exchange-field"><label>Je recevrai</label><div id="nzoneSellReceiveValue" class="nzone-exchange-display">${nzoneSellComputedReceive(meta)}</div></div><div class="nzone-exchange-actions"><button id="nzoneOpSubmit" class="btn primary" onclick="submitNzoneOperation('sell')" ${invalid ? 'disabled' : ''}>Publier mon offre de vente</button><button class="xsheet-link" style="width:100%;margin-top:12px" onclick="go('nzoneDetail')">Annuler</button></div>`
+        return `${nzoneFlowHeader('Vendre des devises', nzoneDetailData().name)}<div class="nzone-exchange-field"><label>N-zone source</label>${nzoneSellSourcePicker()}</div><div class="nzone-exchange-field"><label>Je veux vendre</label><div class="nzone-exchange-control"><input type="text" inputmode="decimal" value="${groupDigits(nzoneOperation.amount)}" oninput="updateNzoneOperationAmount(this.value, this)"><span class="nzone-exchange-unit">${meta.currency}</span></div><small id="nzoneOpAmountHint" class="xsheet-hint ${amount < meta.min ? 'error' : ''}">${amount < meta.min ? `Minimum : ${xamount(meta.min, meta.currency)}` : `Minimum requis : ${xamount(meta.min, meta.currency)}`}</small></div><div class="nzone-exchange-field"><label>Contre</label>${nzoneSellTargetPicker(meta)}</div><div class="nzone-exchange-field"><label>Taux indicatif</label><div id="nzoneSellRateValue" class="nzone-exchange-display">${nzoneIndicativeRateLabel(meta.currency, nzoneOperation.target)}</div></div><div class="nzone-exchange-field"><label>Je recevrai</label><div id="nzoneSellReceiveValue" class="nzone-exchange-display">${nzoneSellComputedReceive(meta)}</div></div><div class="nzone-exchange-actions"><button id="nzoneOpSubmit" class="btn primary" onclick="submitNzoneOperation('sell')" ${invalid ? 'disabled' : ''}>Publier mon offre de vente</button><button class="xsheet-link" style="width:100%;margin-top:12px" onclick="go('nzoneDetail')">Annuler</button></div>`
     }
 
     function openNzoneHeader(sub = 'Ouverture de N-zone') {
@@ -11872,8 +12074,9 @@ ${obtainDealCard(sourceCurrency)}${nzonePendingObtainBlock(sourceCurrency)}`
         go('openNzone')
     }
 
-    function updateOpenNzoneAmount(value) {
+    function updateOpenNzoneAmount(value, el) {
         openNzone.amount = String(value || '').replace(/[^\d.]/g, '');
+        applyGroupedInput(el, openNzone.amount);
         const meta = nzoneMeta(openNzone.currency);
         if (!meta) return;
         const amount = Number(openNzone.amount) || 0;
@@ -11969,7 +12172,7 @@ ${obtainDealCard(sourceCurrency)}${nzonePendingObtainBlock(sourceCurrency)}`
         if (!meta) return openNzoneChooseScreen();
         const amount = Number(openNzone.amount) || 0;
         const invalid = amount < meta.min || !openNzone.method;
-        return `${openNzoneHeader(`Activation ${meta.currency}`)}<div class="card"><div class="row"><div class="row"><div class="flag">${meta.flag}</div><div class="col"><b>N-zone ${meta.currency}</b><span class="small">${meta.country}</span></div></div><span class="tag">${meta.currency}</span></div><p class="sub" style="margin-top:12px">Pour activer ta N-zone ${meta.currency}, effectue un premier dépôt minimum de ${xamount(meta.min, meta.currency)}.</p></div><div class="field"><label>Montant du premier dépôt</label><input type="number" min="${meta.min}" value="${openNzone.amount}" oninput="updateOpenNzoneAmount(this.value)"><small id="openNzoneAmountHint" class="xsheet-hint ${amount < meta.min ? 'error' : ''}">${amount < meta.min ? `Minimum : ${xamount(meta.min, meta.currency)}` : `Minimum requis : ${xamount(meta.min, meta.currency)}`}</small></div>${openNzoneCheckout(meta)}<div class="card"><button id="openNzoneSubmit" class="btn primary" onclick="activateOpenNzone()" ${invalid ? 'disabled' : ''}>Déposer et activer ma N-zone ${meta.currency}</button><button class="xsheet-link" style="width:100%;margin-top:12px" onclick="go('wallets')">Annuler</button></div>`
+        return `${openNzoneHeader(`Activation ${meta.currency}`)}<div class="card"><div class="row"><div class="row"><div class="flag">${meta.flag}</div><div class="col"><b>N-zone ${meta.currency}</b><span class="small">${meta.country}</span></div></div><span class="tag">${meta.currency}</span></div><p class="sub" style="margin-top:12px">Pour activer ta N-zone ${meta.currency}, effectue un premier dépôt minimum de ${xamount(meta.min, meta.currency)}.</p></div><div class="field"><label>Montant du premier dépôt</label><input type="text" inputmode="decimal" value="${groupDigits(openNzone.amount)}" oninput="updateOpenNzoneAmount(this.value, this)"><small id="openNzoneAmountHint" class="xsheet-hint ${amount < meta.min ? 'error' : ''}">${amount < meta.min ? `Minimum : ${xamount(meta.min, meta.currency)}` : `Minimum requis : ${xamount(meta.min, meta.currency)}`}</small></div>${openNzoneCheckout(meta)}<div class="card"><button id="openNzoneSubmit" class="btn primary" onclick="activateOpenNzone()" ${invalid ? 'disabled' : ''}>Déposer et activer ma N-zone ${meta.currency}</button><button class="xsheet-link" style="width:100%;margin-top:12px" onclick="go('wallets')">Annuler</button></div>`
     }
 
     function openNzoneLoadingScreen() {
@@ -11979,7 +12182,7 @@ ${obtainDealCard(sourceCurrency)}${nzonePendingObtainBlock(sourceCurrency)}`
     function openNzoneSuccessScreen() {
         const meta = nzoneMeta(openNzone.currency);
         if (!meta) return openNzoneChooseScreen();
-        return `${openNzoneHeader('N-zone activée')}<div class="card"><div style="font-size:42px;color:#0B74FF;font-weight:950">✓</div><div class="title" style="font-size:21px;margin-top:10px">Cagnotte ${meta.currency} activée</div><div class="open-nzone-success-ref">${openNzone.ref}</div><p class="sub" style="margin-top:12px">Solde initial : ${xamount(Number(openNzone.amount), meta.currency)}</p><button class="btn primary" style="margin-top:18px" onclick="go('xchange')">Aller au deal</button><button class="btn secondary" onclick="go('wallets')">Retour aux cagnottes</button></div>`
+        return `${openNzoneHeader('N-zone activée')}<div class="card"><div style="font-size:42px;color:#9F2220;font-weight:950">✓</div><div class="title" style="font-size:21px;margin-top:10px">Cagnotte ${meta.currency} activée</div><div class="open-nzone-success-ref">${openNzone.ref}</div><p class="sub" style="margin-top:12px">Solde initial : ${xamount(Number(openNzone.amount), meta.currency)}</p><button class="btn primary" style="margin-top:18px" onclick="go('xchange')">Aller au deal</button><button class="btn secondary" onclick="go('wallets')">Retour aux cagnottes</button></div>`
     }
 
     function openNzoneScreen() {
