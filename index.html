@@ -99,8 +99,8 @@
         }
 
         .ctrl.brand {
-            background: rgba(159,34,32,.12);
-            color: #7A1613
+            background: rgba(var(--primary-rgb),.12);
+            color: var(--primary-strong)
         }
 
         .ctrl.theme {
@@ -114,7 +114,7 @@
         }
 
         .ctrl.profile.active {
-            background: #9F2220;
+            background: var(--primary);
             color: #ffffff
         }
 
@@ -169,8 +169,8 @@
 
         .control-submenu button:hover,
         .control-nested[open] > summary {
-            background: rgba(159,34,32,.12);
-            color: #7A1613
+            background: rgba(var(--primary-rgb),.12);
+            color: var(--primary-strong)
         }
 
         .control-nested > summary {
@@ -182,7 +182,7 @@
         .control-nested > summary:after {
             content: "⌄";
             font-size: 13px;
-            color: #9F2220
+            color: var(--primary-ink)
         }
 
         .control-nested[open] > summary:after {
@@ -241,20 +241,74 @@
             position: relative
         }
 
+        /* Les tokens de marque sont portes par .light / .dark, qui vivent sur
+           #screen. Or la chrome du prototype (.controls, .ctrl, le menu
+           mobile) est SOEUR de .phone, donc hors de #screen : sans ce :root
+           les var() n'y resolvent pas et les regles deviennent invalides
+           (le bouton "Utilisateur" perdait son fond et passait en blanc sur
+           blanc). Valeurs charte, identiques au versant clair. */
+        :root {
+            --primary: #9F2220;
+            --primary-rgb: 159, 34, 32;
+            --primary-strong: #7A1613;
+            --primary-ink: #9F2220;
+            --ok: #16a34a;
+            --warn: #d97706;
+            --down: #ef4444;
+        }
+
         .dark {
+            /* Marque, versant sombre : le rouge charte 9F2220 ne tient pas sur le brun
+               (contraste 2.07 sur --card, il en faut 4.5). On eclaircit le rouge de
+               remplissage et on promeut l'orange charte comme encre (texte, icones). */
+            --primary: #D42E2B;
+            --primary-rgb: 212, 46, 43;
+            --primary-strong: #E04A47;
+            --primary-ink: #F47521;
+            /* Semantique : les verts/ambres/rouges d'origine sont cales pour du
+               texte sur blanc ; sur brun ils tombent entre 4.2 et 5.0. On les monte. */
+            --ok: #45D48A;
+            --warn: #F0A72C;
+            --down: #F58C8C;
+            --acc-xaf: #4ADE80;
+            --acc-eur: #F0A72C;
+            --acc-gbp: #A78BFA;
+            --acc-xof: #FDBA74;
+            --acc-xaf-ref: #4ADE80;
+            --acc-xaf-soft: #4ADE8029;
+            --acc-eur-soft: #F0A72C29;
+            --acc-gbp-soft: #A78BFA29;
+            --acc-xof-soft: #FDBA7429;
             --bg: #1C0D08;
             --card: #3A1811;
             --card2: #4A241A;
             --text: #F9ECDD;
             --muted: #C9A896;
-            --line: rgba(249,236,221,.08);
+            --line: rgba(249,236,221,.13);
             --nav: rgba(28,13,8,.96);
             --chip: rgba(244,117,33,.18);
-            --shadow: 0 12px 28px rgba(0,0,0,.35);
+            --shadow: inset 0 1px 0 rgba(249,236,221,.055), 0 14px 30px rgba(0,0,0,.42);
             --data-loader: url('nzo_header_icon_clean.png')
         }
 
         .light {
+            /* Marque, versant clair : valeurs charte inchangees. */
+            --primary: #9F2220;
+            --primary-rgb: 159, 34, 32;
+            --primary-strong: #7A1613;
+            --primary-ink: #9F2220;
+            --ok: #16a34a;
+            --warn: #d97706;
+            --down: #ef4444;
+            --acc-xaf: #16a34a;
+            --acc-eur: #F0A72C;
+            --acc-gbp: #7c3aed;
+            --acc-xof: #d97706;
+            --acc-xaf-ref: #22a06b;
+            --acc-xaf-soft: #16a34a22;
+            --acc-eur-soft: #F0A72C22;
+            --acc-gbp-soft: #7c3aed22;
+            --acc-xof-soft: #d9770622;
             --bg: #F9ECDD;
             --card: #FFFFFF;
             --card2: #F3E2CC;
@@ -262,7 +316,7 @@
             --muted: #8A6F63;
             --line: rgba(58,24,17,.10);
             --nav: rgba(250,246,241,.96);
-            --chip: rgba(159,34,32,.09);
+            --chip: rgba(var(--primary-rgb),.09);
             --shadow: 0 8px 24px rgba(58,24,17,.08);
             --data-loader: url('nzo_header_icon_clean.png')
         }
@@ -320,8 +374,8 @@
         /* Chips et tags brand en light */
         .light .pill.teal,
         .light .tag {
-            background: rgba(159,34,32,.09);
-            color: #7A1613;
+            background: rgba(var(--primary-rgb),.09);
+            color: var(--primary-strong);
         }
 
         .light .filter-chip,
@@ -336,9 +390,9 @@
         .light .filter-chip.active,
         .light .xfilter.active,
         .light .xchange-filter-picker[open] {
-            background: rgba(159,34,32,.10);
-            border: 1px solid rgba(159,34,32,.25);
-            color: #7A1613;
+            background: rgba(var(--primary-rgb),.10);
+            border: 1px solid rgba(var(--primary-rgb),.25);
+            color: var(--primary-strong);
             box-shadow: none;
         }
 
@@ -355,9 +409,9 @@
         }
 
         .light .note {
-            background: rgba(159,34,32,.07);
-            color: #7A1613;
-            border: 1px solid rgba(159,34,32,.15);
+            background: rgba(var(--primary-rgb),.07);
+            color: var(--primary-strong);
+            border: 1px solid rgba(var(--primary-rgb),.15);
         }
 
         /* Badges statut light */
@@ -489,7 +543,7 @@
             display: block;
             width: 14px;
             height: 7px;
-            background: #9F2220;
+            background: var(--primary);
             border-radius: 2px;
             margin: 1px
         }
@@ -507,7 +561,14 @@
             inset: 0;
             display: none;
             flex-direction: column;
-            overflow-y: hidden;
+            /* 'auto' et non 'hidden' : le defilement etait conditionne a la classe
+               can-scroll, posee par une mesure JS (scrollHeight > clientHeight).
+               Des que cette mesure est fausse ou perimee — hauteur de viewport
+               mal calculee, barre d'adresse mobile, rotation — le contenu se
+               retrouvait coupe ET impossible a atteindre. En 'auto' il n'y a pas
+               de scrollbar quand tout tient, et le contenu reste toujours
+               accessible sinon. can-scroll ne pilote plus que la mise en page. */
+            overflow-y: auto;
             overscroll-behavior: contain;
             -webkit-overflow-scrolling: touch;
             touch-action: pan-x pan-y;
@@ -579,7 +640,7 @@
             width: 42px;
             height: 42px;
             border-radius: 16px;
-            background: linear-gradient(135deg, #9F2220, #78ffdf);
+            background: linear-gradient(135deg, var(--primary), #78ffdf);
             color: #062447;
             display: grid;
             place-items: center;
@@ -615,7 +676,7 @@
             top: -75px;
             width: 190px;
             height: 190px;
-            border: 36px solid rgba(159,34,32,.14);
+            border: 36px solid rgba(var(--primary-rgb),.14);
             border-radius: 50%
         }
 
@@ -653,10 +714,10 @@
         }
 
         .balance-tab.active {
-            background: color-mix(in srgb, #9F2220 18%, var(--card) 82%);
-            border-color: rgba(159,34,32,.35);
+            background: color-mix(in srgb, var(--primary) 18%, var(--card) 82%);
+            border-color: rgba(var(--primary-rgb),.35);
             color: var(--text);
-            box-shadow: 0 6px 16px rgba(159,34,32,.12)
+            box-shadow: 0 6px 16px rgba(var(--primary-rgb),.12)
         }
 
         .balance-caption {
@@ -740,7 +801,7 @@
         /* Pill/chip active (devise sélectionnée) */
         .light .card.hero .balance-tab.active,
         .light .card.hero .pill.active {
-            background: #9F2220 !important;
+            background: var(--primary) !important;
             color: #ffffff !important
         }
 
@@ -754,7 +815,7 @@
 
         .pill.teal, .tag {
             background: var(--chip);
-            color: #9F2220
+            color: var(--primary-ink)
         }
 
         .tag {
@@ -766,12 +827,12 @@
 
         .tag.warn {
             background: rgba(245, 158, 11, .13);
-            color: #d97706
+            color: var(--warn)
         }
 
         .tag.lock {
             background: rgba(239, 68, 68, .12);
-            color: #ef4444
+            color: var(--down)
         }
 
         .note {
@@ -779,7 +840,7 @@
             padding: 12px 14px;
             border-radius: 18px;
             background: var(--chip);
-            color: #9F2220;
+            color: var(--primary-ink);
             font-size: 12px;
             font-weight: 800;
             line-height: 1.45
@@ -810,7 +871,7 @@
             border-radius: 15px;
             background: var(--chip);
             margin: 0 auto 8px;
-            color: #9F2220;
+            color: var(--primary-ink);
             font-size: 20px
         }
 
@@ -835,7 +896,7 @@
             min-height: 82px;
             border: 1px solid var(--line);
             border-radius: 24px;
-            background: linear-gradient(145deg, color-mix(in srgb, var(--card) 94%, #9F2220 6%), var(--card));
+            background: linear-gradient(145deg, color-mix(in srgb, var(--card) 94%, var(--primary) 6%), var(--card));
             color: var(--text);
             box-shadow: var(--shadow);
             padding: 13px;
@@ -849,8 +910,8 @@
         .quick-action.featured {
             grid-column: 1 / -1;
             min-height: 76px;
-            background: linear-gradient(135deg, rgba(159,34,32,.28), var(--card));
-            border-color: rgba(159,34,32,.34)
+            background: linear-gradient(135deg, rgba(var(--primary-rgb),.28), var(--card));
+            border-color: rgba(var(--primary-rgb),.34)
         }
 
         .quick-action b {
@@ -860,7 +921,7 @@
             display: grid;
             place-items: center;
             background: var(--chip);
-            color: #9F2220;
+            color: var(--primary-ink);
             font-size: 19px;
             flex: none
         }
@@ -889,9 +950,9 @@
             width: calc(100% - 32px);
             margin: 0 16px 16px;
             padding: 17px;
-            border: 1px solid rgba(159,34,32,.32);
+            border: 1px solid rgba(var(--primary-rgb),.32);
             border-radius: 28px;
-            background: radial-gradient(circle at 90% 0, rgba(159,34,32,.26), transparent 38%), linear-gradient(145deg, color-mix(in srgb, var(--card) 86%, #9F2220 14%), var(--card));
+            background: radial-gradient(circle at 90% 0, rgba(var(--primary-rgb),.26), transparent 38%), linear-gradient(145deg, color-mix(in srgb, var(--card) 86%, var(--primary) 14%), var(--card));
             color: var(--text);
             box-shadow: var(--shadow);
             cursor: pointer;
@@ -909,7 +970,7 @@
             bottom: -58px;
             width: 150px;
             height: 150px;
-            border: 28px solid rgba(159,34,32,.1);
+            border: 28px solid rgba(var(--primary-rgb),.1);
             border-radius: 50%
         }
 
@@ -925,7 +986,7 @@
             width: 48px;
             height: 48px;
             border-radius: 18px;
-            background: #9F2220;
+            background: var(--primary);
             color: #ffffff;
             display: grid;
             place-items: center;
@@ -936,7 +997,7 @@
 
         .market-kicker {
             display: block;
-            color: #9F2220;
+            color: var(--primary-ink);
             font-size: 11px;
             font-weight: 950;
             letter-spacing: .05em;
@@ -965,7 +1026,7 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            color: #9F2220;
+            color: var(--primary-ink);
             font-size: 12px;
             font-weight: 950;
             position: relative;
@@ -986,7 +1047,7 @@
             align-items: center;
             gap: 8px;
             padding: 9px 10px;
-            border: 1px solid rgba(159,34,32,.14);
+            border: 1px solid rgba(var(--primary-rgb),.14);
             border-radius: 16px;
             background: color-mix(in srgb, var(--card) 74%, var(--chip) 26%)
         }
@@ -995,7 +1056,7 @@
             padding: 5px 7px;
             border-radius: 999px;
             background: var(--chip);
-            color: #9F2220;
+            color: var(--primary-ink);
             font-size: 9px;
             font-weight: 950
         }
@@ -1044,7 +1105,7 @@
             border: 0;
             padding: 0;
             background: transparent;
-            color: #9F2220;
+            color: var(--primary-ink);
             font: inherit;
             font-size: 12px;
             font-weight: 950;
@@ -1104,7 +1165,7 @@
             height: 38px;
             border-radius: 14px;
             background: var(--chip);
-            color: #9F2220;
+            color: var(--primary-ink);
             display: grid;
             place-items: center;
             font-size: 12px;
@@ -1151,13 +1212,13 @@
         }
 
         .home-offer-intent.buy {
-            background: rgba(159,34,32,.14);
-            color: #9F2220
+            background: rgba(var(--primary-rgb),.14);
+            color: var(--primary-ink)
         }
 
         .home-offer-intent.sell {
             background: rgba(245, 158, 11, .14);
-            color: #d97706
+            color: var(--warn)
         }
 
         .home-offer-rate {
@@ -1197,7 +1258,7 @@
             border: 0;
             border-radius: 16px;
             padding: 11px 12px;
-            background: #9F2220;
+            background: var(--primary);
             color: #ffffff;
             font-size: 12px;
             font-weight: 950;
@@ -1223,7 +1284,7 @@
 
         .home-offers-dot.active {
             width: 20px;
-            background: #9F2220
+            background: var(--primary)
         }
 
         .xchange-context {
@@ -1231,7 +1292,7 @@
             padding: 16px;
             border: 1px solid var(--line);
             border-radius: 26px;
-            background: linear-gradient(145deg, color-mix(in srgb, var(--card) 90%, #9F2220 10%), var(--card));
+            background: linear-gradient(145deg, color-mix(in srgb, var(--card) 90%, var(--primary) 10%), var(--card));
             box-shadow: var(--shadow)
         }
 
@@ -1280,7 +1341,7 @@
             border-radius: 999px;
             display: grid;
             place-items: center;
-            background: #9F2220;
+            background: var(--primary);
             color: #ffffff;
             font-size: 10px;
             font-weight: 950
@@ -1313,7 +1374,7 @@
             touch-action: pan-x;
             scroll-snap-type: x proximity;
             scrollbar-width: thin;
-            scrollbar-color: rgba(159,34,32,.55) transparent;
+            scrollbar-color: rgba(var(--primary-rgb),.55) transparent;
             padding-bottom: 8px;
             cursor: grab
         }
@@ -1327,14 +1388,14 @@
         }
 
         .xzone-slider::-webkit-scrollbar-thumb {
-            background: rgba(159,34,32,.55);
+            background: rgba(var(--primary-rgb),.55);
             border-radius: 999px
         }
 
         .xzone-card {
             flex: 0 0 172px;
             scroll-snap-align: start;
-            border: 1px solid rgba(159,34,32,.22);
+            border: 1px solid rgba(var(--primary-rgb),.22);
             border-radius: 19px;
             background: var(--chip);
             color: var(--text);
@@ -1343,8 +1404,8 @@
         }
 
         .xzone-card.active {
-            background: rgba(159,34,32,.2);
-            border-color: rgba(159,34,32,.48)
+            background: rgba(var(--primary-rgb),.2);
+            border-color: rgba(var(--primary-rgb),.48)
         }
 
         .xzone-card span {
@@ -1383,10 +1444,10 @@
         }
 
         .xchange-toggle button.active {
-            background: color-mix(in srgb, #9F2220 18%, var(--card) 82%);
-            border-color: rgba(159,34,32,.35);
+            background: color-mix(in srgb, var(--primary) 18%, var(--card) 82%);
+            border-color: rgba(var(--primary-rgb),.35);
             color: var(--text);
-            box-shadow: 0 10px 22px rgba(159,34,32,.12)
+            box-shadow: 0 10px 22px rgba(var(--primary-rgb),.12)
         }
 
         .xsearch {
@@ -1437,7 +1498,7 @@
             -webkit-overflow-scrolling: touch;
             touch-action: pan-x;
             scrollbar-width: thin;
-            scrollbar-color: rgba(159,34,32,.55) transparent;
+            scrollbar-color: rgba(var(--primary-rgb),.55) transparent;
             margin: 0 0 14px;
             padding: 0 16px 8px
         }
@@ -1447,7 +1508,7 @@
         }
 
         .xfilters::-webkit-scrollbar-thumb {
-            background: rgba(159,34,32,.55);
+            background: rgba(var(--primary-rgb),.55);
             border-radius: 999px
         }
 
@@ -1477,8 +1538,8 @@
         .xfilter-menu[open] {
             min-width: 174px;
             border-radius: 20px;
-            border-color: rgba(159,34,32,.38);
-            background: color-mix(in srgb, var(--card) 94%, #9F2220 6%);
+            border-color: rgba(var(--primary-rgb),.38);
+            background: color-mix(in srgb, var(--card) 94%, var(--primary) 6%);
             box-shadow: 0 16px 34px rgba(0, 0, 0, .16)
         }
 
@@ -1509,7 +1570,7 @@
         }
 
         .xfilter-menu[open] summary {
-            color: #9F2220;
+            color: var(--primary-ink);
             background: transparent;
             border-radius: 0
         }
@@ -1518,7 +1579,7 @@
             display: grid;
             gap: 4px;
             padding: 2px 6px 7px;
-            border-top: 1px solid rgba(159,34,32,.12);
+            border-top: 1px solid rgba(var(--primary-rgb),.12);
             background: transparent
         }
 
@@ -1538,13 +1599,13 @@
 
         .xfilter-options button:hover, .xfilter-options button:focus-visible {
             outline: 0;
-            background: rgba(159,34,32,.12);
+            background: rgba(var(--primary-rgb),.12);
             color: var(--text);
-            box-shadow: inset 0 0 0 1px rgba(159,34,32,.2)
+            box-shadow: inset 0 0 0 1px rgba(var(--primary-rgb),.2)
         }
 
         .xfilter-options button.selected {
-            background: #9F2220;
+            background: var(--primary);
             color: #ffffff
         }
 
@@ -1554,9 +1615,9 @@
         }
 
         .xfilter.active {
-            border-color: rgba(159,34,32,.42);
-            background: rgba(159,34,32,.16);
-            color: #9F2220
+            border-color: rgba(var(--primary-rgb),.42);
+            background: rgba(var(--primary-rgb),.16);
+            color: var(--primary-ink)
         }
 
         .xfilter-menu.active[open] {
@@ -1571,7 +1632,7 @@
             padding: 16px;
             border: 1px solid var(--line);
             border-radius: 22px;
-            background: linear-gradient(145deg, color-mix(in srgb, var(--card) 94%, #9F2220 6%), var(--card));
+            background: linear-gradient(145deg, color-mix(in srgb, var(--card) 94%, var(--primary) 6%), var(--card));
             box-shadow: 0 16px 34px rgba(42, 20, 13, .08)
         }
 
@@ -1580,7 +1641,7 @@
             position: absolute;
             inset: 0;
             pointer-events: none;
-            background: radial-gradient(circle at 92% 0%, rgba(159,34,32,.16), transparent 34%)
+            background: radial-gradient(circle at 92% 0%, rgba(var(--primary-rgb),.16), transparent 34%)
         }
 
         .offer-card.mini-offer > * {
@@ -1590,7 +1651,7 @@
 
         .offer-card.sell-mode {
             border-style: dashed;
-            border-color: rgba(159,34,32,.34)
+            border-color: rgba(var(--primary-rgb),.34)
         }
 
         .offer-top, .offer-rate, .offer-foot {
@@ -1613,7 +1674,7 @@
             border-radius: 14px;
             display: grid;
             place-items: center;
-            background: linear-gradient(135deg, #3A1811, #9F2220);
+            background: linear-gradient(135deg, #3A1811, var(--primary));
             color: #ffffff;
             font-size: 12px;
             font-weight: 950;
@@ -1633,7 +1694,7 @@
         }
 
         .offer-pair {
-            color: #9F2220;
+            color: var(--primary-ink);
             font-size: 12px;
             font-weight: 950;
             white-space: nowrap
@@ -1663,8 +1724,8 @@
         }
 
         .offer-badge.buy-mode {
-            background: rgba(159,34,32,.16);
-            color: #9F2220
+            background: rgba(var(--primary-rgb),.16);
+            color: var(--primary-ink)
         }
 
         .offer-route {
@@ -1683,8 +1744,8 @@
             min-height: 30px;
             padding: 0 11px;
             border-radius: 999px;
-            background: color-mix(in srgb, var(--card) 74%, #9F2220 8%);
-            border: 1px solid rgba(159,34,32,.14);
+            background: color-mix(in srgb, var(--card) 74%, var(--primary) 8%);
+            border: 1px solid rgba(var(--primary-rgb),.14);
             color: var(--text);
             font-size: 11px;
             font-weight: 950
@@ -1693,7 +1754,7 @@
         .offer-route i {
             height: 1px;
             border-radius: 999px;
-            background: linear-gradient(90deg, rgba(159,34,32,.14), rgba(159,34,32,.5), rgba(159,34,32,.14))
+            background: linear-gradient(90deg, rgba(var(--primary-rgb),.14), rgba(var(--primary-rgb),.5), rgba(var(--primary-rgb),.14))
         }
 
         .offer-badge.sell-mode {
@@ -1759,7 +1820,7 @@
         .offer-foot {
             margin-top: 14px;
             padding-top: 13px;
-            border-top: 1px solid rgba(159,34,32,.12)
+            border-top: 1px solid rgba(var(--primary-rgb),.12)
         }
 
         .offer-limit span {
@@ -1794,7 +1855,7 @@
         }
 
         .offer-cta {
-            background: #9F2220;
+            background: var(--primary);
             color: #ffffff
         }
 
@@ -1821,8 +1882,8 @@
             margin-top: 12px;
             padding: 7px 10px;
             border-radius: 999px;
-            background: rgba(159,34,32,.14);
-            color: #9F2220;
+            background: rgba(var(--primary-rgb),.14);
+            color: var(--primary-ink);
             font-size: 10px;
             font-weight: 950
         }
@@ -1852,7 +1913,7 @@
             height: 32px;
             border-radius: 12px;
             background: var(--chip);
-            color: #9F2220;
+            color: var(--primary-ink);
             font-size: 11px
         }
 
@@ -1906,7 +1967,7 @@
         }
 
         .offer-conversion-side.target strong {
-            color: #9F2220
+            color: var(--primary-ink)
         }
 
         .offer-conversion-pivot {
@@ -1915,7 +1976,7 @@
             min-width: 30px;
             height: 20px;
             border-radius: 999px;
-            background: rgba(159,34,32,.08);
+            background: rgba(var(--primary-rgb),.08);
             color: var(--muted);
             font-style: normal;
             font-size: 8px;
@@ -1941,7 +2002,7 @@
             width: 4px;
             height: 4px;
             border-radius: 999px;
-            background: rgba(159,34,32,.5)
+            background: rgba(var(--primary-rgb),.5)
         }
 
         .offer-card.mini-offer .offer-foot {
@@ -2001,7 +2062,7 @@
             padding: 6px 9px;
             border-radius: 999px;
             background: var(--chip);
-            color: #9F2220;
+            color: var(--primary-ink);
             font-size: 10px;
             font-weight: 950
         }
@@ -2058,7 +2119,7 @@
         .xsheet-kyc {
             display: inline-flex;
             margin-left: 6px;
-            color: #9F2220;
+            color: var(--primary-ink);
             font-size: 10px;
             font-weight: 950
         }
@@ -2090,7 +2151,7 @@
         }
 
         .xsheet-input:focus-within {
-            box-shadow: 0 2px 10px rgba(0, 0, 0, .06), 0 0 0 2px rgba(159,34,32,.28)
+            box-shadow: 0 2px 10px rgba(0, 0, 0, .06), 0 0 0 2px rgba(var(--primary-rgb),.28)
         }
 
         .xsheet-input input {
@@ -2129,9 +2190,9 @@
             gap: 12px;
             margin-top: 8px;
             padding: 11px 12px;
-            border: 1px solid rgba(159,34,32,.22);
+            border: 1px solid rgba(var(--primary-rgb),.22);
             border-radius: 18px;
-            background: rgba(159,34,32,.1);
+            background: rgba(var(--primary-rgb),.1);
             color: var(--text)
         }
 
@@ -2177,7 +2238,7 @@
         }
 
         .xsheet-choice button.active {
-            background: #9F2220;
+            background: var(--primary);
             color: #ffffff
         }
 
@@ -2232,8 +2293,8 @@
             border-radius: 20px;
             display: grid;
             place-items: center;
-            background: rgba(159,34,32,.16);
-            color: #9F2220;
+            background: rgba(var(--primary-rgb),.16);
+            color: var(--primary-ink);
             font-size: 28px;
             font-weight: 950
         }
@@ -2442,7 +2503,7 @@
             padding: 6px 9px;
             border-radius: 999px;
             background: var(--chip);
-            color: #9F2220;
+            color: var(--primary-ink);
             font-size: 10px;
             font-weight: 950;
             white-space: nowrap
@@ -2450,17 +2511,17 @@
 
         .nzone-status.suspended {
             background: rgba(245, 158, 11, .13);
-            color: #d97706
+            color: var(--warn)
         }
 
         .nzone-status.frozen {
             background: rgba(239, 68, 68, .12);
-            color: #ef4444
+            color: var(--down)
         }
 
         .nzone-balance {
             margin-top: 18px;
-            color: #9F2220;
+            color: var(--primary-ink);
             font-size: 31px;
             line-height: 1;
             font-weight: 950;
@@ -2501,7 +2562,7 @@
             height: 34px;
             border-radius: 13px;
             background: var(--chip);
-            color: #9F2220;
+            color: var(--primary-ink);
             display: grid;
             place-items: center;
             font-size: 16px
@@ -2540,7 +2601,7 @@
             height: 34px;
             border-radius: 14px;
             background: var(--chip);
-            color: #9F2220;
+            color: var(--primary-ink);
             display: grid;
             place-items: center;
             flex: none
@@ -2637,7 +2698,7 @@
             padding: 0 6px;
             border-radius: 999px;
             background: var(--chip);
-            color: #9F2220;
+            color: var(--primary-ink);
             font-size: 10px;
             font-weight: 900;
             white-space: nowrap
@@ -2651,9 +2712,9 @@
         }
 
         .history-tab.active {
-            border-color: rgba(159,34,32,.35);
-            background: linear-gradient(180deg, color-mix(in srgb, #9F2220 14%, var(--card) 86%), color-mix(in srgb, #9F2220 8%, var(--card) 92%));
-            box-shadow: 0 10px 22px rgba(159,34,32,.10);
+            border-color: rgba(var(--primary-rgb),.35);
+            background: linear-gradient(180deg, color-mix(in srgb, var(--primary) 14%, var(--card) 86%), color-mix(in srgb, var(--primary) 8%, var(--card) 92%));
+            box-shadow: 0 10px 22px rgba(var(--primary-rgb),.10);
             color: var(--text)
         }
 
@@ -2671,10 +2732,10 @@
         }
 
         .nzone-tab.active {
-            background: color-mix(in srgb, #9F2220 18%, var(--card) 82%);
-            border-color: rgba(159,34,32,.35);
+            background: color-mix(in srgb, var(--primary) 18%, var(--card) 82%);
+            border-color: rgba(var(--primary-rgb),.35);
             color: var(--text);
-            box-shadow: 0 10px 22px rgba(159,34,32,.12)
+            box-shadow: 0 10px 22px rgba(var(--primary-rgb),.12)
         }
 
         .nzone-list {
@@ -2701,7 +2762,7 @@
         .history-hero {
             border: 1px solid var(--line);
             border-radius: 28px;
-            background: linear-gradient(180deg, color-mix(in srgb, #9F2220 10%, var(--card) 90%), var(--card));
+            background: linear-gradient(180deg, color-mix(in srgb, var(--primary) 10%, var(--card) 90%), var(--card));
             box-shadow: var(--shadow);
             padding: 16px
         }
@@ -2718,7 +2779,7 @@
             padding: 6px 9px;
             border-radius: 999px;
             background: var(--chip);
-            color: #9F2220;
+            color: var(--primary-ink);
             font-size: 10px;
             font-weight: 950;
             letter-spacing: .04em;
@@ -2818,8 +2879,8 @@
             border-radius: 13px;
             display: grid;
             place-items: center;
-            background: color-mix(in srgb, #9F2220 12%, var(--card) 88%);
-            color: #9F2220;
+            background: color-mix(in srgb, var(--primary) 12%, var(--card) 88%);
+            color: var(--primary-ink);
             font-size: 16px;
             font-weight: 950
         }
@@ -2880,8 +2941,8 @@
             border-radius: 13px;
             display: grid;
             place-items: center;
-            background: color-mix(in srgb, #9F2220 12%, var(--card) 88%);
-            color: #9F2220;
+            background: color-mix(in srgb, var(--primary) 12%, var(--card) 88%);
+            color: var(--primary-ink);
             font-size: 16px;
             font-weight: 950
         }
@@ -2946,20 +3007,20 @@
             border-radius: 14px;
             display: grid;
             place-items: center;
-            background: color-mix(in srgb, #9F2220 12%, var(--card) 88%);
-            color: #9F2220;
+            background: color-mix(in srgb, var(--primary) 12%, var(--card) 88%);
+            color: var(--primary-ink);
             font-size: 18px;
             font-weight: 950
         }
 
         .history-deal-row.completed .history-deal-icon {
-            background: color-mix(in srgb, #16a34a 12%, var(--card) 88%);
-            color: #16a34a
+            background: color-mix(in srgb, var(--ok) 12%, var(--card) 88%);
+            color: var(--ok)
         }
 
         .history-deal-row.pending .history-deal-icon {
             background: color-mix(in srgb, #f59e0b 12%, var(--card) 88%);
-            color: #d97706
+            color: var(--warn)
         }
 
         .history-deal-main {
@@ -3038,15 +3099,15 @@
         }
 
         .nzone-entry-icon.in, .nzone-entry-amount.in {
-            color: #16a34a
+            color: var(--ok)
         }
 
         .nzone-entry-icon.out, .nzone-entry-amount.out {
-            color: #d97706
+            color: var(--warn)
         }
 
         .nzone-entry-icon.trade {
-            color: #9F2220
+            color: var(--primary-ink)
         }
 
         .nzone-entry-icon.in {
@@ -3116,11 +3177,11 @@
         }
 
         .nzone-ledger-amount.in {
-            color: #16a34a
+            color: var(--ok)
         }
 
         .nzone-ledger-amount.out {
-            color: #d97706
+            color: var(--warn)
         }
 
         .nzone-ledger-meta {
@@ -3174,7 +3235,7 @@
             touch-action: pan-x;
             padding-bottom: 6px;
             scrollbar-width: thin;
-            scrollbar-color: rgba(159,34,32,.55) transparent;
+            scrollbar-color: rgba(var(--primary-rgb),.55) transparent;
             cursor: grab
         }
 
@@ -3187,7 +3248,7 @@
         }
 
         .sell-targets::-webkit-scrollbar-thumb {
-            background: rgba(159,34,32,.55);
+            background: rgba(var(--primary-rgb),.55);
             border-radius: 999px
         }
 
@@ -3203,8 +3264,8 @@
         }
 
         .sell-target.active {
-            border-color: rgba(159,34,32,.52);
-            background: rgba(159,34,32,.14)
+            border-color: rgba(var(--primary-rgb),.52);
+            background: rgba(var(--primary-rgb),.14)
         }
 
         .sell-target b {
@@ -3228,7 +3289,7 @@
             padding: 4px 7px;
             border-radius: 999px;
             background: var(--chip);
-            color: #9F2220;
+            color: var(--primary-ink);
             font-size: 9px;
             font-weight: 950;
             white-space: nowrap
@@ -3236,17 +3297,17 @@
 
         .nzone-status-badge.ok {
             background: rgba(22, 163, 74, .12);
-            color: #16a34a
+            color: var(--ok)
         }
 
         .nzone-status-badge.warn {
             background: rgba(245, 158, 11, .13);
-            color: #d97706
+            color: var(--warn)
         }
 
         .nzone-status-badge.danger {
             background: rgba(239, 68, 68, .12);
-            color: #ef4444
+            color: var(--down)
         }
 
         .recent-activity-list {
@@ -3307,7 +3368,7 @@
             border-top: 1px solid var(--line);
             padding: 14px 0;
             background: transparent;
-            color: #9F2220;
+            color: var(--primary-ink);
             font: inherit;
             font-size: 12px;
             font-weight: 950;
@@ -3326,7 +3387,7 @@
         }
 
         .nzone-exchange-field:focus-within {
-            box-shadow: 0 2px 10px rgba(0, 0, 0, .06), 0 0 0 2px rgba(159,34,32,.28)
+            box-shadow: 0 2px 10px rgba(0, 0, 0, .06), 0 0 0 2px rgba(var(--primary-rgb),.28)
         }
 
         .nzone-exchange-field label {
@@ -3430,9 +3491,9 @@
             display: grid;
             gap: 6px;
             padding: 8px;
-            border: 1px solid rgba(159,34,32,.22);
+            border: 1px solid rgba(var(--primary-rgb),.22);
             border-radius: 18px;
-            background: color-mix(in srgb, var(--card) 96%, #9F2220 4%);
+            background: color-mix(in srgb, var(--card) 96%, var(--primary) 4%);
             box-shadow: 0 18px 34px rgba(0, 0, 0, .18)
         }
 
@@ -3451,12 +3512,12 @@
         .nzone-picker-option:hover,
         .nzone-picker-option:focus-visible {
             outline: 0;
-            background: rgba(159,34,32,.1);
-            box-shadow: inset 0 0 0 1px rgba(159,34,32,.16)
+            background: rgba(var(--primary-rgb),.1);
+            box-shadow: inset 0 0 0 1px rgba(var(--primary-rgb),.16)
         }
 
         .nzone-picker-option.selected {
-            background: rgba(159,34,32,.14)
+            background: rgba(var(--primary-rgb),.14)
         }
 
         .nzone-picker-line {
@@ -3495,10 +3556,10 @@
             flex: none;
             min-width: 0;
             padding: 8px 12px;
-            border: 1px solid rgba(159,34,32,.42);
+            border: 1px solid rgba(var(--primary-rgb),.42);
             border-radius: 999px;
-            background: rgba(159,34,32,.12);
-            color: #9F2220;
+            background: rgba(var(--primary-rgb),.12);
+            color: var(--primary-ink);
             box-shadow: var(--shadow)
         }
 
@@ -3550,7 +3611,7 @@
             width: 64px;
             height: 64px;
             border-radius: 999px;
-            background: #9F2220;
+            background: var(--primary);
             color: #ffffff;
             display: grid;
             place-items: center;
@@ -3599,17 +3660,17 @@
 
         .profile-kyc.verified {
             background: rgba(22, 163, 74, .12);
-            color: #16a34a
+            color: var(--ok)
         }
 
         .profile-kyc.pending {
             background: rgba(245, 158, 11, .13);
-            color: #d97706
+            color: var(--warn)
         }
 
         .profile-kyc.unverified {
             background: rgba(239, 68, 68, .12);
-            color: #ef4444
+            color: var(--down)
         }
 
         .profile-card {
@@ -3687,7 +3748,7 @@
             border: 0;
             border-radius: 10px;
             background: var(--chip);
-            color: #9F2220;
+            color: var(--primary-ink);
             font-size: 13px;
             font-weight: 900;
             cursor: pointer
@@ -3740,10 +3801,10 @@
         }
 
         .profile-segment button.active {
-            background: #9F2220;
-            border-color: #9F2220;
+            background: var(--primary);
+            border-color: var(--primary-ink);
             color: #ffffff;
-            box-shadow: 0 6px 16px rgba(159,34,32,.25)
+            box-shadow: 0 6px 16px rgba(var(--primary-rgb),.25)
         }
 
         .profile-switch {
@@ -3778,13 +3839,13 @@
         }
 
         .profile-switch.on .profile-switch-track {
-            background: rgba(159,34,32,.22);
-            border-color: rgba(159,34,32,.34)
+            background: rgba(var(--primary-rgb),.22);
+            border-color: rgba(var(--primary-rgb),.34)
         }
 
         .profile-switch.on .profile-switch-track i {
             left: 21px;
-            background: #9F2220
+            background: var(--primary)
         }
 
         .profile-switch-text {
@@ -3831,7 +3892,7 @@
             border-radius: 18px;
             display: grid;
             place-items: center;
-            background: linear-gradient(135deg, #3A1811, #9F2220);
+            background: linear-gradient(135deg, #3A1811, var(--primary));
             color: #ffffff;
             font-size: 19px;
             font-weight: 950;
@@ -3882,20 +3943,20 @@
         .profile-hub-badge.verified,
         .profile-hub-pill.verified {
             background: rgba(22, 163, 74, .11);
-            color: #16a34a
+            color: var(--ok)
         }
 
         .profile-hub-badge.pending,
         .profile-hub-pill.pending {
             background: rgba(245, 158, 11, .13);
-            color: #d97706
+            color: var(--warn)
         }
 
         .profile-hub-badge.unverified,
         .profile-hub-badge.off,
         .profile-hub-pill.off {
             background: rgba(239, 68, 68, .1);
-            color: #ef4444
+            color: var(--down)
         }
 
         .profile-hub-section {
@@ -3949,7 +4010,7 @@
             display: grid;
             place-items: center;
             background: var(--chip);
-            color: #9F2220;
+            color: var(--primary-ink);
             font-size: 10px;
             font-weight: 950;
             flex: none
@@ -4077,7 +4138,7 @@
         }
 
         .profile-sheet-message.ok {
-            color: #9F2220
+            color: var(--primary-ink)
         }
 
         .open-nzone-option {
@@ -4103,8 +4164,8 @@
         }
 
         .open-nzone-option.active {
-            border-color: rgba(159,34,32,.48);
-            background: rgba(159,34,32,.13)
+            border-color: rgba(var(--primary-rgb),.48);
+            background: rgba(var(--primary-rgb),.13)
         }
 
         .open-nzone-main {
@@ -4126,7 +4187,7 @@
             padding: 5px 8px;
             border-radius: 999px;
             background: var(--chip);
-            color: #9F2220;
+            color: var(--primary-ink);
             font-size: 9px;
             font-weight: 950;
             white-space: nowrap
@@ -4150,9 +4211,9 @@
         .checkout-card {
             margin: 0 16px 12px;
             padding: 14px;
-            border: 1px solid rgba(159,34,32,.20);
+            border: 1px solid rgba(var(--primary-rgb),.20);
             border-radius: 28px;
-            background: linear-gradient(155deg, color-mix(in srgb, #9F2220 10%, var(--card)) 0%, var(--card) 42%, var(--card));
+            background: linear-gradient(155deg, color-mix(in srgb, var(--primary) 10%, var(--card)) 0%, var(--card) 42%, var(--card));
             box-shadow: var(--shadow)
         }
 
@@ -4176,7 +4237,7 @@
             display: grid;
             place-items: center;
             background: #ffffff;
-            border: 1px solid rgba(159,34,32,.16);
+            border: 1px solid rgba(var(--primary-rgb),.16);
             overflow: hidden
         }
 
@@ -4216,7 +4277,7 @@
             padding: 7px 10px;
             border-radius: 999px;
             background: var(--chip);
-            color: #9F2220;
+            color: var(--primary-ink);
             font-size: 10px;
             font-weight: 950
         }
@@ -4304,9 +4365,9 @@
         }
 
         .checkout-method.active {
-            border-color: rgba(159,34,32,.52);
-            background: color-mix(in srgb, #9F2220 12%, var(--card));
-            box-shadow: 0 12px 26px rgba(159, 34, 32, .12)
+            border-color: rgba(var(--primary-rgb),.52);
+            background: color-mix(in srgb, var(--primary) 12%, var(--card));
+            box-shadow: 0 12px 26px rgba(var(--primary-rgb), .12)
         }
 
         .checkout-method-main {
@@ -4323,7 +4384,7 @@
             display: grid;
             place-items: center;
             background: var(--chip);
-            color: #9F2220;
+            color: var(--primary-ink);
             font-size: 10px;
             font-weight: 950;
             letter-spacing: -.02em;
@@ -4346,8 +4407,8 @@
         }
 
         .checkout-method.active .checkout-method-check {
-            border-color: #9F2220;
-            background: radial-gradient(circle, #9F2220 0 42%, transparent 46%)
+            border-color: var(--primary-ink);
+            background: radial-gradient(circle, var(--primary) 0 42%, transparent 46%)
         }
 
         .checkout-detail {
@@ -4458,7 +4519,7 @@
 
         .nav button.active {
             background: var(--chip);
-            color: #9F2220
+            color: var(--primary-ink)
         }
 
         .btn {
@@ -4477,7 +4538,7 @@
         }
 
         .primary {
-            background: #9F2220;
+            background: var(--primary);
             color: #ffffff
         }
 
@@ -4522,7 +4583,7 @@
         }
 
         .field:focus-within {
-            box-shadow: 0 2px 10px rgba(0, 0, 0, .06), 0 0 0 2px rgba(159,34,32,.28)
+            box-shadow: 0 2px 10px rgba(0, 0, 0, .06), 0 0 0 2px rgba(var(--primary-rgb),.28)
         }
 
         .field label {
@@ -4534,7 +4595,7 @@
         }
 
         .field:focus-within label {
-            color: #9F2220
+            color: var(--primary-ink)
         }
 
         .field input, .field select {
@@ -4557,7 +4618,7 @@
         }
 
         .method.active .radio {
-            border: 6px solid #9F2220
+            border: 6px solid var(--primary)
         }
 
         .fx {
@@ -4579,7 +4640,7 @@
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            background: #9F2220;
+            background: var(--primary);
             color: #ffffff;
             display: grid;
             place-items: center;
@@ -4605,7 +4666,7 @@
         }
 
         .splash {
-            background: #9F2220;
+            background: var(--primary);
             padding: 16px;
             z-index: 80
         }
@@ -4742,7 +4803,7 @@
             background: #f7fbff;
             border: 1px solid #EDE0D2;
             box-shadow: 0 16px 34px rgba(58, 24, 17, .10);
-            color: #9F2220;
+            color: var(--primary-ink);
             font-size: 48px;
             line-height: 1;
             margin-bottom: 28px
@@ -4757,7 +4818,7 @@
             stroke-width: 2.4;
             stroke-linecap: round;
             stroke-linejoin: round;
-            color: #9F2220
+            color: var(--primary-ink)
         }
 
         .onb-icon text {
@@ -4827,19 +4888,19 @@
         }
 
         .onb-dot.active {
-            background: #9F2220
+            background: var(--primary)
         }
 
         .onb-next, .onb-final-primary {
             border: 0;
             border-radius: 999px;
-            background: #9F2220;
+            background: var(--primary);
             color: #ffffff;
             font: inherit;
             font-size: 14px;
             font-weight: 900;
             cursor: pointer;
-            box-shadow: 0 14px 34px rgba(159,34,32,.26)
+            box-shadow: 0 14px 34px rgba(var(--primary-rgb),.26)
         }
 
         .onb-next {
@@ -5055,7 +5116,7 @@
 
         .auth-field:focus-within > .auth-label,
         .auth-field:focus-within > .auth-field-top > .auth-label {
-            color: #9F2220
+            color: var(--primary-ink)
         }
 
         .auth-hidden {
@@ -5107,7 +5168,7 @@
         }
 
         .auth-eye-btn.is-open {
-            color: #9F2220
+            color: var(--primary-ink)
         }
 
         .auth-eye-btn.is-open .auth-eye-slash {
@@ -5174,13 +5235,13 @@
 
         .auth-contact-option.active {
             background: var(--card);
-            color: #9F2220;
+            color: var(--primary-ink);
             font-weight: 900;
             box-shadow: 0 2px 8px rgba(0, 0, 0, .07)
         }
 
         .auth-contact-option:focus-visible, .auth-country-select:focus-visible {
-            outline: 2px solid rgba(159,34,32,.3);
+            outline: 2px solid rgba(var(--primary-rgb),.3);
             outline-offset: 2px
         }
 
@@ -5212,7 +5273,7 @@
             height: 34px;
             border-radius: 12px;
             background: var(--chip);
-            color: #9F2220;
+            color: var(--primary-ink);
             display: grid;
             place-items: center;
             font-size: 16px;
@@ -5245,7 +5306,7 @@
             padding: 0 12px;
             font-size: 18px;
             font-weight: 900;
-            color: #9F2220
+            color: var(--primary-ink)
         }
 
         .auth-prefix-flag {
@@ -5423,7 +5484,7 @@
         }
 
         .auth-picker-option.selected {
-            color: #9F2220
+            color: var(--primary-ink)
         }
 
         .auth-step-tag {
@@ -5432,7 +5493,7 @@
             padding: 6px 12px;
             border-radius: 999px;
             background: color-mix(in srgb, var(--chip) 90%, transparent);
-            color: #9F2220;
+            color: var(--primary-ink);
             font-size: 10px;
             font-weight: 900;
             letter-spacing: .08em;
@@ -5461,7 +5522,7 @@
             position: absolute;
             inset: 0;
             border-radius: inherit;
-            background: #9F2220;
+            background: var(--primary);
             transform: scaleX(0);
             transform-origin: left;
             transition: transform .25s ease
@@ -5542,7 +5603,7 @@
         .auth-inline-link {
             border: 0;
             background: transparent;
-            color: #9F2220;
+            color: var(--primary-ink);
             font: inherit;
             font-size: 12px;
             font-weight: 900;
@@ -5576,7 +5637,7 @@
 
         .auth-check input {
             margin: 2px 0 0;
-            accent-color: #9F2220;
+            accent-color: var(--primary-ink);
             flex: none
         }
 
@@ -5634,7 +5695,7 @@
         }
 
         .auth-otp input:focus {
-            box-shadow: 0 2px 10px rgba(0, 0, 0, .07), 0 0 0 2px rgba(159,34,32,.4)
+            box-shadow: 0 2px 10px rgba(0, 0, 0, .07), 0 0 0 2px rgba(var(--primary-rgb),.4)
         }
 
         .auth-loading {
@@ -5670,7 +5731,7 @@
         }
 
         .auth-error.ok {
-            color: #9F2220
+            color: var(--primary-ink)
         }
 
         .auth-submit {
@@ -5764,7 +5825,7 @@
         .auth-mode-link {
             border: 0;
             background: transparent;
-            color: #9F2220;
+            color: var(--primary-ink);
             font: inherit;
             font-weight: 900;
             cursor: pointer;
@@ -5803,7 +5864,7 @@
 
         .auth-legal-preview summary:after {
             content: "⌄";
-            color: #9F2220;
+            color: var(--primary-ink);
             transition: transform .18s ease
         }
 
@@ -5861,7 +5922,7 @@
 
         .deal-advanced-criteria summary:after {
             content: "⌄";
-            color: #9F2220;
+            color: var(--primary-ink);
             transition: transform .18s ease
         }
 
@@ -5916,7 +5977,7 @@
 
         .deal-advanced-field input:focus,
         .deal-advanced-field select:focus {
-            box-shadow: 0 0 0 2px rgba(159,34,32,.28)
+            box-shadow: 0 0 0 2px rgba(var(--primary-rgb),.28)
         }
 
         .deal-advanced-field-wide {
@@ -5949,7 +6010,7 @@
         }
 
         .deal-period-head b {
-            color: #9F2220;
+            color: var(--primary-ink);
             font-size: 12px;
             font-weight: 950;
             text-align: right
@@ -5976,7 +6037,7 @@
         }
 
         .deal-period-option:hover {
-            border-color: rgba(159,34,32,.28);
+            border-color: rgba(var(--primary-rgb),.28);
             transform: translateY(-1px)
         }
 
@@ -6020,14 +6081,14 @@
         }
 
         .deal-period-option:has(input:checked) {
-            background: color-mix(in srgb, #9F2220 12%, var(--card) 88%);
-            border-color: rgba(159,34,32,.38);
-            box-shadow: 0 10px 24px rgba(159,34,32,.10)
+            background: color-mix(in srgb, var(--primary) 12%, var(--card) 88%);
+            border-color: rgba(var(--primary-rgb),.38);
+            box-shadow: 0 10px 24px rgba(var(--primary-rgb),.10)
         }
 
         .deal-period-option:has(input:checked):before {
-            border-color: #9F2220;
-            background: #9F2220;
+            border-color: var(--primary-ink);
+            background: var(--primary);
             box-shadow: inset 0 0 0 2px #ffffff
         }
 
@@ -6051,7 +6112,7 @@
 
         .receipt-card-head .tag {
             background: var(--chip);
-            color: #9F2220;
+            color: var(--primary-ink);
             border: 0
         }
 
@@ -6086,7 +6147,7 @@
             padding: 12px 13px;
             border: 1px solid var(--line);
             border-radius: 18px;
-            background: color-mix(in srgb, #9F2220 8%, var(--card) 92%)
+            background: color-mix(in srgb, var(--primary) 8%, var(--card) 92%)
         }
 
         .receipt-preview-cta b {
@@ -6110,7 +6171,7 @@
             display: grid;
             place-items: center;
             background: var(--chip);
-            color: #9F2220;
+            color: var(--primary-ink);
             font-style: normal;
             font-size: 16px;
             font-weight: 950;
@@ -6157,7 +6218,7 @@
 
         .obtain-card.obtain-success-card {
             padding: 18px;
-            border-color: color-mix(in srgb, #9F2220 14%, var(--line));
+            border-color: color-mix(in srgb, var(--primary) 14%, var(--line));
             box-shadow: 0 18px 48px rgba(15, 38, 72, .08)
         }
 
@@ -6181,12 +6242,12 @@
             height: 42px;
             border-radius: 15px;
             font-size: 21px;
-            background: color-mix(in srgb, #9F2220 12%, var(--card));
-            box-shadow: inset 0 0 0 1px rgba(159,34,32,.08)
+            background: color-mix(in srgb, var(--primary) 12%, var(--card));
+            box-shadow: inset 0 0 0 1px rgba(var(--primary-rgb),.08)
         }
 
         .obtain-success-card .obtain-title {
-            color: #9F2220;
+            color: var(--primary-ink);
             font-size: 21px;
             line-height: 1.05
         }
@@ -6204,7 +6265,7 @@
         .obtain-success-card .home-exchange-cta {
             min-height: 46px;
             border-radius: 16px;
-            box-shadow: 0 12px 26px rgba(159,34,32,.18)
+            box-shadow: 0 12px 26px rgba(var(--primary-rgb),.18)
         }
 
         .obtain-success-card .success-receipt {
@@ -6254,7 +6315,7 @@
         .obtain-success-card .success-receipt .receipt-action-icon {
             width: 18px;
             height: 18px;
-            color: #9F2220
+            color: var(--primary-ink)
         }
 
         .receipt-actions-only {
@@ -6288,7 +6349,7 @@
         .receipt-actions-only .receipt-action-icon {
             width: 18px;
             height: 18px;
-            color: #9F2220
+            color: var(--primary-ink)
         }
 
         .receipt-action-icon {
@@ -6330,7 +6391,7 @@
             gap: 10px;
             padding: 10px 12px;
             border-radius: 18px;
-            background: color-mix(in srgb, #9F2220 10%, var(--card2) 90%)
+            background: color-mix(in srgb, var(--primary) 10%, var(--card2) 90%)
         }
 
         .nzone-menu-head-mark {
@@ -6338,7 +6399,7 @@
             height: 34px;
             border-radius: 13px;
             background: var(--chip);
-            color: #9F2220;
+            color: var(--primary-ink);
             display: grid;
             place-items: center;
             font-size: 15px;
@@ -6538,7 +6599,7 @@
             display: grid;
             place-items: center;
             background: var(--chip);
-            color: #9F2220;
+            color: var(--primary-ink);
             font-size: 15px;
             font-weight: 950;
             flex: none
@@ -6744,7 +6805,7 @@
         .primary,
         .offer-cta,
         .home-offer-buy {
-            background: #9F2220;
+            background: var(--primary);
             color: #ffffff
         }
 
@@ -6770,7 +6831,7 @@
         .switch {
             border-radius: 16px;
             background: var(--chip);
-            color: #9F2220
+            color: var(--primary-ink)
         }
 
         .nav {
@@ -6798,7 +6859,7 @@
 
         .nav button.active {
             background: transparent;
-            color: #9F2220
+            color: var(--primary-ink)
         }
 
         .nav b,
@@ -6844,7 +6905,7 @@
             border: 0;
             border-radius: 999px;
             padding: 0 16px;
-            background: #9F2220;
+            background: var(--primary);
             color: #ffffff;
             font: inherit;
             font-size: 13px;
@@ -6941,9 +7002,9 @@
         }
 
         .mini-action.primary {
-            background: linear-gradient(135deg, #9F2220, #7A1613);
+            background: linear-gradient(135deg, var(--primary), var(--primary-strong));
             color: #ffffff;
-            border-color: rgba(159,34,32,.3)
+            border-color: rgba(var(--primary-rgb),.3)
         }
 
         .mini-action.primary span,
@@ -6964,7 +7025,7 @@
             display: grid;
             place-items: center;
             background: var(--chip);
-            color: #9F2220;
+            color: var(--primary-ink);
             font-size: 24px;
             font-weight: 500
         }
@@ -7014,7 +7075,7 @@
         }
 
         .mini-ticker i {
-            color: #16a34a;
+            color: var(--ok);
             font-style: normal;
             font-weight: 750
         }
@@ -7124,7 +7185,7 @@
         }
 
         .mini-label {
-            color: #9F2220;
+            color: var(--primary-ink);
             font-size: 12px;
             font-weight: 850;
             letter-spacing: .06em;
@@ -7136,7 +7197,7 @@
             border-radius: 999px;
             padding: 6px 10px;
             background: rgba(22, 163, 74, .1);
-            color: #16a34a;
+            color: var(--ok);
             font-size: 12px;
             font-weight: 750;
             white-space: nowrap
@@ -7144,7 +7205,7 @@
 
         .mini-verified.off {
             background: rgba(239, 68, 68, .1);
-            color: #ef4444
+            color: var(--down)
         }
 
         .mini-flags {
@@ -7156,7 +7217,7 @@
         }
 
         .mini-arrow {
-            color: #9F2220;
+            color: var(--primary-ink);
             font-weight: 700
         }
 
@@ -7182,7 +7243,7 @@
             width: 180px;
             height: 180px;
             border-radius: 50%;
-            border: 30px solid rgba(159,34,32,.08);
+            border: 30px solid rgba(var(--primary-rgb),.08);
             pointer-events: none
         }
 
@@ -7220,7 +7281,7 @@
             display: grid;
             place-items: center;
             background: var(--chip);
-            color: #9F2220;
+            color: var(--primary-ink);
             font-size: 22px;
             font-weight: 750;
             flex: none
@@ -7290,7 +7351,7 @@
         }
 
         .mini-tab.active {
-            background: #9F2220;
+            background: var(--primary);
             color: #ffffff
         }
 
@@ -7327,7 +7388,7 @@
         }
 
         .mini-wallet-actions button.primary {
-            background: #9F2220;
+            background: var(--primary);
             color: #ffffff
         }
 
@@ -7347,15 +7408,15 @@
             display: grid;
             place-items: center;
             background: var(--chip);
-            color: #9F2220
+            color: var(--primary-ink)
         }
 
         .mini-activity-amount.in {
-            color: #16a34a
+            color: var(--ok)
         }
 
         .mini-activity-amount.out {
-            color: #ef4444
+            color: var(--down)
         }
 
         .mini-filter {
@@ -7385,7 +7446,7 @@
         }
 
         .mini-filter button.active {
-            background: #9F2220;
+            background: var(--primary);
             color: #ffffff
         }
 
@@ -7430,7 +7491,7 @@
             width: 56px;
             height: 56px;
             border-radius: 18px;
-            background: #9F2220;
+            background: var(--primary);
             color: #ffffff;
             font-size: 22px
         }
@@ -7460,7 +7521,7 @@
         }
 
         .profile-logout {
-            color: #ef4444
+            color: var(--down)
         }
 
         .light .app {
@@ -7522,13 +7583,13 @@
         .light .market-mark,
         .light .auth-icon {
             background: #F5DDD6;
-            color: #9F2220
+            color: var(--primary-ink)
         }
 
         .light .mini-action.primary {
-            background: linear-gradient(135deg, #9F2220, #7A1613);
-            border-color: rgba(159,34,32,.3);
-            box-shadow: 0 16px 32px rgba(159, 34, 32, .20)
+            background: linear-gradient(135deg, var(--primary), var(--primary-strong));
+            border-color: rgba(var(--primary-rgb),.3);
+            box-shadow: 0 16px 32px rgba(var(--primary-rgb), .20)
         }
 
         .light .mini-action.primary b {
@@ -7575,7 +7636,7 @@
         }
 
         .light .nav button.active {
-            color: #9F2220
+            color: var(--primary-ink)
         }
 
         .light .nav button.active b {
@@ -7667,8 +7728,8 @@
             }
 
             .mobile-prototype-panel .brand {
-                background: rgba(159,34,32,.12);
-                color: #7A1613
+                background: rgba(var(--primary-rgb),.12);
+                color: var(--primary-strong)
             }
 
             .mobile-prototype-panel .theme {
@@ -7677,14 +7738,27 @@
             }
 
             .mobile-prototype-panel .profile.active {
-                background: #9F2220;
+                background: var(--primary);
                 color: #ffffff
             }
 
             .phone {
                 width: 100vw;
+                /* Chaine de replis, du plus ancien au plus recent : le navigateur
+                   retient la derniere valeur qu'il comprend.
+                   100vh                   = viewport barre d'adresse RETRACTEE,
+                                             donc plus grand que la zone visible ;
+                   -webkit-fill-available  = zone visible, iOS Safari < 15.4 ;
+                   100dvh                  = zone visible, partout ailleurs.
+                   L'ancien 'min-height: 100vh' ecrasait 'height: 100dvh' (un
+                   min-height l'emporte toujours sur height) : .phone depassait
+                   le bas de l'ecran, la barre de navigation passait sous le pli,
+                   et comme clientHeight etait surestime la classe can-scroll
+                   n'etait jamais posee — l'ecran restait coupe ET non scrollable. */
+                height: 100vh;
+                height: -webkit-fill-available;
                 height: 100dvh;
-                min-height: 100vh;
+                min-height: 0;
                 background: transparent;
                 border-radius: 0;
                 padding: 0;
@@ -7747,7 +7821,7 @@
             width: 120px;
             height: 120px;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(159,34,32,.06) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(var(--primary-rgb),.06) 0%, transparent 70%);
             pointer-events: none;
         }
         .home-exchange-title {
@@ -7783,7 +7857,7 @@
             transition: border-color .15s ease;
         }
         .home-currency-field:focus-within {
-            border-color: #9F2220;
+            border-color: var(--primary-ink);
         }
         .home-currency-field span {
             font-size: 9px;
@@ -7816,29 +7890,29 @@
             display: grid;
             place-items: center;
             background: var(--chip);
-            color: #9F2220;
+            color: var(--primary-ink);
             font-size: 18px;
             justify-self: center;
-            border: 1.5px solid rgba(159,34,32,.2);
+            border: 1.5px solid rgba(var(--primary-rgb),.2);
         }
         .home-exchange-cta {
             width: 100%;
             min-height: 50px;
             border: 0;
             border-radius: 17px;
-            background: #9F2220;
+            background: var(--primary);
             color: #ffffff;
             font-family: inherit;
             font-size: 15px;
             font-weight: 900;
             cursor: pointer;
             letter-spacing: .01em;
-            box-shadow: 0 6px 20px rgba(159,34,32,.3);
+            box-shadow: 0 6px 20px rgba(var(--primary-rgb),.3);
             transition: transform .12s ease, box-shadow .12s ease;
         }
         .home-exchange-cta:active {
             transform: scale(.98);
-            box-shadow: 0 3px 10px rgba(159,34,32,.2);
+            box-shadow: 0 3px 10px rgba(var(--primary-rgb),.2);
         }
 
         .home-currency-btn {
@@ -7857,7 +7931,7 @@
             transition: border-color .15s ease;
         }
         .home-currency-btn:focus, .home-currency-btn:hover {
-            border-color: #9F2220;
+            border-color: var(--primary-ink);
         }
         .home-currency-label {
             font-size: 10px;
@@ -7900,9 +7974,9 @@
             max-height: 260px;
             overflow-y: auto;
             padding: 8px;
-            border: 1px solid rgba(159,34,32,.2);
+            border: 1px solid rgba(var(--primary-rgb),.2);
             border-radius: 18px;
-            background: color-mix(in srgb, var(--card) 96%, #9F2220 4%);
+            background: color-mix(in srgb, var(--card) 96%, var(--primary) 4%);
             box-shadow: 0 18px 38px rgba(42, 20, 13, .18)
         }
 
@@ -7934,7 +8008,7 @@
         .deal-currency-option:hover,
         .deal-currency-option:focus-visible {
             outline: 0;
-            background: rgba(159,34,32,.1)
+            background: rgba(var(--primary-rgb),.1)
         }
 
         .deal-currency-option b {
@@ -8043,14 +8117,14 @@
         }
 
         .obtain-estimate b {
-            color: #9F2220;
+            color: var(--primary-ink);
             font-size: 14px;
             font-weight: 900;
             letter-spacing: .01em
         }
 
         .obtain-error {
-            color: #ef4444
+            color: var(--down)
         }
 
         .obtain-loader-stage,
@@ -8073,11 +8147,11 @@
         @keyframes nzoLoaderSoft {
             0%, 100% {
                 transform: scale(.96);
-                filter: drop-shadow(0 0 0 rgba(159,34,32,0))
+                filter: drop-shadow(0 0 0 rgba(var(--primary-rgb),0))
             }
             50% {
                 transform: scale(1.04);
-                filter: drop-shadow(0 10px 22px rgba(159,34,32,.18))
+                filter: drop-shadow(0 10px 22px rgba(var(--primary-rgb),.18))
             }
         }
 
@@ -8101,7 +8175,7 @@
         }
 
         .obtain-step b {
-            color: #9F2220;
+            color: var(--primary-ink);
             font-size: 10px;
             font-weight: 950
         }
@@ -8133,7 +8207,7 @@
         }
 
         .obtain-line.hero b {
-            color: #9F2220;
+            color: var(--primary-ink);
             font-size: 18px;
             letter-spacing: -.035em
         }
@@ -8261,7 +8335,7 @@
             display: grid;
             place-items: center;
             background: var(--card);
-            color: #9F2220;
+            color: var(--primary-ink);
             font-size: 15px;
             border: 0;
             box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
@@ -8335,7 +8409,7 @@
         .obtain-form-card .obtain-inline-target {
             border: 0;
             background: var(--chip);
-            color: #9F2220;
+            color: var(--primary-ink);
             border-radius: 999px;
             padding: 0 10px;
             min-height: 28px;
@@ -8369,8 +8443,8 @@
         .obtain-inline-target {
             border: 0;
             border-radius: 999px;
-            background: rgba(159,34,32,.1);
-            color: #9F2220;
+            background: rgba(var(--primary-rgb),.1);
+            color: var(--primary-ink);
             padding: 7px 10px;
             font-family: inherit;
             cursor: pointer
@@ -8397,14 +8471,14 @@
             position: absolute;
             inset: 12px;
             border-radius: 999px;
-            border: 1px solid rgba(159,34,32,.16);
+            border: 1px solid rgba(var(--primary-rgb),.16);
             animation: obtainPulse 2.2s ease-in-out infinite
         }
 
         .obtain-loader-wrap:after {
             inset: 0;
             animation-delay: .35s;
-            border-color: rgba(159,34,32,.09)
+            border-color: rgba(var(--primary-rgb),.09)
         }
 
         .obtain-loader-dot {
@@ -8412,7 +8486,7 @@
             width: 8px;
             height: 8px;
             border-radius: 999px;
-            background: #9F2220;
+            background: var(--primary);
             opacity: .25;
             animation: obtainBlink 1.25s ease-in-out infinite
         }
@@ -8467,8 +8541,8 @@
             margin-bottom: 12px;
             padding: 5px 9px;
             border-radius: 999px;
-            background: rgba(159,34,32,.1);
-            color: #9F2220;
+            background: rgba(var(--primary-rgb),.1);
+            color: var(--primary-ink);
             font-size: 10px;
             font-weight: 950
         }
@@ -8494,7 +8568,7 @@
         }
 
         .obtain-value-main b {
-            color: #9F2220;
+            color: var(--primary-ink);
             font-size: 31px;
             line-height: 1;
             font-weight: 950;
@@ -8567,7 +8641,7 @@
             padding: 0 9px;
             border-radius: 999px;
             background: var(--chip);
-            color: #9F2220;
+            color: var(--primary-ink);
             font-size: 10px;
             font-weight: 950;
             white-space: nowrap
@@ -8578,7 +8652,7 @@
             min-height: 46px;
             border: 0;
             border-radius: 16px;
-            background: #9F2220;
+            background: var(--primary);
             color: #ffffff;
             font: inherit;
             font-size: 13px;
@@ -8610,7 +8684,7 @@
         }
 
         .seller-offer-action.danger {
-            color: #ef4444;
+            color: var(--down);
             border-color: rgba(239,68,68,.22)
         }
 
@@ -8625,7 +8699,7 @@
             border: 1px solid var(--line);
             border-radius: 24px;
             background: linear-gradient(180deg, var(--card), color-mix(in srgb, var(--card2) 72%, transparent));
-            box-shadow: 0 10px 22px rgba(159, 34, 32, .05)
+            box-shadow: 0 10px 22px rgba(var(--primary-rgb), .05)
         }
 
         .seller-detail-main {
@@ -8680,7 +8754,7 @@
         }
 
         .seller-exchange-detail .seller-wide-cta {
-            background: #9F2220;
+            background: var(--primary);
             color: #ffffff;
             border: 0
         }
@@ -8723,7 +8797,7 @@
         }
 
         .pending-obtain-line i {
-            color: #9F2220;
+            color: var(--primary-ink);
             font-style: normal;
             font-weight: 950
         }
@@ -8850,6 +8924,329 @@
             }
 
         }
+
+        /* ============================================================
+           VERSANT SOMBRE — pendant structurel des regles .light
+           Le theme clair tient sa nettete de bordures explicites
+           (1px solid #EDE0D2) sur des cartes blanches. En sombre il n'y
+           avait que le swap de tokens : d'ou l'aplat brun sur brun.
+           On redonne ici des aretes lisibles et une echelle de surfaces.
+           ============================================================ */
+
+        /* -- Fond applicatif : degrade discret, pendant du .light .app -- */
+        .dark .app {
+            background: linear-gradient(180deg, #1F0F09 0%, #1A0C07 52%, #150A06 100%)
+        }
+
+        .dark .status {
+            background: #1F0F09;
+            color: var(--text)
+        }
+
+        .dark .header {
+            background: #23110B;
+            border-bottom: 1px solid var(--line)
+        }
+
+        /* -- Surfaces : meme liste que le pendant clair -- */
+        .dark .card,
+        .dark .act,
+        .dark .quick-action,
+        .dark .quick-action.featured,
+        .dark .home-offer-card,
+        .dark .offer-card,
+        .dark .offer-card.sell-mode,
+        .dark .profile-card,
+        .dark .recent-activity-list,
+        .dark .nzone-list,
+        .dark .checkout-card,
+        .dark .field,
+        .dark .nzone-exchange-field,
+        .dark .open-nzone-option,
+        .dark .nzone-action,
+        .dark .fxcard,
+        .dark .xsearch,
+        .dark .xchange-context {
+            background: var(--card);
+            border: 1px solid var(--line);
+            box-shadow: var(--shadow)
+        }
+
+        /* Surface de niveau 2 : ce qui se pose SUR une carte doit remonter,
+           pas s'enfoncer — sinon tout se confond avec le fond. */
+        .dark .mini-action,
+        .dark .mini-balance,
+        .dark .mini-activity,
+        .dark .mini-profile-item,
+        .dark .mini-corridor,
+        .dark .mini-instant,
+        .dark .mini-wallet-hero,
+        .dark .mini-profile-head {
+            background: linear-gradient(180deg, #40201A 0%, #351811 100%);
+            border-color: var(--line);
+            box-shadow: var(--shadow)
+        }
+
+        .dark .checkout-card {
+            background: linear-gradient(155deg, #4A241A 0%, #3A1811 46%, #331610 100%);
+            border-color: var(--line)
+        }
+
+        /* -- Champs de saisie : creux, l'inverse d'une surface elevee -- */
+        .dark .field input,
+        .dark .field select {
+            background: transparent;
+            border: 0;
+            color: var(--text)
+        }
+
+        .dark .auth-input {
+            background: transparent;
+            border: 0;
+            box-shadow: none;
+            color: var(--text)
+        }
+
+        /* -- Pastilles d'icones : le clair pose l'encre marque sur #F5DDD6 -- */
+        .dark .mini-action b,
+        .dark .mini-icon,
+        .dark .act b,
+        .dark .quick-action b,
+        .dark .profile-row-icon,
+        .dark .checkout-mark,
+        .dark .market-mark,
+        .dark .auth-icon {
+            background: rgba(244, 117, 33, .16);
+            color: var(--primary-ink)
+        }
+
+        /* -- Action primaire : en sombre --primary-strong est plus CLAIR,
+              le degrade monte donc au lieu de descendre. -- */
+        .dark .mini-action.primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-strong));
+            border-color: rgba(var(--primary-rgb), .45);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, .45)
+        }
+
+        .dark .mini-action.primary b {
+            background: rgba(255, 255, 255, .18);
+            color: #ffffff
+        }
+
+        .dark .mini-action.primary span,
+        .dark .mini-action.primary small,
+        .dark .mini-action.primary .mini-action-arrow {
+            color: #ffffff
+        }
+
+        .dark .mini-action.primary small {
+            opacity: .82
+        }
+
+        /* -- Bandeau de taux : contenu par des filets, comme en clair,
+              au lieu de baver d'un bord a l'autre. -- */
+        .dark .mini-ticker {
+            background: linear-gradient(90deg, #2A130D, #341A12);
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line)
+        }
+
+        .dark .mini-ticker span { color: var(--muted) }
+        .dark .mini-ticker b    { color: var(--text) }
+        .dark .mini-ticker i    { color: var(--ok) }
+
+        /* -- Navigation -- */
+        .dark .nav {
+            background: rgba(31, 15, 9, .97);
+            border-top-color: var(--line);
+            box-shadow: 0 -12px 30px rgba(0, 0, 0, .45)
+        }
+
+        .dark .nav button        { color: var(--muted) }
+        .dark .nav button.active { color: var(--primary-ink) }
+
+        .dark .nav button.active b {
+            background: rgba(244, 117, 33, .16);
+            border-radius: 14px
+        }
+
+        /* -- Chips, filtres, tags -- */
+        .dark .filter-chip,
+        .dark .xfilter,
+        .dark .xchange-filter-picker {
+            background: #40201A;
+            border: 1px solid var(--line);
+            color: var(--text);
+            box-shadow: none
+        }
+
+        .dark .filter-chip.active,
+        .dark .xfilter.active,
+        .dark .xchange-filter-picker[open] {
+            background: rgba(244, 117, 33, .16);
+            border: 1px solid rgba(244, 117, 33, .34);
+            color: var(--primary-ink);
+            box-shadow: none
+        }
+
+        .dark .xfilter-menu[open],
+        .dark .xfilter-menu.active[open] {
+            background: #40201A;
+            border: 1px solid var(--line);
+            color: var(--text);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, .5)
+        }
+
+        .dark .pill.teal,
+        .dark .tag {
+            background: rgba(244, 117, 33, .16);
+            color: var(--primary-ink)
+        }
+
+        .dark .note {
+            background: rgba(244, 117, 33, .10);
+            color: var(--primary-ink);
+            border: 1px solid rgba(244, 117, 33, .24)
+        }
+
+        .dark .tag.warn {
+            background: rgba(240, 167, 44, .16);
+            color: #F0A72C
+        }
+
+        .dark .tag.lock {
+            background: rgba(239, 68, 68, .16);
+            color: #F58C8C
+        }
+
+        .dark .auth-divider:before,
+        .dark .auth-divider:after {
+            background: var(--line)
+        }
+
+        /* -- Hierarchie de texte -- */
+        .dark .sub,
+        .dark .hello,
+        .dark .caption,
+        .dark .balance-caption,
+        .dark .mini-kicker,
+        .dark .mini-subtitle,
+        .dark .mini-row-sub {
+            color: var(--muted)
+        }
+
+        .dark .section,
+        .dark .mini-section {
+            color: #A88370
+        }
+
+        .dark .mini-header,
+        .dark .flowhead,
+        .dark .nzone-detail-head {
+            color: var(--text)
+        }
+
+        /* -- Feuilles et menus flottants -- */
+        .dark .nzone-picker-options {
+            background: #40201A;
+            border: 1px solid var(--line);
+            box-shadow: 0 18px 44px rgba(0, 0, 0, .55)
+        }
+
+        .dark .xsheet,
+        .dark .profile-sheet,
+        .dark .xsheet-panel,
+        .dark .profile-sheet-panel {
+            background: #2E1610;
+            border: none;
+            border-top: 1px solid var(--line);
+            box-shadow: 0 -8px 40px rgba(0, 0, 0, .55)
+        }
+
+        /* -- Carte solde : c'est le heros, il porte la marque -- */
+        .dark .card.hero {
+            background: linear-gradient(150deg, #5A2620 0%, #3E1A13 52%, #33150F 100%) !important;
+            color: var(--text) !important;
+            border: 1px solid rgba(244, 117, 33, .18) !important;
+            box-shadow: var(--shadow) !important
+        }
+
+        .dark .card.hero .balance-topline,
+        .dark .card.hero .balance-topline span,
+        .dark .card.hero .balance-tab,
+        .dark .card.hero .balance-country {
+            color: var(--muted) !important
+        }
+
+        .dark .card.hero .amount,
+        .dark .card.hero .pill {
+            color: var(--text) !important
+        }
+
+        .dark .card.hero .balance-tabs {
+            background: rgba(0, 0, 0, .28) !important;
+            border: 1px solid var(--line) !important
+        }
+
+        .dark .card.hero .balance-tab {
+            background: transparent !important;
+            color: var(--muted) !important
+        }
+
+        .dark .card.hero .balance-tab.active,
+        .dark .card.hero .pill.active {
+            background: var(--primary) !important;
+            color: #ffffff !important
+        }
+
+        .dark .card.hero .balance-country,
+        .dark .card.hero .pill {
+            background: rgba(0, 0, 0, .28) !important;
+            color: var(--text) !important;
+            border: 1px solid var(--line) !important
+        }
+
+        .dark .offer-card.mini-offer {
+            overflow: visible;
+            margin: 0 28px;
+            padding: 15px 0 16px;
+            border: 0;
+            border-bottom: 1px solid var(--line);
+            border-radius: 0;
+            background: transparent;
+            box-shadow: none
+        }
+
+        .dark .home-nzone-dock {
+            background: linear-gradient(145deg, #40201A 0%, #351811 44%, #2C1410 100%);
+            border-color: var(--line);
+            box-shadow: var(--shadow)
+        }
+
+        .dark .home-nzone-center,
+        .dark .home-nzone-node b {
+            background: #40201A
+        }
+
+        .dark .home-nzone-dock-foot {
+            background: #2A130D
+        }
+
+        /* -- Logo d'authentification -------------------------------------
+           syncLogo() bascule entre nzo_auth_logo_dark_aligned.png et
+           ...light_aligned.png, mais les deux fichiers sont identiques : un
+           aplat #9F2220, soit 2.07 de contraste sur le brun. On le pose en
+           blanc via le meme filtre que le splash (.splash-svg), qui est la
+           facon deja retenue dans le projet pour sortir le logo sur fond
+           sombre. L'asset n'est pas modifie. */
+        /* :not(.compact) est essentiel : la variante compacte affiche l'icone
+           d'app, un carre rouge OPAQUE aux lettres blanches. Le filtre y
+           blanchirait aussi le fond et ne laisserait qu'un carre blanc plein.
+           Seul le grand logo, detoure sur transparence, doit etre inverse. */
+        .dark .auth-head:not(.compact) .logo.big {
+            filter: brightness(0) invert(1)
+        }
+
     </style>
 </head>
 <body>
@@ -10772,10 +11169,10 @@
 
     function homeNzoneCarousel() {
         const gradients = {
-            XAF: ['#f0fdf4','#dcfce7','#16a34a'],
-            EUR: ['#FFF7E8','#FDECC8','#F0A72C'],
-            GBP: ['#faf5ff','#ede9fe','#7c3aed'],
-            XOF: ['#fffbeb','#fef3c7','#d97706']
+            XAF: ['#f0fdf4','#dcfce7','var(--acc-xaf)','var(--acc-xaf-soft)'],
+            EUR: ['#FFF7E8','#FDECC8','var(--acc-eur)','var(--acc-eur-soft)'],
+            GBP: ['#faf5ff','#ede9fe','var(--acc-gbp)','var(--acc-gbp-soft)'],
+            XOF: ['#fffbeb','#fef3c7','var(--acc-xof)','var(--acc-xof-soft)']
         };
         const currencies = Object.keys(HOME_BALANCES);
         const cards = currencies.map((currency, index) => {
@@ -10793,7 +11190,7 @@
                 `transition:transform .2s ease,opacity .2s ease;cursor:pointer" ` +
                 `onclick="openHomeNzone('${currency}')">` +
                 `<div style="display:flex;align-items:center;justify-content:space-between">` +
-                `<span class="home-nzone-badge" style="color:${g[2]};background:${g[2]}22">N-Zone ${currency}</span>` +
+                `<span class="home-nzone-badge" style="color:${g[2]};background:${g[3]}">N-Zone ${currency}</span>` +
                 `<span style="font-size:20px;line-height:1">${balance.flag}</span>` +
                 `</div>` +
                 `<div>` +
@@ -10817,7 +11214,7 @@
             `<div id="homeNzoneCarousel" style="display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:4px 28px 12px 24px;scrollbar-width:none">` +
             `${cards}` +
             `<button style="${openS}" type="button" onclick="startOpenNzone()">` +
-            `<span style="width:38px;height:38px;border-radius:14px;display:grid;place-items:center;background:var(--chip);color:#9F2220;font-size:22px">+</span>` +
+            `<span style="width:38px;height:38px;border-radius:14px;display:grid;place-items:center;background:var(--chip);color:var(--primary-ink);font-size:22px">+</span>` +
             `<span style="font-size:12px;font-weight:800;color:var(--text)">Ouvrir une cagnotte</span>` +
             `</button>` +
             `</div></section>`;
@@ -10870,7 +11267,7 @@
             '</div>' +
             '<button class="home-exchange-cta" type="button" onclick="startObtainFromHome()">Obtenir</button>' +
             '<div style="display:flex;justify-content:center;margin-top:12px">' +
-              '<span id="hRate2" style="display:inline-flex;align-items:center;gap:5px;background:var(--chip);color:#9F2220;font-size:11px;font-weight:750;padding:5px 12px;border-radius:999px">' +
+              '<span id="hRate2" style="display:inline-flex;align-items:center;gap:5px;background:var(--chip);color:var(--primary-ink);font-size:11px;font-weight:750;padding:5px 12px;border-radius:999px">' +
                 defaultRate + ' · taux indicatif' +
               '</span>' +
             '</div>' +
@@ -11359,8 +11756,8 @@
 
     function nzoneRow(currency) {
         const data = nzoneDetailData(currency);
-        const accents = { XAF: '#22a06b', EUR: '#F0A72C', GBP: '#7c3aed', XOF: '#d97706' };
-        const accent = accents[currency] || '#9F2220';
+        const accents = { XAF: 'var(--acc-xaf-ref)', EUR: 'var(--acc-eur)', GBP: 'var(--acc-gbp)', XOF: 'var(--acc-xof)' };
+        const accent = accents[currency] || 'var(--primary-ink)';
         return `<div class="nzone nzone-clickable" role="button" tabindex="0" onclick="openNzoneDetail('${currency}')" onkeydown="if(event.key==='Enter'){openNzoneDetail('${currency}')}">
   <div class="nzone-main">
     <div class="flag">${data.flag}</div>
@@ -11376,7 +11773,7 @@
     function walletsScreen() {
         const currencies = openedNzoneCurrencies();
         const rows = currencies.map(nzoneRow).join('');
-        const addBtn = `<button type="button" onclick="startOpenNzone()" style="width:100%;padding:16px;border:1.5px dashed var(--line);border-radius:16px;background:transparent;color:var(--muted);font-family:inherit;font-size:13px;font-weight:800;cursor:pointer;margin-top:8px;display:flex;align-items:center;justify-content:center;gap:8px"><span style="width:24px;height:24px;border-radius:8px;background:var(--chip);color:#9F2220;display:grid;place-items:center;font-size:14px">+</span> Ouvrir une N-Zone</button>`;
+        const addBtn = `<button type="button" onclick="startOpenNzone()" style="width:100%;padding:16px;border:1.5px dashed var(--line);border-radius:16px;background:transparent;color:var(--muted);font-family:inherit;font-size:13px;font-weight:800;cursor:pointer;margin-top:8px;display:flex;align-items:center;justify-content:center;gap:8px"><span style="width:24px;height:24px;border-radius:8px;background:var(--chip);color:var(--primary-ink);display:grid;place-items:center;font-size:14px">+</span> Ouvrir une N-Zone</button>`;
         return `${appHeader('N-Zones', 'Vos espaces devises', '')}
 <div style="padding:0 20px 24px">
   <div style="padding:0 2px">${rows}</div>
@@ -11668,7 +12065,7 @@ ${obtainDealCard(sourceCurrency)}${nzonePendingObtainBlock(sourceCurrency)}`
     }
 
     function updateNzoneDealRate() {
-        const src = document.getElementById('nzSrcVal')?.textContent || currentNzone;
+        const src = document.getElementById('nzCostVal')?.textContent || currentNzone;
         const targetEl = document.getElementById('nzTgtVal');
         const tgt = targetEl?.textContent || targetEl?.value || '';
         obtainFlow.source = src;
@@ -11677,7 +12074,10 @@ ${obtainDealCard(sourceCurrency)}${nzonePendingObtainBlock(sourceCurrency)}`
     }
 
     function selectNzoneDealCurrency(field, currency) {
-        const srcEl = document.getElementById('nzSrcVal');
+        // Le markup expose la devise source sous l'id nzCostVal (cf. obtain-cost-field) ;
+        // 'nzSrcVal' n'existe nulle part, donc le garde ci-dessous sortait toujours
+        // et aucun choix de devise n'etait pris en compte.
+        const srcEl = document.getElementById('nzCostVal');
         const tgtEl = document.getElementById('nzTgtVal');
         if (!srcEl || !tgtEl) return;
         const next = currency === srcEl.textContent ? obtainDefaultTarget(srcEl.textContent) : currency;
@@ -12001,7 +12401,7 @@ ${obtainDealCard(sourceCurrency)}${nzonePendingObtainBlock(sourceCurrency)}`
         const title = type === 'sell' ? 'Offre de vente publiée' : type === 'withdraw' ? 'Retrait lancé' : 'Dépôt confirmé';
         const detail = type === 'sell' ? `${amount} proposés contre ${nzoneOperation.target}` : type === 'withdraw' ? `${amount} en cours de retrait` : `${amount} ajoutés à la N-zone`;
         const market = type === 'sell' ? `<button class="btn secondary" onclick="go('xchange')">Voir le marché</button>` : '';
-        return `${nzoneFlowHeader(title, nzoneDetailData().name)}<div class="card"><div style="font-size:42px;color:#9F2220;font-weight:950">✓</div><div class="title" style="font-size:21px;margin-top:10px">${title}</div><p class="sub" style="margin-top:10px">${detail}</p><button class="btn primary" style="margin-top:18px" onclick="go('nzoneDetail')">Retour à la N-zone</button>${market}</div>`
+        return `${nzoneFlowHeader(title, nzoneDetailData().name)}<div class="card"><div style="font-size:42px;color:var(--primary-ink);font-weight:950">✓</div><div class="title" style="font-size:21px;margin-top:10px">${title}</div><p class="sub" style="margin-top:10px">${detail}</p><button class="btn primary" style="margin-top:18px" onclick="go('nzoneDetail')">Retour à la N-zone</button>${market}</div>`
     }
 
     function nzoneCashScreen(type) {
@@ -12182,7 +12582,7 @@ ${obtainDealCard(sourceCurrency)}${nzonePendingObtainBlock(sourceCurrency)}`
     function openNzoneSuccessScreen() {
         const meta = nzoneMeta(openNzone.currency);
         if (!meta) return openNzoneChooseScreen();
-        return `${openNzoneHeader('N-zone activée')}<div class="card"><div style="font-size:42px;color:#9F2220;font-weight:950">✓</div><div class="title" style="font-size:21px;margin-top:10px">Cagnotte ${meta.currency} activée</div><div class="open-nzone-success-ref">${openNzone.ref}</div><p class="sub" style="margin-top:12px">Solde initial : ${xamount(Number(openNzone.amount), meta.currency)}</p><button class="btn primary" style="margin-top:18px" onclick="go('xchange')">Aller au deal</button><button class="btn secondary" onclick="go('wallets')">Retour aux cagnottes</button></div>`
+        return `${openNzoneHeader('N-zone activée')}<div class="card"><div style="font-size:42px;color:var(--primary-ink);font-weight:950">✓</div><div class="title" style="font-size:21px;margin-top:10px">Cagnotte ${meta.currency} activée</div><div class="open-nzone-success-ref">${openNzone.ref}</div><p class="sub" style="margin-top:12px">Solde initial : ${xamount(Number(openNzone.amount), meta.currency)}</p><button class="btn primary" style="margin-top:18px" onclick="go('xchange')">Aller au deal</button><button class="btn secondary" onclick="go('wallets')">Retour aux cagnottes</button></div>`
     }
 
     function openNzoneScreen() {
@@ -12822,6 +13222,13 @@ ${obtainDealCard(sourceCurrency)}${nzonePendingObtainBlock(sourceCurrency)}`
     enableHorizontalScrollAssist();
     enableXchangeFilterMenus();
     window.addEventListener('resize', syncScrollableView);
+    // Sur mobile, l'apparition/disparition de la barre d'adresse change la
+    // hauteur visible sans toujours declencher 'resize' : visualViewport si.
+    if (window.visualViewport) {
+        window.visualViewport.addEventListener('resize', syncScrollableView);
+        window.visualViewport.addEventListener('scroll', syncScrollableView)
+    }
+    window.addEventListener('orientationchange', () => setTimeout(syncScrollableView, 120));
     go('home');
     showSplash(true);
 </script>
