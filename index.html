@@ -3,6 +3,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Sans theme-color declare, Safari iOS echantillonne la couleur du haut de
+         la page pour teinter la barre d'etat : il attrapait le rouge plein ecran
+         du splash et le gardait ensuite sur tous les ecrans. Valeur explicite,
+         resynchronisee au changement de theme par syncDocumentChrome(). -->
+    <meta id="themeColorMeta" name="theme-color" content="#F9ECDD">
     <title>N-ZO APPLICATION PROTOTYPES</title>
     <meta name="description" content="Le bon montant au bon taux">
     <link rel="icon" type="image/png" href="favicon.png">
@@ -28,6 +33,15 @@
         html, body {
             height: 100%;
             overflow: hidden
+        }
+
+        /* Le rubber band d'iOS decouvre le fond du document, pas celui de #screen
+           qui porte le theme : on peint <html> a la couleur du theme (repli clair
+           ici, bascule par syncDocumentChrome()) pour ne plus laisser passer le
+           rouge du splash. overscroll-behavior coupe en plus l'effet d'elastique. */
+        html {
+            background: #F9ECDD;
+            overscroll-behavior: none
         }
 
         body {
@@ -4961,7 +4975,15 @@
 
         .auth {
             display: none;
-            align-items: stretch;
+            /* 'flex-start' et non 'stretch' : stretch fixait la hauteur de
+               .auth-shell a celle de la zone visible, et comme les enfants du
+               panneau sont compressibles par defaut c'est .auth-fields — qui est
+               en overflow:hidden — qui absorbait le manque de place. Sur un ecran
+               court (Safari iOS barre d'adresse affichee, ~629px) la carte perdait
+               90px et coupait le champ mot de passe, sans meme etre scrollable
+               puisque rien ne debordait. En flex-start le shell prend la hauteur
+               de son contenu et le defilement de .auth reprend la main. */
+            align-items: flex-start;
             justify-content: flex-start;
             padding: 10px 4px 8px;
             overflow-x: hidden;
@@ -5010,6 +5032,17 @@
             display: flex;
             flex-direction: column;
             justify-content: center
+        }
+
+        /* Meme raison que .view > * : aucun bloc du formulaire ne doit se laisser
+           comprimer quand la place manque — il doit deborder pour devenir
+           scrollable. Le panneau lui-meme est concerne : compresse par le shell,
+           il gardait une hauteur inferieure a son contenu et le
+           'justify-content: center' faisait alors deborder le haut du formulaire
+           (logo tronque) dans une zone que le defilement ne peut pas atteindre. */
+        .auth-shell > *,
+        .auth-panel > * {
+            flex-shrink: 0
         }
 
         .auth-panel:before {
@@ -9247,6 +9280,26 @@
             filter: brightness(0) invert(1)
         }
 
+        /* === ZOOM AUTOMATIQUE iOS ===
+           Safari iOS agrandit la page des qu'un champ prend le focus avec une
+           police inferieure a 16px, et ne revient pas a l'echelle 1 en sortant :
+           la page reste zoomee et deplacable, d'ou l'ecran qui apparait "colle a
+           droite" apres une saisie, y compris sur les ecrans suivants puisque le
+           prototype ne recharge jamais la page. 16px est le seuil exact — aucune
+           autre parade n'est fiable, Safari ignore maximum-scale depuis iOS 10.
+           Cible mobile seulement : le rendu desktop reste au pixel pres. */
+        @media (max-width: 480px) {
+            .auth-input input,
+            .auth-input select,
+            .auth-country-select,
+            .xsearch input,
+            .deal-advanced-field input,
+            .nzone-menu .deal-advanced-field select,
+            .deal-advanced-field select {
+                font-size: 16px
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -10099,10 +10152,22 @@
             (onboarding && onboarding.classList.contains('active'))
     }
 
+    // Les tokens de theme vivent sur #screen, mais la barre d'etat iOS et la zone
+    // d'overscroll prennent la couleur du DOCUMENT : sans cette synchro, Safari
+    // gardait la teinte echantillonnee au chargement, celle du splash rouge.
+    // Valeurs de --bg des deux versants.
+    function syncDocumentChrome() {
+        const color = theme === 'dark' ? '#1C0D08' : '#F9ECDD';
+        document.documentElement.style.background = color;
+        const meta = document.getElementById('themeColorMeta');
+        if (meta) meta.setAttribute('content', color)
+    }
+
     function toggleTheme() {
         const keepOverlay = hasBlockingPrototypeOverlay();
         theme = theme === 'dark' ? 'light' : 'dark';
         screen.className = 'screen ' + theme;
+        syncDocumentChrome();
         if (!keepOverlay) go(current);
         else {
             syncLogo();
@@ -10376,11 +10441,11 @@
         const raw = document.getElementById('loginIdentifier').value.trim();
         if (authContactType === 'phone') {
             const digits = raw.replace(/\D/g, '');
-            if (!digits) return 'Sélectionnez téléphone puis saisissez votre numéro.';
+            if (!digits) return 'Saisissez votre numéro de téléphone.';
             if (digits.length < 6) return 'Entrez un numéro de téléphone valide.';
             return ''
         }
-        if (!raw) return 'Sélectionnez email puis saisissez votre adresse.';
+        if (!raw) return 'Saisissez votre adresse email.';
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(raw)) return 'Entrez une adresse email valide.';
         return ''
     }
@@ -13218,6 +13283,7 @@ ${obtainDealCard(sourceCurrency)}${nzonePendingObtainBlock(sourceCurrency)}`
     syncAuthIdentifierUi();
     syncLogo();
     syncThemeToggle();
+    syncDocumentChrome();
     syncPrototypeProfile();
     enableHorizontalScrollAssist();
     enableXchangeFilterMenus();
